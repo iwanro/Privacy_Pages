@@ -1,0 +1,122 @@
+POLITICA DE CONFIDENȚIALITATE - Ghidul Sancțiunilor
+================================================
+
+1. INTRODUCERE
+-------------
+Această politică de confidențialitate descrie modul în care aplicația "Ghidul Sancțiunilor" colectează, utilizează și protejează datele dumneavoastră personale. Aplicația este dezvoltată și menținută de Iulian Ivan.
+
+✓ ANGAJAMENTUL NOSTRU: Nu colectăm, stocăm sau transmitem nicio dată personală. Confidențialitatea dumneavoastră este prioritatea noastră.
+
+
+2. COLECTAREA DATELOR
+-------------------
+
+2.1 DATE PERSONALE
+✓ NU colectăm date personale:
+• Nu colectăm nume, adrese, numere de telefon sau alte informații de identificare personală
+• Nu folosim conturi de utilizator sau autentificare
+• Nu stocăm istoricul de navigare sau căutare
+• Nu salvăm informații despre locația dumneavoastră
+• Nu colectăm date despre dispozitivul dumneavoastră
+
+2.2 DATE TEHNICE
+Aplicația utilizează permisiunea de INTERNET exclusiv pentru:
+• Descărcarea legislației actualizate de pe servere securizate (HTTPS)
+• Asigurarea funcționalității aplicației în mod offline după sincronizare
+
+NU folosim:
+• Analytics sau tracking
+• Rețele sociale de publicitate
+• Servicii de terțe părți pentru colectarea datelor
+• Cookies sau tehnologii similare de urmărire
+
+
+3. UTILIZAREA DATELOR
+--------------------
+SCOPUL APLICAȚIEI: Ghidul Sancțiunilor este un instrument EDUCATIV și INFORMATIV care facilitează accesul la legislația privind sancțiunile și contravențiile din România.
+
+Toate datele legislative sunt stocate LOCAL pe dispozitivul dumneavoastră și nu sunt transmise către nicio terță parte.
+
+
+4. DISCLAIMER IMPORTANT
+----------------------
+
+⚠️ AVERTISMENT IMPORTANT - CITEȚI CU ATENȚIE:
+
+4.1 NATURĂ EDUCAȚIONALĂ
+Aplicația "Ghidul Sancțiunilor" are exclusiv un caracter INFORMATIV și EDUCATIV. Aceasta NU înlocuiește sfaturile juridice profesionale și NU constituie consultanță juridică autorizată.
+
+4.2 LIMITARE DE RĂSPUNDERE
+Dezvoltatorul (Iulian Ivan) nu își asumă și exclude orice responsabilitate pentru:
+• Exactitatea, actualitatea sau caracterul complet al informațiilor legislative prezentate
+• Modificările legislative ulterioare publicării informațiilor în aplicație
+• Consecințele utilizării informațiilor în scopuri neoficiale
+• Deciziile luate pe baza informațiilor din aplicație
+• Pierderea sau prejudiciile rezultate din utilizarea aplicației
+
+4.3 ABSOLVIRE DE RĂSPUNDERE
+Utilizatorul recunoaște și acceptă că:
+• Aplicația este oferită "ca atare" (AS IS), fără garanții de orice fel
+• Dezvoltatorul nu garantează continuitatea, disponibilitatea sau absența erorilor
+• Utilizarea informațiilor se face pe propriul risc al utilizatorului
+• Pentru situații juridice reale, este obligatoriu să consultați un avocat autorizat
+• Dezvoltatorul nu răspunde pentru nicio daună directă, indirectă, accidentală sau consecventă
+
+4.4 VERIFICARE OFICIALĂ
+Pentru acte normative oficiale și actualizate, consultați întotdeauna:
+• Monitorul Oficial al României
+• Site-uri guvernamentale oficiale
+• Avocați autorizați
+
+
+5. PERMISELE APLICAȚIEI
+----------------------
+Aplicația solicită următoarele permisiuni:
+• INTERNET - Pentru descărcarea legislației actualizate prin conexiune securizată HTTPS
+
+NU solicităm și NU folosim:
+• Acces la contacte
+• Acces la locație
+• Acces la camera foto
+• Acces la microfon
+• Acces la fișiere
+• Niciun alt tip de date personale
+
+
+6. SECURITATEA DATELOR
+--------------------
+Deși nu colectăm date personale, implementăm măsuri de securitate pentru:
+• Transmiterea securizată a legislației (HTTPS/TLS)
+• Stocarea locală a datelor pe dispozitivul utilizatorului
+• Absența oricărei comunicări cu servere terțe pentru colectarea datelor
+
+
+7. DREPTURILE UTILIZATORULUI
+---------------------------
+Deoarece nu colectăm date personale:
+• Nu există conturi de utilizator de șters
+• Nu există date de exportat
+• Puteți dezinstala aplicația oricând pentru a elimina toate datele locale
+
+
+8. MODIFICĂRI ALE POLITICII
+---------------------------
+Ne rezervăm dreptul de a modifica această politică de confidențialitate. Orice modificare va fi postată în aplicație. Utilizarea continuă a aplicației după modificări presupune acceptarea noilor termeni.
+
+
+9. LEGISLAȚIE APLICABILĂ
+-----------------------
+Această politică și utilizarea aplicației sunt guvernate de legislația României. Orice litigiu va fi supus instanțelor competente din România.
+
+
+10. CONTACT
+----------
+Pentru întrebări sau preocupări legate de politicile de confidențialitate, ne puteți contacta:
+• Email: iulianivn@duck.com
+• Website: https://iwan.ro
+• Developer: Iulian Ivan
+
+Ultima actualizare: Martie 2026
+Versiunea 1.0.1
+
+© 2026 Iulian Ivan. Toate drepturile rezervate.

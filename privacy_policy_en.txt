@@ -1,0 +1,122 @@
+PRIVACY POLICY - Penalties Guide
+=================================
+
+1. INTRODUCTION
+---------------
+This privacy policy describes how the "Penalties Guide" application collects, uses, and protects your personal data. The App is developed and maintained by Iulian Ivan.
+
+✓ OUR COMMITMENT: We do not collect, store, or transmit any personal data. Your privacy is our priority.
+
+
+2. DATA COLLECTION
+------------------
+
+2.1 PERSONAL DATA
+✓ We DO NOT collect personal data:
+• We do not collect names, addresses, phone numbers, or other personally identifiable information
+• We do not use user accounts or authentication
+• We do not store browsing or search history
+• We do not save location information
+• We do not collect device information
+
+2.2 TECHNICAL DATA
+The App uses INTERNET permission exclusively for:
+• Downloading updated legislation from secure servers (HTTPS)
+• Ensuring app functionality in offline mode after synchronization
+
+We do NOT use:
+• Analytics or tracking
+• Social media advertising
+• Third-party data collection services
+• Cookies or similar tracking technologies
+
+
+3. DATA USAGE
+-------------
+APP PURPOSE: Penalties Guide is an EDUCATIONAL and INFORMATIONAL tool that facilitates access to Romanian legislation regarding penalties and contraventions.
+
+All legislative data is stored LOCALLY on your device and is not transmitted to any third party.
+
+
+4. IMPORTANT DISCLAIMER
+-----------------------
+
+⚠️ IMPORTANT WARNING - READ CAREFULLY:
+
+4.1 EDUCATIONAL NATURE
+The "Penalties Guide" application is exclusively INFORMATIONAL and EDUCATIONAL in nature. It DOES NOT replace professional legal advice and DOES NOT constitute authorized legal consultation.
+
+4.2 LIABILITY LIMITATION
+The Developer (Iulian Ivan) assumes no responsibility and excludes any liability for:
+• Accuracy, currency, or completeness of the legislative information presented
+• Subsequent legislative changes after information publication in the app
+• Consequences of using information for unofficial purposes
+• Decisions made based on app information
+• Loss or damages resulting from app usage
+
+4.3 DISCLAIMER OF LIABILITY
+The user acknowledges and accepts that:
+• The application is provided "as is" without any warranties
+• The developer does not guarantee continuity, availability, or absence of errors
+• Use of information is at the user's own risk
+• For real legal situations, it is mandatory to consult a licensed attorney
+• The developer is not liable for any direct, indirect, incidental, or consequential damages
+
+4.4 OFFICIAL VERIFICATION
+For official and updated legal acts, always consult:
+• Romanian Official Monitor (Monitorul Oficial)
+• Official government websites
+• Licensed attorneys
+
+
+5. APP PERMISSIONS
+------------------
+The application requests the following permissions:
+• INTERNET - To download updated legislation via secure HTTPS connection
+
+We DO NOT request or use:
+• Contacts access
+• Location access
+• Camera access
+• Microphone access
+• File access
+• Any other personal data
+
+
+6. DATA SECURITY
+----------------
+Although we do not collect personal data, we implement security measures for:
+• Secure transmission of legislation (HTTPS/TLS)
+• Local storage of data on the user's device
+• Absence of any communication with third-party servers for data collection
+
+
+7. USER RIGHTS
+--------------
+Since we do not collect personal data:
+• There are no user accounts to delete
+• There is no data to export
+• You can uninstall the app anytime to remove all local data
+
+
+8. POLICY CHANGES
+-----------------
+We reserve the right to modify this privacy policy. Any changes will be posted in the app. Continued use after changes constitutes acceptance of new terms.
+
+
+9. APPLICABLE LAW
+-----------------
+This policy and app usage are governed by Romanian law. Any disputes will be subject to competent courts in Romania.
+
+
+10. CONTACT
+-----------
+For questions or concerns regarding privacy policies, you can contact us:
+• Email: iulianivn@duck.com
+• Website: https://iwan.ro
+• Developer: Iulian Ivan
+
+Last updated: March 2026
+Version 1.0.1
+
+© 2026 Iulian Ivan. All rights reserved.
