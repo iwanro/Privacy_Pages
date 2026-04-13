@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Fișiere Proiect</title>
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --container-bg: #ffffff;
+            --text: #2d3436;
+            --accent: #0984e3;
+            --border: #dfe6e9;
+            --hover: #f1f2f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--bg);
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        #file-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            transition: background 0.2s;
+            border-radius: 6px;
+        }
+
+        .item:hover {
+            background-color: var(--hover);
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .icon {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .name {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: var(--border);
+            color: #636e72;
+        }
+
+        .loading {
+            text-align: center;
+            color: #b2bec3;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="repo-title">Documentație Proiect</h1>
+    <div id="file-list">
+        <div class="loading">Se încarcă lista de fișiere...</div>
+    </div>
+</div>
+
+<script>
+    // --- CONFIGURARE ---
+    const USER = 'NUMELE_TAU_DE_UTILIZATOR'; 
+    const REPO = 'NUMELE_REPOZITORIULUI';
+    // -------------------
+
+    async function fetchRepoContents() {
+        const url = `https://api.github.com/repos/${USER}/${REPO}/contents/`;
+        const listElement = document.getElementById('file-list');
+
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            if (!response.ok) throw new Error('Nu am putut accesa datele.');
+
+            listElement.innerHTML = '';
+
+            // Sortăm: folderele primele, apoi fișierele
+            data.sort((a, b) => (b.type === 'dir') - (a.type === 'dir'));
+
+            data.forEach(item => {
+                // Excludem index.html și fișierele ascunse (ca .gitignore)
+                if (item.name === 'index.html' || item.name.startsWith('.')) return;
+
+                const link = document.createElement('a');
+                link.className = 'item';
+                
+                // Dacă e folder, link-ul merge către structura din GitHub (sau poți adapta)
+                // Dacă e HTML, link-ul merge către fișier direct
+                link.href = item.html_url; 
+                
+                // Iconițe simple bazate pe tip
+                const icon = item.type === 'dir' ? '📁' : '📄';
+                const typeLabel = item.type === 'dir' ? 'Folder' : 'File';
+
+                link.innerHTML = `
+                    <span class="icon">${icon}</span>
+                    <span class="name">${item.name}</span>
+                    <span class="badge">${typeLabel}</span>
+                `;
+                
+                listElement.appendChild(link);
+            });
+
+        } catch (error) {
+            listElement.innerHTML = `<div class="loading" style="color: #d63031;">Eroare: ${error.message}</div>`;
+        }
+    }
+
+    fetchRepoContents();
+</script>
+
+</body>
+</html>
