@@ -3,154 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Fișiere Proiect</title>
+    <title>Beekeeping Tracker - Index</title>
     <style>
         :root {
-            --bg: #f8f9fa;
-            --container-bg: #ffffff;
-            --text: #2d3436;
-            --accent: #0984e3;
-            --border: #dfe6e9;
-            --hover: #f1f2f6;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-hover: rgba(255, 255, 255, 0.2);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 40px 20px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--container-bg);
+            width: 100%;
+            max-width: 600px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
             padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--bg);
-            padding-bottom: 10px;
-            font-weight: 600;
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
         }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        h1 { font-size: 1.5rem; margin: 0; }
+        p { opacity: 0.8; font-size: 0.9rem; }
 
         #file-list {
-            list-style: none;
-            padding: 0;
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         .item {
             display: flex;
             align-items: center;
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--border);
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
             text-decoration: none;
-            color: var(--text);
-            transition: background 0.2s;
-            border-radius: 6px;
+            color: white;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
         }
 
         .item:hover {
-            background-color: var(--hover);
+            background: var(--glass-hover);
+            transform: translateX(5px);
+            border-color: rgba(255,255,255,0.3);
         }
 
-        .item:last-child {
-            border-bottom: none;
+        .icon { margin-right: 15px; font-size: 1.2rem; }
+        .name { flex-grow: 1; font-weight: 500; }
+        
+        .cancel-btn {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            transition: 0.3s;
         }
 
-        .icon {
-            margin-right: 12px;
-            font-size: 1.2rem;
-        }
-
-        .name {
-            flex-grow: 1;
-            font-weight: 500;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            padding: 2px 8px;
-            border-radius: 12px;
-            background: var(--border);
-            color: #636e72;
-        }
-
-        .loading {
-            text-align: center;
-            color: #b2bec3;
-            padding: 20px;
-        }
+        .cancel-btn:hover { background: white; color: #764ba2; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1 id="repo-title">Documentație Proiect</h1>
-    <div id="file-list">
-        <div class="loading">Se încarcă lista de fișiere...</div>
+    <div class="container">
+        <div class="header">
+            <div id="loading-area">
+                <div class="spinner"></div>
+                <h1>Beekeeping Tracker</h1>
+                <p id="status-text">Redirecting to legal docs...</p>
+                <button class="cancel-btn" onclick="stopRedirect()">Anulează redirecționarea</button>
+            </div>
+        </div>
+
+        <div id="file-list">
+            </div>
     </div>
-</div>
 
-<script>
-    // --- CONFIGURARE ---
-    const USER = 'iwanro'; 
-    const REPO = 'Privacy_Pages';
-    // -------------------
+    <script>
+        // --- CONFIGURARE ---
+        const USER = 'iwanro'; 
+        const REPO = 'Privacy_Pages';
+        let redirectTimeout;
 
-    async function fetchRepoContents() {
-        const url = `https://api.github.com/repos/${USER}/${REPO}/contents/`;
-        const listElement = document.getElementById('file-list');
+        // 1. Logica de redirecționare (întârziată cu 2 secunde)
+        function startRedirect() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const langCode = userLang.split('-')[0];
+            const supportedLangs = { 'ro': 'privacy_ro.html', 'en': 'privacy_en.html' };
+            const targetPage = supportedLangs[langCode] || 'privacy_en.html';
 
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            if (!response.ok) throw new Error('Nu am putut accesa datele.');
-
-            listElement.innerHTML = '';
-
-            // Sortăm: folderele primele, apoi fișierele
-            data.sort((a, b) => (b.type === 'dir') - (a.type === 'dir'));
-
-            data.forEach(item => {
-                // Excludem index.html și fișierele ascunse (ca .gitignore)
-                if (item.name === 'index.html' || item.name.startsWith('.')) return;
-
-                const link = document.createElement('a');
-                link.className = 'item';
-                
-                // Dacă e folder, link-ul merge către structura din GitHub (sau poți adapta)
-                // Dacă e HTML, link-ul merge către fișier direct
-                link.href = item.html_url; 
-                
-                // Iconițe simple bazate pe tip
-                const icon = item.type === 'dir' ? '📁' : '📄';
-                const typeLabel = item.type === 'dir' ? 'Folder' : 'File';
-
-                link.innerHTML = `
-                    <span class="icon">${icon}</span>
-                    <span class="name">${item.name}</span>
-                    <span class="badge">${typeLabel}</span>
-                `;
-                
-                listElement.appendChild(link);
-            });
-
-        } catch (error) {
-            listElement.innerHTML = `<div class="loading" style="color: #d63031;">Eroare: ${error.message}</div>`;
+            redirectTimeout = setTimeout(() => {
+                window.location.href = targetPage;
+            }, 2000); 
         }
-    }
 
-    fetchRepoContents();
-</script>
+        function stopRedirect() {
+            clearTimeout(redirectTimeout);
+            document.getElementById('loading-area').style.display = 'none';
+            document.querySelector('.header').innerHTML += "<h1>Index Fișiere</h1><p>Navigare manuală</p>";
+        }
 
+        // 2. Logica de afișare fișiere
+        async function fetchFiles() {
+            const url = `https://api.github.com/repos/${USER}/${REPO}/contents/`;
+            const listElement = document.getElementById('file-list');
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (!response.ok) throw new Error();
+
+                listElement.innerHTML = '';
+                data.forEach(item => {
+                    if (item.name === 'index.html' || item.name.startsWith('.')) return;
+
+                    const icon = item.type === 'dir' ? '📁' : '📄';
+                    const link = document.createElement('a');
+                    link.className = 'item';
+                    link.href = item.html_url;
+                    link.innerHTML = `<span class="icon">${icon}</span><span class="name">${item.name}</span>`;
+                    listElement.appendChild(link);
+                });
+            } catch (e) {
+                listElement.innerHTML = "<p style='text-align:center'>Nu am putut încărca lista automat.</p>";
+            }
+        }
+
+        // Pornim ambele funcții
+        startRedirect();
+        fetchFiles();
+    </script>
 </body>
 </html>
