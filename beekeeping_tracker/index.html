@@ -42,7 +42,6 @@
         h1 { margin: 0; font-size: 24px; }
         p { margin: 5px 0; opacity: 0.9; }
 
-        /* Stil pentru Lista de Fișiere */
         .content-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -76,7 +75,6 @@
         }
 
         .file-item:last-child { border-bottom: none; }
-
         .file-icon { margin-right: 15px; font-size: 1.2rem; }
         
         .cancel-btn {
@@ -108,22 +106,23 @@
 
     <script>
         // --- CONFIGURARE ---
-        const USER = 'iwanro'; 
-        const REPO = 'beekeeping_tracker';
+        // Asigură-te că aceste două sunt corecte pentru ca API-ul să poată citi lista
+        const USER = 'UTILIZATORUL_TAU_DE_GITHUB'; 
+        const REPO = 'NUME_REPO_PENTRU_PRIVACY';
+        
         let redirectTimer;
 
-        // 1. Logica de Redirecționare
         function initRedirect() {
-            var userLang = navigator.language || navigator.userLanguage;
-            var langCode = userLang.split('-')[0];
-            var supportedLangs = { 'ro': 'privacy_ro.html', 'en': 'privacy_en.html' };
-            var targetPage = supportedLangs[langCode] || 'privacy_en.html';
+            const userLang = navigator.language || navigator.userLanguage;
+            const langCode = userLang.split('-')[0];
+            const supportedLangs = { 'ro': 'privacy_ro.html', 'en': 'privacy_en.html' };
+            const targetPage = supportedLangs[langCode] || 'privacy_en.html';
 
             document.getElementById('status').innerText = `Redirecting to ${targetPage} in 3s...`;
 
             redirectTimer = setTimeout(() => {
                 window.location.href = targetPage;
-            }, 3000); // 3 secunde întârziere
+            }, 3000);
         }
 
         function stopRedirect() {
@@ -132,34 +131,38 @@
             document.querySelector('.spinner').style.display = 'none';
         }
 
-        // 2. Logica de Listare Fișiere (GitHub API)
         async function loadRepoFiles() {
             const container = document.getElementById('list-container');
+            
             try {
                 const response = await fetch(`https://api.github.com/repos/${USER}/${REPO}/contents/`);
                 const files = await response.json();
 
                 if (!response.ok) throw new Error();
 
-                container.innerHTML = ''; // Curățăm mesajul de loading
+                container.innerHTML = '';
 
                 files.forEach(file => {
-                    // Excludem index.html și fișierele ascunse
+                    // Ignorăm index.html și fișierele ascunse
                     if (file.name === 'index.html' || file.name.startsWith('.')) return;
 
                     const icon = file.type === 'dir' ? '📁' : '📄';
                     const item = document.createElement('a');
                     item.className = 'file-item';
-                    item.href = file.html_url;
+                    
+                    // MODIFICAREA CHEIE:
+                    // În loc de file.html_url (care e pe GitHub), 
+                    // folosim file.path sau file.name pentru a rămâne pe domeniul Vercel
+                    item.href = "./" + file.name; 
+                    
                     item.innerHTML = `<span class="file-icon">${icon}</span> <span>${file.name}</span>`;
                     container.appendChild(item);
                 });
             } catch (err) {
-                container.innerHTML = '<p style="text-align:center;">Eroare la încărcarea listei. Verifică setările USER/REPO.</p>';
+                container.innerHTML = '<p style="text-align:center;">Eroare la listare. Verifică USER/REPO în cod.</p>';
             }
         }
 
-        // Pornim procesele
         initRedirect();
         loadRepoFiles();
     </script>
