@@ -129,7 +129,7 @@
 <p class="last-updated">Ultima actualizare: 1 Iunie 2026</p>
 
 <p class="highlight-box">
-  <strong>Pe scurt:</strong> ChatSeal: WhatsApp to PDF procesează <strong>integral pe dispozitivul tău</strong>. Nu colectăm, nu stocăm, nu accesăm și nu transmitem niciun fel de date personale. Aplicația funcționează complet offline, fără servere, fără analytics, fără trackere.
+  <strong>Pe scurt:</strong> ChatSeal: WhatsApp to PDF procesează conversațiile <strong>integral pe dispozitivul tău</strong>. Nu colectăm, nu stocăm și nu accesăm conținutul conversațiilor tale. Singurul SDK third-party este <strong>Adapty</strong> (procesare securizată de achiziții in-app) — nu există analytics, trackere sau reclame.
 </p>
 
 <!-- ─── PRIVACY RO ─── -->
@@ -141,7 +141,7 @@
   <li><strong>Fără conturi:</strong> Aplicația nu necesită crearea unui cont sau autentificare.</li>
   <li><strong>Fără analytics:</strong> Nu includem SDK-uri de analytics, trackere, cookies sau instrumente de profiling.</li>
   <li><strong>Fără publicitate:</strong> Aplicația nu afișează reclame și nu integrează rețele publicitare.</li>
-  <li><strong>Fără servere:</strong> Toate operațiile au loc local, pe dispozitivul tău. Nu comunicăm cu niciun server extern.</li>
+  <li><strong>Procesare locală:</strong> Toate operațiile cu fișiere și conversații au loc local, pe dispozitivul tău.</li>
 </ul>
 
 <h3>1.2. Cum procesăm datele din conversații</h3>
@@ -161,10 +161,21 @@
 <h3>1.4. Permisiuni Android</h3>
 <p>Aplicația poate solicita permisiunea de <strong>stocare</strong> (READ/WRITE_EXTERNAL_STORAGE sau MANAGE_EXTERNAL_STORAGE, în funcție de versiunea Android) exclusiv pentru a salva PDF-ul generat pe dispozitiv. Nu citim, modificăm sau accesăm alte fișiere decât cele selectate explicit de tine prin dialogul de share sau file picker.</p>
 
-<h3>1.5. Confidențialitatea copiilor</h3>
+<h3>1.5. SDK Adapty (procesare achiziții in-app)</h3>
+<p>Pentru funcționalitatea premium (abonamente și achiziții unice), aplicația integrează <strong>Adapty SDK</strong> (adapty.io). Adapty este un serviciu third-party specializat în procesarea securizată a achizițiilor in-app. Prin Adapty, se transmit exclusiv următoarele date:</p>
+<ul>
+  <li><strong>ID-ul produsului</strong> achiziționat și tipul abonamentului</li>
+  <li><strong>Receipt-ul de achiziție</strong> (necesar pentru validarea plății de către Google Play)</li>
+  <li><strong>Statusul abonamentului</strong> (activ, expirat, în perioadă de grație)</li>
+  <li><strong>Un identificator anonim de utilizator</strong> (generat de Adapty, nu conține date personale)</li>
+  <li><strong>Țara de facturare</strong> (din profilul Google Play, necesar pentru taxare corectă)</li>
+</ul>
+<p><strong>NU se transmit</strong> prin Adapty: conținutul conversațiilor, nume de fișiere, email-uri, numere de telefon, contacte, sau orice altă informație personală. Politica de confidențialitate Adapty este disponibilă la <a href="https://adapty.io/privacy/" target="_blank" rel="noopener">https://adapty.io/privacy/</a>.</p>
+
+<h3>1.6. Confidențialitatea copiilor</h3>
 <p>Aplicația nu se adresează copiilor sub 13 ani și nu colectează cu bună știință date personale de la minori.</p>
 
-<h3>1.6. Modificări ale politicii</h3>
+<h3>1.7. Modificări ale politicii</h3>
 <p>Orice modificare a acestei politici va fi publicată pe această pagină, cu actualizarea datei „Ultima actualizare". Îți recomandăm să revizuiești periodic această pagină.</p>
 
 <!-- ─── TERMS RO ─── -->
@@ -231,7 +242,7 @@
 <p class="last-updated">Last updated: June 1, 2026</p>
 
 <p class="highlight-box">
-  <strong>In short:</strong> ChatSeal: WhatsApp to PDF processes everything <strong>entirely on your device</strong>. We do not collect, store, access, or transmit any personal data whatsoever. The app works completely offline — no servers, no analytics, no trackers.
+  <strong>In short:</strong> ChatSeal: WhatsApp to PDF processes conversations <strong>entirely on your device</strong>. We do not collect, store, or access your conversation content. The only third-party SDK is <strong>Adapty</strong> (secure in-app purchase processing) — no analytics, no trackers, no ads.
 </p>
 
 <!-- ─── PRIVACY EN ─── -->
@@ -243,7 +254,7 @@
   <li><strong>No accounts:</strong> The app does not require account creation or login.</li>
   <li><strong>No analytics:</strong> We do not include any analytics SDKs, trackers, cookies, or profiling tools.</li>
   <li><strong>No advertising:</strong> The app displays no ads and integrates no advertising networks.</li>
-  <li><strong>No servers:</strong> All operations occur locally on your device. We do not communicate with any external server.</li>
+  <li><strong>Local processing:</strong> All file and conversation operations occur locally on your device.</li>
 </ul>
 
 <h3>1.2. How we process chat data</h3>
@@ -263,10 +274,21 @@
 <h3>1.4. Android Permissions</h3>
 <p>The app may request <strong>storage</strong> permissions (READ/WRITE_EXTERNAL_STORAGE or MANAGE_EXTERNAL_STORAGE, depending on Android version) solely to save the generated PDF to your device. We do not read, modify, or access any files other than those you explicitly select via the share dialog or file picker.</p>
 
-<h3>1.5. Children's Privacy</h3>
+<h3>1.5. Adapty SDK (in-app purchase processing)</h3>
+<p>For premium functionality (subscriptions and one-time purchases), the app integrates <strong>Adapty SDK</strong> (adapty.io). Adapty is a third-party service specialized in secure in-app purchase processing. Through Adapty, the following data is transmitted exclusively:</p>
+<ul>
+  <li><strong>Purchased product ID</strong> and subscription type</li>
+  <li><strong>Purchase receipt</strong> (required for payment validation by Google Play)</li>
+  <li><strong>Subscription status</strong> (active, expired, grace period)</li>
+  <li><strong>Anonymous user identifier</strong> (generated by Adapty, contains no personal data)</li>
+  <li><strong>Billing country</strong> (from your Google Play profile, required for correct taxation)</li>
+</ul>
+<p><strong>NOT transmitted</strong> through Adapty: conversation content, file names, email addresses, phone numbers, contacts, or any other personal information. Adapty's privacy policy is available at <a href="https://adapty.io/privacy/" target="_blank" rel="noopener">https://adapty.io/privacy/</a>.</p>
+
+<h3>1.6. Children's Privacy</h3>
 <p>This app is not directed at children under 13 and does not knowingly collect personal information from minors.</p>
 
-<h3>1.6. Changes to this policy</h3>
+<h3>1.7. Changes to this policy</h3>
 <p>Any changes to this policy will be published on this page with an updated "Last updated" date. We encourage you to review this page periodically.</p>
 
 <!-- ─── TERMS EN ─── -->
@@ -331,7 +353,7 @@ document.querySelector('.lang-bar').addEventListener('click', function(e) {
   if (!lang) return;
   var i, sections = document.querySelectorAll('.section');
   for (i = 0; i < sections.length; i++) sections[i].classList.remove('active');
-  document.getElementById('section-' + lang).classList.add('active');
+  document.getElementById(`section-${lang}`).classList.add('active');
   var buttons = this.querySelectorAll('button');
   for (i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
   btn.classList.add('active');
