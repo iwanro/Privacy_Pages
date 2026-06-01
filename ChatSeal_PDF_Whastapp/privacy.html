@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatSeal: WhatsApp to PDF — Politică de Confidențialitate & Termeni</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1a1a2e;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .lang-bar {
+    background: #1a1a2e;
+    padding: 12px 24px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .lang-bar button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .lang-bar button:hover { background: rgba(255,255,255,0.1); }
+  .lang-bar button.active { background: #4a6cf7; border-color: #4a6cf7; }
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .section {
+    display: none;
+  }
+  .section.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1a1a2e;
+  }
+  .last-updated {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 32px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+    color: #1a1a2e;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 8px;
+    color: #374151;
+  }
+  p, li { color: #4b5563; }
+  p { margin-bottom: 12px; }
+  ul, ol { padding-left: 24px; margin-bottom: 16px; }
+  li { margin-bottom: 6px; }
+  strong { color: #1a1a2e; font-weight: 600; }
+  .highlight-box {
+    background: #eef2ff;
+    border-left: 4px solid #4a6cf7;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  .highlight-box p { margin: 0; color: #1e3a8a; }
+  .disclaimer-box {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  .disclaimer-box p { margin: 0; color: #991b1b; }
+  .footer-note {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 13px;
+  }
+  @media (max-width: 600px) {
+    .container { padding: 24px 16px 60px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button type="button" class="active" data-lang="ro">🇷🇴 Română</button>
+  <button type="button" data-lang="en">🇬🇧 English</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ROMANIAN -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="section-ro" class="section active">
+<div class="container">
+
+<h1>Politică de Confidențialitate &amp; Termeni de Utilizare</h1>
+<p class="last-updated">Ultima actualizare: 1 Iunie 2026</p>
+
+<p class="highlight-box">
+  <strong>Pe scurt:</strong> ChatSeal: WhatsApp to PDF procesează <strong>integral pe dispozitivul tău</strong>. Nu colectăm, nu stocăm, nu accesăm și nu transmitem niciun fel de date personale. Aplicația funcționează complet offline, fără servere, fără analytics, fără trackere.
+</p>
+
+<!-- ─── PRIVACY RO ─── -->
+<h2>1. Politica de Confidențialitate</h2>
+
+<h3>1.1. Ce date colectăm</h3>
+<p><strong>NU colectăm NICIUN fel de date.</strong> ChatSeal: WhatsApp to PDF nu colectează, nu stochează, nu procesează și nu transmite către terțe părți nicio informație personală, tehnică sau de utilizare.</p>
+<ul>
+  <li><strong>Fără conturi:</strong> Aplicația nu necesită crearea unui cont sau autentificare.</li>
+  <li><strong>Fără analytics:</strong> Nu includem SDK-uri de analytics, trackere, cookies sau instrumente de profiling.</li>
+  <li><strong>Fără publicitate:</strong> Aplicația nu afișează reclame și nu integrează rețele publicitare.</li>
+  <li><strong>Fără servere:</strong> Toate operațiile au loc local, pe dispozitivul tău. Nu comunicăm cu niciun server extern.</li>
+</ul>
+
+<h3>1.2. Cum procesăm datele din conversații</h3>
+<p>Când utilizezi funcția de export WhatsApp:</p>
+<ol>
+  <li>Selectezi manual o conversație WhatsApp prin dialogul de share al Android.</li>
+  <li>Fișierul este citit <strong>exclusiv local</strong> în memoria aplicației.</li>
+  <li>Conținutul este parsat și convertit în PDF — <strong>totul pe dispozitivul tău</strong>.</li>
+  <li>PDF-ul rezultat este salvat local pe dispozitiv (folderul Downloads sau o locație la alegerea ta).</li>
+  <li>După generare, datele brute din fișierul importat sunt <strong>eliminate din memoria aplicației</strong>.</li>
+</ol>
+<p><strong>NU încărcăm, NU stocăm și NU avem acces</strong> la conținutul conversațiilor tale. Nu există servere, baze de date externe sau infrastructură cloud unde aceste date ar putea ajunge.</p>
+
+<h3>1.3. Date de diagnostic (crash reports)</h3>
+<p>Aplicația poate genera rapoarte de crash anonimizate prin Google Play Console (Crashlytics nativ), doar dacă accepți explicit la prima lansare. Aceste rapoarte conțin exclusiv informații tehnice (model dispozitiv, versiune Android, stack trace) și <strong>NU</strong> conțin date din conversații, nume de fișiere sau conținut parsat.</p>
+
+<h3>1.4. Permisiuni Android</h3>
+<p>Aplicația poate solicita permisiunea de <strong>stocare</strong> (READ/WRITE_EXTERNAL_STORAGE sau MANAGE_EXTERNAL_STORAGE, în funcție de versiunea Android) exclusiv pentru a salva PDF-ul generat pe dispozitiv. Nu citim, modificăm sau accesăm alte fișiere decât cele selectate explicit de tine prin dialogul de share sau file picker.</p>
+
+<h3>1.5. Confidențialitatea copiilor</h3>
+<p>Aplicația nu se adresează copiilor sub 13 ani și nu colectează cu bună știință date personale de la minori.</p>
+
+<h3>1.6. Modificări ale politicii</h3>
+<p>Orice modificare a acestei politici va fi publicată pe această pagină, cu actualizarea datei „Ultima actualizare". Îți recomandăm să revizuiești periodic această pagină.</p>
+
+<!-- ─── TERMS RO ─── -->
+<h2>2. Termeni de Utilizare</h2>
+
+<h3>2.1. Acceptarea termenilor</h3>
+<p>Prin descărcarea și utilizarea aplicației ChatSeal: WhatsApp to PDF, ești de acord cu prezentii Termeni de Utilizare. Dacă nu ești de acord, nu utiliza aplicația.</p>
+
+<h3>2.2. Descrierea serviciului</h3>
+<p>ChatSeal: WhatsApp to PDF este o unealtă offline care convertește conversații exportate din WhatsApp în format PDF. Aplicația este oferită „ca atare" („as is"), fără garanții explicite sau implicite.</p>
+
+<h3>2.3. Responsabilitatea utilizatorului</h3>
+<div class="disclaimer-box">
+  <p><strong>Ești singurul responsabil</strong> pentru conținutul conversațiilor pe care alegi să le convertești și să le distribui sub formă de PDF. Utilizarea aplicației pentru a procesa date cu caracter personal sau sensibile se face pe propria ta răspundere.</p>
+</div>
+<ul>
+  <li>Respectă legislația aplicabilă (GDPR, Legea 677/2001, etc.) atunci când distribui PDF-uri generate.</li>
+  <li>Nu utiliza aplicația pentru a încălca drepturile de proprietate intelectuală ale altor persoane.</li>
+  <li>Nu utiliza aplicația în scopuri ilegale sau frauduloase.</li>
+</ul>
+
+<h3>2.4. Drepturile de proprietate intelectuală</h3>
+<p>Aplicația și codul său sursă sunt proprietatea dezvoltatorului. Conținutul conversațiilor pe care le procesezi îți aparține ție sau părților implicate în conversație.</p>
+
+<h3>2.5. Limitarea răspunderii</h3>
+<div class="disclaimer-box">
+  <p><strong>În niciun caz</strong> dezvoltatorul (Iulian Ivn — freelancer independent) nu poate fi considerat răspunzător pentru daune directe, indirecte, incidentale, speciale sau consecințiale rezultate din utilizarea sau imposibilitatea utilizării aplicației, inclusiv dar fără a se limita la: pierderea de date, pierderea de profit, întreruperea activității, dezvăluirea neautorizată a conversațiilor procesate, sau orice altă pierdere financiară sau de reputație.</p>
+</div>
+<ul>
+  <li>Aplicația este furnizată „ca atare", fără garanție de funcționare neîntreruptă sau fără erori.</li>
+  <li>Nu garantăm că PDF-urile generate vor fi acceptate de autorități, instanțe sau terțe părți ca dovadă legală.</li>
+  <li>Nu ne asumăm responsabilitatea pentru conținutul generat de utilizator sau pentru utilizarea necorespunzătoare a aplicației.</li>
+</ul>
+
+<h3>2.6. GDPR &amp; Conformitate legală</h3>
+<p>Deoarece aplicația nu colectează, nu stochează și nu procesează date personale pe servere externe, nu intră sub incidența obligațiilor principale de conformitate GDPR (Art. 4 — date cu caracter personal). Totuși, dacă alegi să convertești și să distribui conversații ce conțin date cu caracter personal, ești responsabil să respecți principiile GDPR în calitate de operator de date.</p>
+
+<h3>2.7. Contact</h3>
+<p>
+  <strong>Dezvoltator:</strong> Iulian Ivn — Freelancer independent<br>
+  <strong>Email:</strong> <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a>
+</p>
+
+<h3>2.8. Neafiliere</h3>
+<p>Această aplicație <strong>nu este afiliată, aprobată sau sponsorizată</strong> de WhatsApp LLC, Meta Platforms, Inc. sau de oricare dintre subsidiarele acestora. WhatsApp este o marcă înregistrată a Meta Platforms, Inc.</p>
+
+<h3>2.9. Legea aplicabilă</h3>
+<p>Prezentii termeni se supun legislației române. Orice dispută va fi soluționată pe cale amiabilă, iar în caz de eșec, la instanțele competente din România.</p>
+
+<div class="footer-note">
+  ChatSeal: WhatsApp to PDF — © 2026 Iulian Ivn. Toate drepturile rezervate.
+</div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- ENGLISH -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="section-en" class="section">
+<div class="container">
+
+<h1>Privacy Policy &amp; Terms of Use</h1>
+<p class="last-updated">Last updated: June 1, 2026</p>
+
+<p class="highlight-box">
+  <strong>In short:</strong> ChatSeal: WhatsApp to PDF processes everything <strong>entirely on your device</strong>. We do not collect, store, access, or transmit any personal data whatsoever. The app works completely offline — no servers, no analytics, no trackers.
+</p>
+
+<!-- ─── PRIVACY EN ─── -->
+<h2>1. Privacy Policy</h2>
+
+<h3>1.1. What data we collect</h3>
+<p><strong>We collect NO data whatsoever.</strong> ChatSeal: WhatsApp to PDF does not collect, store, process, or transmit any personal, technical, or usage information to any third party.</p>
+<ul>
+  <li><strong>No accounts:</strong> The app does not require account creation or login.</li>
+  <li><strong>No analytics:</strong> We do not include any analytics SDKs, trackers, cookies, or profiling tools.</li>
+  <li><strong>No advertising:</strong> The app displays no ads and integrates no advertising networks.</li>
+  <li><strong>No servers:</strong> All operations occur locally on your device. We do not communicate with any external server.</li>
+</ul>
+
+<h3>1.2. How we process chat data</h3>
+<p>When you use the WhatsApp export feature:</p>
+<ol>
+  <li>You manually select a WhatsApp conversation via Android's share dialog.</li>
+  <li>The file is read <strong>exclusively locally</strong> into the app's memory.</li>
+  <li>The content is parsed and converted to PDF — <strong>all on your device</strong>.</li>
+  <li>The resulting PDF is saved locally (Downloads folder or your chosen location).</li>
+  <li>After generation, all raw imported data is <strong>cleared from app memory</strong>.</li>
+</ol>
+<p><strong>We do NOT upload, store, or have access</strong> to your conversation content. There are no servers, external databases, or cloud infrastructure where this data could go.</p>
+
+<h3>1.3. Crash &amp; diagnostic data</h3>
+<p>The app may generate anonymized crash reports through Google Play Console (native Crashlytics), but only if you explicitly opt in on first launch. These reports contain exclusively technical information (device model, Android version, stack trace) and <strong>NEVER</strong> include conversation data, file names, or parsed content.</p>
+
+<h3>1.4. Android Permissions</h3>
+<p>The app may request <strong>storage</strong> permissions (READ/WRITE_EXTERNAL_STORAGE or MANAGE_EXTERNAL_STORAGE, depending on Android version) solely to save the generated PDF to your device. We do not read, modify, or access any files other than those you explicitly select via the share dialog or file picker.</p>
+
+<h3>1.5. Children's Privacy</h3>
+<p>This app is not directed at children under 13 and does not knowingly collect personal information from minors.</p>
+
+<h3>1.6. Changes to this policy</h3>
+<p>Any changes to this policy will be published on this page with an updated "Last updated" date. We encourage you to review this page periodically.</p>
+
+<!-- ─── TERMS EN ─── -->
+<h2>2. Terms of Use</h2>
+
+<h3>2.1. Acceptance of terms</h3>
+<p>By downloading and using ChatSeal: WhatsApp to PDF, you agree to these Terms of Use. If you do not agree, do not use the app.</p>
+
+<h3>2.2. Service description</h3>
+<p>ChatSeal: WhatsApp to PDF is an offline tool that converts exported WhatsApp conversations to PDF format. The app is provided "as is", without any express or implied warranties.</p>
+
+<h3>2.3. User responsibility</h3>
+<div class="disclaimer-box">
+  <p><strong>You are solely responsible</strong> for the content of conversations you choose to convert and distribute as PDFs. Using the app to process personal or sensitive data is at your own risk.</p>
+</div>
+<ul>
+  <li>Comply with applicable law (GDPR, local data protection regulations) when distributing generated PDFs.</li>
+  <li>Do not use the app to infringe upon others' intellectual property rights.</li>
+  <li>Do not use the app for illegal or fraudulent purposes.</li>
+</ul>
+
+<h3>2.4. Intellectual property</h3>
+<p>The app and its source code are the property of the developer. The content of conversations you process belongs to you or the parties involved in those conversations.</p>
+
+<h3>2.5. Limitation of liability</h3>
+<div class="disclaimer-box">
+  <p><strong>Under no circumstances</strong> shall the developer (Iulian Ivn — independent freelancer) be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or inability to use the app, including but not limited to: data loss, loss of profit, business interruption, unauthorized disclosure of processed conversations, or any other financial or reputational loss.</p>
+</div>
+<ul>
+  <li>The app is provided "as is", without warranty of uninterrupted or error-free operation.</li>
+  <li>We do not guarantee that generated PDFs will be accepted by authorities, courts, or third parties as legal evidence.</li>
+  <li>We assume no responsibility for user-generated content or misuse of the app.</li>
+</ul>
+
+<h3>2.6. GDPR &amp; Legal Compliance</h3>
+<p>Because the app does not collect, store, or process personal data on external servers, it is not subject to core GDPR compliance obligations (Art. 4 — personal data). However, if you choose to convert and distribute conversations containing personal data, you are responsible for complying with GDPR principles as a data controller.</p>
+
+<h3>2.7. Contact</h3>
+<p>
+  <strong>Developer:</strong> Iulian Ivn — Independent Freelancer<br>
+  <strong>Email:</strong> <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a>
+</p>
+
+<h3>2.8. No Affiliation</h3>
+<p>This app <strong>is not affiliated, endorsed, or sponsored</strong> by WhatsApp LLC, Meta Platforms, Inc., or any of their subsidiaries. WhatsApp is a registered trademark of Meta Platforms, Inc.</p>
+
+<h3>2.9. Governing Law</h3>
+<p>These terms are governed by Romanian law. Any dispute shall first be resolved amicably; if unsuccessful, it shall be submitted to the competent courts of Romania.</p>
+
+<div class="footer-note">
+  ChatSeal: WhatsApp to PDF — © 2026 Iulian Ivn. All rights reserved.
+</div>
+
+</div>
+</div>
+
+<script>
+document.querySelector('.lang-bar').addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) return;
+  var lang = btn.getAttribute('data-lang');
+  if (!lang) return;
+  var i, sections = document.querySelectorAll('.section');
+  for (i = 0; i < sections.length; i++) sections[i].classList.remove('active');
+  document.getElementById('section-' + lang).classList.add('active');
+  var buttons = this.querySelectorAll('button');
+  for (i = 0; i < buttons.length; i++) buttons[i].classList.remove('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
