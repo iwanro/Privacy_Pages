@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politică de Confidențialitate — Forest Guard</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.7;color:#1a1a2e;background:#f8f9fa;padding:20px}
+.container{max-width:800px;margin:0 auto;background:#fff;border-radius:12px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.lang-bar{text-align:right;margin-bottom:24px}
+.lang-bar button{background:#059669;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:14px;margin-left:8px}
+.lang-bar button:hover{background:#047857}
+.lang-bar button.active{background:#064e3b}
+h1{font-size:28px;color:#059669;margin-bottom:8px;font-weight:700}
+.subtitle{color:#6b7280;font-size:14px;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid #e5e7eb}
+h2{font-size:18px;color:#064e3b;margin:28px 0 12px;font-weight:600}
+p,li{color:#374151;margin-bottom:10px;font-size:15px}
+ul{padding-left:20px;margin-bottom:12px}
+li{margin-bottom:6px}
+strong{color:#1a1a2e}
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid #e5e7eb;font-size:13px;color:#9ca3af;text-align:center}
+[lang=en]{display:none}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="lang-bar">
+<button type="button" onclick="switchLang('ro')" id="btn-ro" class="active">RO</button>
+<button type="button" onclick="switchLang('en')" id="btn-en">EN</button>
+</div>
+
+<!-- ROMANIAN -->
+<div lang="ro">
+<h1>Politică de Confidențialitate</h1>
+<p class="subtitle">Forest Guard — Aplicație de monitorizare avize SUMAL<br>
+Ultima actualizare: 28 iunie 2026</p>
+
+<h2>1. Operator de Date</h2>
+<p><strong>Iwan</strong> — Freelancer<br>
+Site: <a href="https://iwan.ro">https://iwan.ro</a><br>
+Email: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></p>
+
+<h2>2. Ce Date Colectăm</h2>
+<p>Aplicația Forest Guard colectează următoarele date cu caracter personal:</p>
+<ul>
+<li><strong>Identificator dispozitiv</strong> (ANDROID_ID) — pentru autentificare și prevenirea utilizării abuzive</li>
+<li><strong>Token FCM</strong> (Firebase Cloud Messaging) — pentru trimiterea notificărilor push</li>
+<li><strong>Numere de înmatriculare</strong> introduse de utilizator — pentru monitorizare</li>
+<li><strong>Preferințe utilizator</strong> (temă, setări de monitorizare) — stocate local pe dispozitiv</li>
+</ul>
+<p>Nu colectăm: nume, adrese de email (decât la contact direct), numere de telefon, poze, locație GPS reală, contacte, sau orice alte date personale sensibile.</p>
+
+<h2>3. Cum Folosim Datele</h2>
+<p>Datele colectate sunt utilizate exclusiv pentru:</p>
+<ul>
+<li>Funcționarea Aplicației (monitorizare, notificări)</li>
+<li>Îmbunătățirea serviciului</li>
+<li>Prevenirea abuzurilor și a utilizării neautorizate</li>
+</ul>
+<p>Datele nu sunt utilizate pentru publicitate, profilare, vânzare către terți sau orice alt scop comercial.</p>
+
+<h2>4. Stocarea Datelor</h2>
+<p>Datele utilizatorului sunt stocate în:</p>
+<ul>
+<li><strong>Dispozitivul local</strong> (Isar DB + SharedPreferences) — majoritatea datelor</li>
+<li><strong>Cloudflare Workers KV</strong> (server) — doar token FCM, numere de înmatriculare, ultimul ID de aviz procesat și tier-ul de abonament</li>
+<li><strong>Firebase</strong> — token FCM și date de diagnostic (Crashlytics, opțional)</li>
+</ul>
+
+<h2>5. GDPR — Drepturile Dumneavoastră</h2>
+<p>În conformitate cu Regulamentul General privind Protecția Datelor (GDPR), aveți următoarele drepturi:</p>
+<ul>
+<li><strong>Dreptul de acces</strong> — puteți solicita o copie a datelor stocate despre dumneavoastră</li>
+<li><strong>Dreptul la ștergere</strong> ("dreptul de a fi uitat") — puteți solicita ștergerea tuturor datelor dumneavoastră</li>
+<li><strong>Dreptul la rectificare</strong> — puteți corecta datele incorecte</li>
+<li><strong>Dreptul la portabilitate</strong> — puteți primi datele într-un format structurat</li>
+</ul>
+<p>Pentru exercitarea acestor drepturi, contactați-ne la: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></p>
+
+<h2>6. Parteneri Terți</h2>
+<p>Aplicația utilizează următorii furnizori terți:</p>
+<ul>
+<li><strong>Cloudflare</strong> — server și stocare KV (politica lor: <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>)</li>
+<li><strong>Firebase (Google)</strong> — notificări push și raportare erori (politica lor: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>)</li>
+<li><strong>inspectorulpadurii.ro</strong> — sursa datelor publice (administrat de autoritățile române)</li>
+</ul>
+<p>Furnizorul nu vinde, nu închiriază și nu partajează date personale cu terți, cu excepția celor necesari funcționării tehnice a Aplicației.</p>
+
+<h2>7. Securitatea Datelor</h2>
+<p>Implementăm măsuri tehnice și organizatorice rezonabile pentru protejarea datelor împotriva accesului neautorizat, pierderii sau modificării. Totuși, niciun sistem nu este complet sigur, iar Furnizorul nu poate garanta securitatea absolută a datelor.</p>
+
+<h2>8. Păstrarea Datelor</h2>
+<p>Datele sunt păstrate pe durata utilizării Aplicației. La ștergerea contului sau dezinstalarea Aplicației, datele sunt eliminate în termen de 30 de zile de pe server. Datele de pe dispozitivul local rămân până la dezinstalare sau ștergere manuală.</p>
+
+<h2>9. Modificări ale Politicii</h2>
+<p>Ne rezervăm dreptul de a actualiza această politică. Modificările vor fi publicate pe această pagină. Utilizarea continuă a Aplicației după modificări constituie acceptarea politicii actualizate.</p>
+
+<h2>10. Contact</h2>
+<p>Pentru întrebări legate de confidențialitate:<br>
+Email: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></p>
+</div>
+
+<!-- ENGLISH -->
+<div lang="en">
+<h1>Privacy Policy</h1>
+<p class="subtitle">Forest Guard — SUMAL Permit Monitoring Application<br>
+Last updated: June 28, 2026</p>
+
+<h2>1. Data Controller</h2>
+<p><strong>Iwan</strong> — Freelancer<br>
+Website: <a href="https://iwan.ro">https://iwan.ro</a><br>
+Email: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></p>
+
+<h2>2. What Data We Collect</h2>
+<p>The Forest Guard application collects the following personal data:</p>
+<ul>
+<li><strong>Device identifier</strong> (ANDROID_ID) — for authentication and abuse prevention</li>
+<li><strong>FCM Token</strong> (Firebase Cloud Messaging) — for push notification delivery</li>
+<li><strong>License plate numbers</strong> entered by the user — for monitoring</li>
+<li><strong>User preferences</strong> (theme, monitoring settings) — stored locally on device</li>
+</ul>
+<p>We do NOT collect: names, email addresses (unless contacted directly), phone numbers, photos, real GPS location, contacts, or any other sensitive personal data.</p>
+
+<h2>3. How We Use Data</h2>
+<p>Collected data is used exclusively for:</p>
+<ul>
+<li>Application functionality (monitoring, notifications)</li>
+<li>Service improvement</li>
+<li>Prevention of abuse and unauthorized use</li>
+</ul>
+<p>Data is NOT used for advertising, profiling, sale to third parties, or any other commercial purpose.</p>
+
+<h2>4. Data Storage</h2>
+<p>User data is stored in:</p>
+<ul>
+<li><strong>Local device</strong> (Isar DB + SharedPreferences) — most data</li>
+<li><strong>Cloudflare Workers KV</strong> (server) — FCM token, license plates, last processed aviz ID, and subscription tier only</li>
+<li><strong>Firebase</strong> — FCM token and diagnostic data (Crashlytics, optional)</li>
+</ul>
+
+<h2>5. GDPR — Your Rights</h2>
+<p>Under the General Data Protection Regulation (GDPR), you have the following rights:</p>
+<ul>
+<li><strong>Right of access</strong> — request a copy of your stored data</li>
+<li><strong>Right to erasure</strong> ("right to be forgotten") — request deletion of all your data</li>
+<li><strong>Right to rectification</strong> — correct inaccurate data</li>
+<li><strong>Right to portability</strong> — receive data in a structured format</li>
+</ul>
+<p>To exercise these rights, contact us at: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></p>
+
+<h2>6. Third-Party Partners</h2>
+<p>The Application uses the following third-party providers:</p>
+<ul>
+<li><strong>Cloudflare</strong> — server and KV storage (their policy: <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>)</li>
+<li><strong>Firebase (Google)</strong> — push notifications and error reporting (their policy: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>)</li>
+<li><strong>inspectorulpadurii.ro</strong> — public data source (operated by Romanian authorities)</li>
+</ul>
+<p>The Provider does not sell, rent, or share personal data with third parties except as necessary for the technical operation of the Application.</p>
+
+<h2>7. Data Security</h2>
+<p>We implement reasonable technical and organizational measures to protect data against unauthorized access, loss, or alteration. However, no system is completely secure, and the Provider cannot guarantee absolute data security.</p>
+
+<h2>8. Data Retention</h2>
+<p>Data is retained for the duration of Application use. Upon account deletion or Application uninstallation, server data is removed within 30 days. Local device data remains until uninstallation or manual deletion.</p>
+
+<h2>9. Policy Changes</h2>
+<p>We reserve the right to update this policy. Changes will be published on this page. Continued use of the Application after modifications constitutes acceptance of the updated policy.</p>
+
+<h2>10. Contact</h2>
+<p>For privacy-related questions:<br>
+Email: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></p>
+</div>
+
+<div class="footer">
+&copy; 2026 Iwan — Forest Guard. All rights reserved.
+</div>
+</div>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('[lang]').forEach(el => {
+    el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
+  });
+  document.querySelectorAll('.lang-bar button').forEach(btn => {
+    btn.classList.toggle('active', btn.id === 'btn-' + lang);
+  });
+}
+</script>
+</body>
+  </html>
