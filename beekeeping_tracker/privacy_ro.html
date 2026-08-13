@@ -71,203 +71,188 @@
 <body>
     <div class="container">
         <h1>Politica de Confidențialitate</h1>
-        <p><strong>Jurnal Apicol Digital</strong> ("noi", "aplicația", "serviciul") se angajează să protejeze confidențialitatea datelor dumneavoastră. Această politică explică cum colectăm, folosim și protejăm informațiile dumneavoastră.</p>
+        <p><strong>Jurnal Apicol Digital</strong> ("noi", "aplicația", "serviciul") se angajează să protejeze confidențialitatea datelor dumneavoastră. Această politică explică ce date colectăm, cum sunt utilizate, unde sunt stocate și ce drepturi aveți în legătură cu datele dumneavoastră.</p>
 
         <div class="highlight">
-            <strong>Important:</strong> Folosind această aplicație, sunteți de acord cu colectarea și utilizarea datelor descrise în prezenta politică.
+            <strong>Important:</strong> Aplicația este proiectată <strong>offline-first</strong>: funcționează complet fără internet, iar toate datele sunt salvate mai întâi pe dispozitiv. Când există conexiune la internet, datele pot fi sincronizate automat cu un server de backup cloud (Cloudflare), după cum este descris mai jos, pentru a proteja datele împotriva pierderii și a permite restaurarea lor pe un alt telefon. Folosind această aplicație, sunteți de acord cu colectarea și utilizarea datelor descrise în prezenta politică.
         </div>
 
         <h2>1. Datele Pe Care Le Colectăm</h2>
 
-        <h3>1.1 Date Furnizate de Dumneavoastră</h3>
+        <h3>1.1 Date Introduse de Dumneavoastră</h3>
         <ul>
-            <li><strong>Date de cont:</strong> Nume, adresă de email (dacă se aplică)</li>
-            <li><strong>Date de abonament:</strong> Informații despre achizițiile premium, statutul abonamentului</li>
-            <li><strong>Date apicole:</strong> Informații despre stupine, stupi, regine, activități, recolte, tratamente</li>
-            <li><strong>Date de utilizare:</strong> Preferințe lingvistice, setări de notificări, tema aplicației</li>
+            <li><strong>Numele și locația stupinelor</strong> — nume, descriere locație</li>
+            <li><strong>Date despre stupi</strong> — nume, status sănătate, status regină, an naștere regină, cod culoare, număr rame, note</li>
+            <li><strong>Activități apicole</strong> — tip activitate (inspecție, recoltare, tratament, hrănire, schimbare rame), dată, cantități, detalii tratament, note</li>
+            <li><strong>Inventar</strong> — echipamente și consumabile (denumire, cantitate, categorie)</li>
+            <li><strong>Înregistrări Varroa</strong> — verificări și tratamente împotriva varrozei</li>
+            <li><strong>Preferințe de notificări</strong> — frecvență inspecții, alerte tratamente, alerte sănătate, prag vârstă regine</li>
+            <li><strong>Preferințe de temă</strong> — tema luminoasă/întunecată</li>
+            <li><strong>Date de contact (formularul de contact)</strong> — dacă folosiți formularul de contact din Setări → Despre, sunt transmise numele, adresa de email, categoria selectată (eroare, sugestie, întrebare, altceva) și mesajul pe care le introduceți. Aceste date sunt folosite exclusiv pentru a vă răspunde și pentru a îmbunătăți aplicația</li>
         </ul>
 
-        <h3>1.2 Date Colectate Automat</h3>
+        <h3>1.2 Date de Locație (GPS)</h3>
         <ul>
-            <li><strong>Date de dispozitiv:</strong> Model de telefon/ tabletă, sistem de operare, identificatori unici de dispozitiv</li>
-            <li><strong>Date de utilizare:</strong> Funcționalitățile folosite, timpul petrecut în aplicație, erorile de sistem</li>
-            <li><strong>Date de locație:</strong> Locația generală a dispozitivului (doar dacă permiteți și pentru funcții precum coordonatele stupinei)</li>
+            <li><strong>Coordonate GPS</strong> (latitudine, longitudine) — salvate doar dacă apăsați butonul "Locație GPS" la crearea/ editarea unei stupine</li>
+            <li>Aplicația nu accesează locația în fundal</li>
+            <li>Coordonatele GPS fac parte din datele stupinei și, dacă sincronizarea cloud este activă, sunt transmise împreună cu restul datelor către serverul de backup (Cloudflare), așa cum este descris la secțiunea 2.2</li>
         </ul>
 
-        <h3>1.3 Date de Plată</h3>
-        <div class="highlight">
-            <strong>Procesare Plăți:</strong> Plățile sunt procesate prin <strong>RevenueCat</strong> și magazinele de aplicații (Google Play Store, Apple App Store). Noi nu stocăm și nu procesăm detaliile cardului dumneavoastră bancar.
-        </div>
+        <h3>1.3 Identificatori de Dispozitiv</h3>
         <ul>
-            <li>Informațiile de plată sunt colectate direct de către magazinul de aplicații</li>
-            <li>RevenueCat primește doar confirmarea achiziției și detaliile abonamentului</li>
-            <li>Vezi <a href="https://www.revenuecat.com/privacy" target="_blank">Politica de confidențialitate RevenueCat</a></li>
-            <li>Vezi politicile magazinelor de aplicații:</li>
-            <ul>
-                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Privacy Policy</a></li>
-                <li><a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">Apple App Store Privacy Policy</a></li>
-            </ul>
+            <li><strong>Identificator anonim de dispozitiv (UUID)</strong> — generat aleatoriu, fără legătură cu identitatea dumneavoastră personală</li>
+            <li><strong>Identificator Android (ANDROID_ID)</strong> — stocat sub formă de hash (SHA-256), nu sub formă brută</li>
+            <li><strong>Cod de recuperare</strong> — cod generat de aplicație, pe care îl puteți folosi pentru a vă restaura datele pe un alt telefon</li>
+        </ul>
+        <p>Aceste identificatoare nu conțin nume, adrese de email sau alte date personale.</p>
+
+        <h3>1.4 Date de Utilizare și Diagnostic</h3>
+        <ul>
+            <li><strong>Rapoarte de crash (Firebase Crashlytics)</strong> — în cazul unei erori, sunt colectate informații tehnice anonime (tipul erorii, modelul dispozitivului, versiunea aplicației) pentru a putea remedia problemele</li>
+            <li><strong>Jetoane de notificare push (FCM)</strong> — un identificator tehnic generat de serviciul de notificări Google, folosit exclusiv pentru livrarea notificărilor push pe dispozitivul dumneavoastră</li>
+            <li><strong>Date de achiziție (Adapty)</strong> — la activarea Premium, procesatorul de plăți Adapty confirmă starea abonamentului/achiziției unice. Aplicația nu vede și nu stochează datele cardului bancar</li>
         </ul>
 
-        <h2>2. Cum Folosim Datele Dumneavoastră</h2>
+        <h2>2. Cum Sunt Stocate Datele</h2>
 
-        <h3>2.1 Principalul Scop al Serviciului</h3>
+        <h3>2.1 Stocare Locală</h3>
+        <p>Toate datele sunt salvate <strong>mai întâi pe dispozitivul dumneavoastră</strong>. Aplicația utilizează:</p>
         <ul>
-            <li>Pentru a vă oferi funcționalitățile principale ale aplicației (gestionarea stupinei, stupilor, activităților)</li>
-            <li>Pentru a vă oferi funcționalități premium (voice dictation, export date)</li>
-            <li>Pentru a gestiona abonamentul premium și facturarea</li>
-            <li>Pentru a trimite notificări importante despre stupi (amintiri inspecții, tratamente)</li>
+            <li><strong>Bază de date locală SQLite (Drift)</strong> — pentru stupine, stupi, activități, inventar și setări. Fișierul bazei de date este stocat în directorul privat al aplicației</li>
+            <li><strong>SharedPreferences</strong> — pentru preferințe de temă, status premium și coada de sincronizare</li>
         </ul>
 
-        <h3>2.2 Îmbunătățirea Serviciului</h3>
+        <h3>2.2 Sincronizare Cloud (Backup)</h3>
+        <p>Aplicația include un serviciu de sincronizare cloud care <strong>poate transmite datele către un server extern</strong> pentru a le proteja împotriva pierderii și a permite restaurarea pe un alt telefon:</p>
         <ul>
-            <li>Analiza utilizării pentru a îmbunătăți funcționalitățile</li>
-            <li>Depanarea erorilor și menținerea stabilității aplicației</li>
-            <li>Dezvoltarea de noi funcționalități bazate pe feedback-ul utilizatorilor</li>
+            <li><strong>Furnizor:</strong> Cloudflare (serviciul D1 — bază de date gestionată, și KV — stocare de rate-limit), prin Worker-ul cloud al aplicației</li>
+            <li><strong>Ce se transmite:</strong> toate datele introduse în aplicație (stupine, stupi, activități, tratamente, recoltări, inventar, înregistrări varroa, setări de notificări), inclusiv coordonatele GPS ale stupinelor, împreună cu identificatorul anonim de dispozitiv (UUID)</li>
+            <li><strong>Când:</strong> automat, la intervale regulate când dispozitivul are conexiune la internet. Datele locale rămân funcționale fără internet</li>
+            <li><strong>De ce:</strong> backup automat, sincronizare între mai multe dispozitive și restaurarea datelor după reinstallare sau pierderea telefonului (prin cod de recuperare)</li>
+            <li><strong>Protecția în tranzit:</strong> toate transmisiile se fac prin HTTPS; accesul la API este protejat cu cheie de autentificare și limitat prin rate-limit pe adresă IP și pe utilizator</li>
+            <li><strong>Dezactivare:</strong> nu există în prezent o opțiune de dezactivare a sincronizării din interfață; datele se transmit doar către Cloudflare, nu către alte părți</li>
         </ul>
 
-        <h3>2.3 Comunicări</h3>
+        <h3>2.3 Acces la Date</h3>
         <ul>
-            <li>Pentru a vă trimite actualizări despre funcționalități</li>
-            <li>Pentru a vă informa despre modificări ale serviciului</li>
-            <li>Pentru asistență tehnică (dacă ne contactați)</li>
+            <li>Datele sunt accesibile de aplicație pe dispozitivul pe care sunt stocate și, în cazul sincronizării, de serverul Cloudflare menționat mai sus</li>
+            <li>Datele nu sunt vândute, închiriate sau partajate cu agenți de publicitate sau alte companii</li>
+            <li>Niciun angajat sau terț nu are acces la datele dumneavoastră în afara procesării tehnice necesare funcționării serviciului de backup</li>
         </ul>
 
-        <h2>3. Partajarea Datelor</h2>
+        <h3>2.4 Backup și Export</h3>
+        <p>Puteți exporta datele manual în format CSV, JSON sau PDF prin funcționalitatea de export din meniul Setări. Fișierul exportat este salvat pe dispozitivul dumneavoastră și poate fi partajat prin aplicația de share a sistemului (ex: email, Google Drive). Transferul acestor fișiere se face la inițiativa dumneavoastră.</p>
 
-        <h3>3.1 Nu Vindezem Datele Dumneavoastră</h3>
-        <p>Nu vindem, nu comercializăm și nu transferăm datele dumneavoastră personale către terțe părți pentru marketing.</p>
+        <h2>3. Cum Utilizăm Datele</h2>
 
-        <h3>3.2 Furnizori de Servicii</h3>
-        <p>Partajăm date doar cu următorii furnizori necesari pentru funcționare:</p>
+        <h3>3.1 Scopul Colectării Datelor</h3>
         <ul>
-            <li><strong>RevenueCat</strong> - pentru gestionarea abonamentelor premium</li>
-            <li><strong>Google/Apple</strong> - pentru procesarea plăților prin magazinele de aplicații</li>
-            <li><strong>Servicii de notificări</strong> - Firebase Cloud Messaging pentru trimite notificări</li>
-            <li><strong>Servicii de analiză</strong> - pentru monitorizarea stabilității aplicației (fără date personale)</li>
+            <li><strong>Gestionare stupine și stupi</strong> — datele sunt folosite exclusiv pentru a vă permite să țineți evidența stupinelor, stupilor și activităților apicole</li>
+            <li><strong>Notificări</strong> — reminder-urile și alertele vă ajută să nu omiteți inspecțiile, retragerea tratamentelor sau problemele de sănătate</li>
+            <li><strong>Statistici</strong> — datele despre activități și recoltări sunt agregate pentru a afișa grafice în secțiunea de statistici</li>
+            <li><strong>Backup și restaurare</strong> — sincronizarea cloud protejează datele împotriva pierderii și permite restaurarea lor pe un alt telefon prin cod de recuperare</li>
+            <li><strong>Îmbunătățirea aplicației</strong> — rapoartele anonime de crash ne ajută să identificăm și să reparăm erorile</li>
         </ul>
 
-        <h3>3.3 Cerințe Legale</h3>
-        <p>Putem dezvălui date dacă este necesar pentru:</p>
+        <h3>3.2 Partajarea Datelor</h3>
+        <p>Datele dumneavoastră <strong>nu sunt vândute și nu sunt partajate cu agenți de publicitate</strong>. Datele sunt transmise doar către furnizorii tehnici necesari funcționării aplicației:</p>
         <ul>
-            <li>A respecta legea (ordin judecătoresc, citație)</li>
-            <li>A proteja drepturile și proprietatea noastră</li>
-            <li>A preveni frauda sau abuzul</li>
-            <li>A asigura securitatea utilizatorilor noștri</li>
+            <li><strong>Cloudflare</strong> — stocare backup (bază de date D1) și livrare API</li>
+            <li><strong>Google Firebase</strong> — notificări push (Firebase Cloud Messaging) și rapoarte de crash anonime (Crashlytics)</li>
+            <li><strong>Adapty</strong> — verificarea stării abonamentului Premium</li>
+            <li><strong>Telegram</strong> — mesajele trimise prin formularul de contact (nume, email, mesaj) sunt transmise dezvoltatorului prin serviciul de mesagerie Telegram, exclusiv pentru a răspunde utilizatorului și pentru a îmbunătăți aplicația</li>
+            <li><strong>OpenStreetMap / Google Maps</strong> — afișarea hărții stupinelor și direcții (doar la cererea dumneavoastră, prin deschiderea hărții)</li>
         </ul>
 
-        <h2>4. Securitatea Datelor</h2>
+        <h3>3.3 Păstrarea Datelor</h3>
+        <p>Datele locale sunt stocate pe dispozitiv atâta timp cât sunt păstrate în aplicație. Datele din backup-ul cloud sunt păstrate pentru a permite restaurarea, inclusiv după reinstallarea aplicației pe același telefon sau pe un telefon nou. Pentru a solicita ștergerea datelor din backup-ul cloud, contactați-ne la adresa de email de mai jos.</p>
 
+        <h2>4. Permisiuni de Sistem</h2>
+        <h3>4.1 Locație</h3>
         <ul>
-            <li><strong>Stocare Locală:</strong> Toate datele apicole sunt stocate local pe dispozitivul dumneavoastră în baza de date Isar (cifrată)</li>
-            <li><strong>Fără Server Central:</strong> Nu stocăm datele dumneavoastră pe serverele noastre centrale</li>
-            <li><strong>Backup Utilizator:</strong> Sunteți responsabil pentru backup-ul datelor dumneavoastră prin funcția de export</li>
-            <li><strong>Criptare:</strong> Datele sunt protejate prin criptare în tranzit și la stocare</li>
+            <li><strong>ACCESS_FINE_LOCATION</strong> — utilizat pentru a obține coordonate GPS precise la crearea/ editarea stupinelor (doar la apăsarea butonului "Locație GPS")</li>
+            <li><strong>ACCESS_COARSE_LOCATION</strong> — utilizat ca alternativă dacă locația fină nu este disponibilă</li>
+            <li>Locația nu este accesată în fundal</li>
+        </ul>
+        <h3>4.2 Notificări</h3>
+        <ul>
+            <li><strong>Notificări locale</strong> — reminder-urile și alertele sunt programate local pe dispozitiv și afișate de sistem</li>
+            <li><strong>Notificări push (FCM)</strong> — anumite alerte (de exemplu, retragerea tratamentelor) sunt programate și pe serverul de backup, care le trimite pe dispozitiv prin serviciul Firebase Cloud Messaging, chiar dacă aplicația nu este deschisă</li>
+            <li>Pentru a funcționa corect, aplicația solicită permisiunea de a trimite și afișa notificări</li>
+        </ul>
+        <h3>4.3 Alte Permisiuni</h3>
+        <ul>
+            <li><strong>Camera foto</strong> — pentru scanarea codurilor QR și atașarea fotografiilor la stupi (doar la cererea dumneavoastră)</li>
+            <li><strong>Microfon</strong> — pentru dictare vocală (Premium, doar la cererea dumneavoastră)</li>
+            <li><strong>Internet</strong> — pentru sincronizarea backup și notificările push</li>
         </ul>
 
-        <h2>5. Datele Copiilor</h2>
-        <div class="highlight">
-            <strong>Aplicația nu este destinată copiilor sub 13 ani.</strong> Nu colectăm intenționat date de la copii. Dacă descoperim că am colectat date de la un copil sub 13 ani, le vom șterge imediat.
-        </div>
-
-        <h2>6. Drepturile Dumneavoastră</h2>
-
-        <h3>6.1 Acces și Control</h3>
-        <p>Aveți dreptul la:</p>
+        <h2>5. Securitatea Datelor</h2>
         <ul>
-            <li><strong>Acces:</strong> Puteți vedea toate datele stocate în aplicație</li>
-            <li><strong>Export:</strong> Puteți exporta datele în format CSV sau JSON (funcție premium)</li>
-            <li><strong>Stergere:</strong> Puteți șterge orice dată direct din aplicație</li>
-            <li><strong>Dezabonare:</strong> Puteți anula abonamentul premium oricând</li>
+            <li>Datele sunt stocate într-o bază de date locală (SQLite) cu acces restricționat la aplicație</li>
+            <li>Transmisiile către serverul de backup se fac exclusiv prin HTTPS</li>
+            <li>API-ul de sincronizare este protejat cu cheie de autentificare și rate-limit</li>
+            <li>Identificatorul Android este stocat doar sub formă de hash, nu în formă brută</li>
+            <li>Parolele și credențialele nu sunt stocate în aplicație</li>
+            <li>Aplicația nu utilizează cookies, pixeli de urmărire sau publicitate direcționată</li>
         </ul>
 
-        <h3>6.2 Portabilitatea Datelor</h3>
-        <p>Puteți exporta toate datele dumneavoastră în format standard (CSV/JSON) și le puteți folosi în alte aplicații.</p>
-
-        <h2>7. Abonamentul Premium și Plăți</h2>
-
-        <h3>7.1 Informații Generale</h3>
+        <h2>6. Servicii Terțe</h2>
+        <p>Aplicația interacționează cu următoarele servicii terțe:</p>
         <ul>
-            <li>Abonamentul premium oferă funcționalități nelimitate</li>
-            <li>Plata este procesată prin magazinul de aplicații (Google Play/App Store)</li>
-            <li>Prețurile sunt afișate înainte de achiziție</li>
-            <li>Abonamentele se reînnoiesc automat până la anulare</li>
+            <li><strong>Cloudflare</strong> — backup de date (D1) și API de sincronizare</li>
+            <li><strong>Google Firebase</strong> — notificări push (FCM) și rapoarte de crash (Crashlytics)</li>
+            <li><strong>Adapty</strong> — procesarea achizițiilor Premium</li>
+            <li><strong>Telegram</strong> — primirea mesajelor trimise prin formularul de contact (nume, email, mesaj); mesajele sunt trimise numai la inițiativa utilizatorului, prin formular</li>
+            <li><strong>OpenStreetMap</strong> — afișarea hărții stupinelor (la deschiderea hărții)</li>
+            <li><strong>Google Maps</strong> — la deschiderea direcțiilor către o stupină, coordonatele sunt transmise ca URL către aplicația Google Maps (la cererea dumneavoastră)</li>
+            <li><strong>Client de email</strong> — la apăsarea pe adresa de email, este deschis clientul de email cu adresa precompletată; niciun conținut nu este trimis automat</li>
+            <li><strong>iwan.ro</strong> — la apăsarea pe website, se deschide site-ul în browser</li>
+        </ul>
+        <p>Fiecare serviciu terț își aplică propria politică de confidențialitate. Vă recomandăm să le consultați.</p>
+
+        <h2>7. Secțiunea de Date din Google Play</h2>
+        <ul>
+            <li><strong>Colectare de date:</strong> date introduse de utilizator (stupine, stupi, activități), locație GPS (la cerere explicită), date de contact (nume, email, mesaj — doar prin formularul de contact), identificatori de dispozitiv (UUID, hash Android ID, jeton FCM), date de diagnostic (crash-uri anonime), date de achiziție (statut Premium)</li>
+            <li><strong>Partajare de date:</strong> datele sunt transmise către Cloudflare (backup), Google Firebase (notificări push, crash-uri), Adapty (achiziții) și Telegram (mesaje din formularul de contact) pentru funcționalități esențiale ale aplicației; nu sunt partajate cu agenți de publicitate</li>
+            <li><strong>Ștergere date:</strong> datele pot fi șterse de utilizator din interfața aplicației sau prin dezinstalare; pentru ștergerea backup-ului cloud, contactați-ne pe email</li>
         </ul>
 
-        <h3>7.2 Politica de Reînnoire</h3>
+        <h2>8. Drepturile Dumneavoastră</h2>
         <ul>
-            <li>Abonamentele se reînnoiesc automat la sfârșitul perioadei curente</li>
-            <li>Puteți anula oricând prin magazinul de aplicații</li>
-            <li>Anularea nu afectează perioada curentă deja plătită</li>
-            <li>Nu oferim rambursări pentru perioade parțiale</li>
-        </ul>
-
-        <h3>7.3 Gestionarea Abonamentului</h3>
-        <ul>
-            <li>Accesați "Setări" → "Abonament" → "Gestionează Abonament"</li>
-            <li>Sau direct din magazinul de aplicații</li>
-        </ul>
-
-        <h2>8. Confidențialitate și Notificări</h2>
-
-        <h3>8.1 Coordonate GPS</h3>
-        <ul>
-            <li>Colectăm coordonatele GPS doar pentru a marca locația stupinelor</li>
-            <li>Datele de locație sunt stocate local pe dispozitiv</li>
-            <li>Nu urmărim locația în timp real</li>
-            <li>Puteți adăuga coordonate manual</li>
-        </ul>
-
-        <h3>8.2 Microfon (Voice Dictation)</h3>
-        <ul>
-            <li>Folosim microfonul doar pentru dictare vocală</li>
-            <li>Înregistrarea este procesată local pe dispozitiv</li>
-            <li>Nu stocăm înregistrările audio</li>
-            <li>Funcția este disponibilă doar pentru abonații premium</li>
-        </ul>
-
-        <h2>9. Modificări Ale Politicii</h2>
-
-        <p>Vom actualiza această politică periodic pentru a reflecta:</p>
-        <ul>
-            <li>Noi funcționalități ale aplicației</li>
-            <li>Schimbări în legislația aplicabilă</li>
-            <li>Feedback-ul utilizatorilor</li>
-        </ul>
-
-        <p>Vă vom notifica despre modificări semnificative prin:</p>
-        <ul>
-            <li>Notificare în aplicație</li>
-            <li>Email (dacă este furnizat)</li>
-        </ul>
-
-        <h2>10. Contact</h2>
-
-        <div class="contact">
-            <h3>Pentru Întrebări sau Reclamații:</h3>
-            <ul>
-                <li><strong>Email:</strong> iulianivn@gmail.com</li>
-                <li><strong>Website:</strong> <a href="https://iwan.ro" target="_blank">https://iwan.ro</a></li>
-                <li><strong>Telefon:</strong> Disponibil pe request</li>
-            </ul>
-            <p>Vă rugăm să includeți "Privacy Policy" în subiectul email-ului dumneavoastră.</p>
-        </div>
-
-        <h2>11. Legislație Aplicabilă</h2>
-
-        <p>Această politică este în conformitate cu:</p>
-        <ul>
-            <li><strong>GDPR</strong> - Regulamentul General privind Protecția Datelor (UE)</li>
-            <li><strong>LGPD</strong> - Legea română privind protecția datelor cu caracter personal</li>
-            <li><strong>CCPA</strong> - California Consumer Privacy Act (SUA)</li>
+            <li>Aveți dreptul de a accesa, modifica și șterge oricând datele dumneavoastră din aplicație</li>
+            <li>Aveți dreptul de a solicita exportul tuturor datelor dumneavoastră în format CSV sau JSON</li>
+            <li>Aveți dreptul de a revoca permisiunile de locație, notificări, cameră și microfon în orice moment din setările telefonului</li>
+            <li>Aveți dreptul de a solicita ștergerea datelor dumneavoastră, inclusiv a backup-ului cloud, contactându-ne la adresa de email de mai jos</li>
         </ul>
 
         <div class="highlight">
             <strong>Drepturi GDPR:</strong> Ca utilizator UE, aveți dreptul la acces, rectificare, ștergere ("dreptul de a fi uitat"), restricționare, portabilitate și opoziție. Contactați-ne pentru a exercita aceste drepturi.
         </div>
 
-        <p class="last-updated">Ultima actualizare: Aprilie 2026</p>
-        <p style="text-align: center; color: #7f8c8d;">Versiunea 1.0</p>
+        <h2>9. Modificări Ale Politicii</h2>
+        <p>Vom actualiza această politică periodic pentru a reflecta noi funcționalități ale aplicației, schimbări în legislația aplicabilă sau feedback-ul utilizatorilor. Vă vom notifica despre modificări semnificative prin notificare în aplicație sau email (dacă este furnizat).</p>
+
+        <h2>10. Contact</h2>
+        <div class="contact">
+            <h3>Pentru Întrebări sau Reclamații:</h3>
+            <ul>
+                <li><strong>Email:</strong> iulianivn@gmail.com</li>
+                <li><strong>Website:</strong> <a href="https://iwan.ro" target="_blank">https://iwan.ro</a></li>
+                <li><strong>Dezvoltator:</strong> Ivan Iulian</li>
+            </ul>
+            <p>Vă rugăm să includeți "Privacy Policy" în subiectul email-ului dumneavoastră.</p>
+        </div>
+
+        <h2>11. Legislație Aplicabilă</h2>
+        <ul>
+            <li><strong>GDPR</strong> — Regulamentul General privind Protecția Datelor (UE)</li>
+            <li><strong>LGPD</strong> — Legea română privind protecția datelor cu caracter personal</li>
+            <li><strong>CCPA</strong> — California Consumer Privacy Act (SUA)</li>
+        </ul>
+
+        <p class="last-updated">Ultima actualizare: 13 august 2026</p>
+        <p style="text-align: center; color: #7f8c8d;">Versiunea 1.6.4</p>
     </div>
 </body>
 </html>

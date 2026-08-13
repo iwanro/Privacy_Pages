@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Beekeeping Tracker</title>
+    <title>Privacy Policy - Digital Beekeeping Journal</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -71,203 +71,188 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p><strong>Beekeeping Tracker</strong> ("we", "the app", "the service") is committed to protecting your privacy. This policy explains how we collect, use, and protect your information.</p>
+        <p><strong>Digital Beekeeping Journal</strong> ("we", "the app", "the service") is committed to protecting your privacy. This policy explains what data we collect, how it is used, where it is stored, and what rights you have regarding your data.</p>
 
         <div class="highlight">
-            <strong>Important:</strong> By using this app, you agree to the collection and use of data described in this policy.
+            <strong>Important:</strong> The app is designed <strong>offline-first</strong>: it works fully without an internet connection, and all data is saved on your device first. When an internet connection is available, data may be automatically synchronized with a cloud backup server (Cloudflare), as described below, to protect your data from loss and allow restoring it on another phone. By using this app, you agree to the collection and use of the data described in this policy.
         </div>
 
         <h2>1. Data We Collect</h2>
 
         <h3>1.1 Data You Provide</h3>
         <ul>
-            <li><strong>Account Data:</strong> Name, email address (if applicable)</li>
-            <li><strong>Subscription Data:</strong> Premium purchase information, subscription status</li>
-            <li><strong>Beekeeping Data:</strong> Apiary, hive, queen, activity, harvest, and treatment information</li>
-            <li><strong>Usage Data:</strong> Language preferences, notification settings, app theme</li>
+            <li><strong>Apiary names and locations</strong> — name, location description</li>
+            <li><strong>Hive data</strong> — name, health status, queen status, queen birth year, color code, frame count, notes</li>
+            <li><strong>Beekeeping activities</strong> — activity type (inspection, harvest, treatment, feeding, frame change), date, quantities, treatment details, notes</li>
+            <li><strong>Inventory</strong> — equipment and consumables (name, quantity, category)</li>
+            <li><strong>Varroa records</strong> — checks and treatments against varroa mites</li>
+            <li><strong>Notification preferences</strong> — inspection frequency, treatment alerts, health alerts, queen age threshold</li>
+            <li><strong>Theme preference</strong> — light/dark theme</li>
+            <li><strong>Contact details (contact form)</strong> — if you use the contact form in Settings → About, your name, email address, selected category (bug, suggestion, question, other) and message are transmitted. These are used exclusively to respond to you and to improve the app</li>
         </ul>
 
-        <h3>1.2 Automatically Collected Data</h3>
+        <h3>1.2 Location Data (GPS)</h3>
         <ul>
-            <li><strong>Device Data:</strong> Phone/tablet model, operating system, unique device identifiers</li>
-            <li><strong>Usage Data:</strong> Features used, time spent in app, system errors</li>
-            <li><strong>Location Data:</strong> General device location (only if permitted and for apiary coordinates)</li>
+            <li><strong>GPS coordinates</strong> (latitude, longitude) — saved only if you press the "GPS location" button when creating/editing an apiary</li>
+            <li>The app does not access location in the background</li>
+            <li>GPS coordinates are part of the apiary data and, if cloud sync is enabled, are transmitted together with the rest of the data to the backup server (Cloudflare), as described in section 2.2</li>
         </ul>
 
-        <h3>1.3 Payment Data</h3>
-        <div class="highlight">
-            <strong>Payment Processing:</strong> Payments are processed through <strong>RevenueCat</strong> and app stores (Google Play Store, Apple App Store). We do not store or process your credit card details.
-        </div>
+        <h3>1.3 Device Identifiers</h3>
         <ul>
-            <li>Payment information is collected directly by the app store</li>
-            <li>RevenueCat receives only purchase confirmation and subscription details</li>
-            <li>See <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
-            <li>See app store privacy policies:</li>
-            <ul>
-                <li><a href="https://policies.google.com/privacy" target="_blank">Google Play Privacy Policy</a></li>
-                <li><a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">Apple App Store Privacy Policy</a></li>
-            </ul>
+            <li><strong>Anonymous device identifier (UUID)</strong> — randomly generated, not linked to your personal identity</li>
+            <li><strong>Android identifier (ANDROID_ID)</strong> — stored as a hash (SHA-256), never in raw form</li>
+            <li><strong>Recovery code</strong> — a code generated by the app that you can use to restore your data on another phone</li>
+        </ul>
+        <p>These identifiers do not contain names, email addresses, or other personal data.</p>
+
+        <h3>1.4 Usage and Diagnostic Data</h3>
+        <ul>
+            <li><strong>Crash reports (Firebase Crashlytics)</strong> — on an error, anonymous technical information is collected (error type, device model, app version) to help fix issues</li>
+            <li><strong>Push notification tokens (FCM)</strong> — a technical identifier generated by Google's notification service, used exclusively to deliver push notifications to your device</li>
+            <li><strong>Purchase data (Adapty)</strong> — when activating Premium, the Adapty payment processor confirms your subscription/one-time purchase status. The app never sees or stores your bank card details</li>
         </ul>
 
-        <h2>2. How We Use Your Data</h2>
+        <h2>2. How Data Is Stored</h2>
 
-        <h3>2.1 Primary Service Purpose</h3>
+        <h3>2.1 Local Storage</h3>
+        <p>All data is saved <strong>on your device first</strong>. The app uses:</p>
         <ul>
-            <li>To provide core app features (apiary, hive, activity management)</li>
-            <li>To provide premium features (voice dictation, data export)</li>
-            <li>To manage premium subscription and billing</li>
-            <li>To send important notifications about hives (inspection reminders, treatments)</li>
+            <li><strong>Local SQLite database (Drift)</strong> — for apiaries, hives, activities, inventory and settings. The database file is stored in the app's private directory</li>
+            <li><strong>SharedPreferences</strong> — for theme preferences, premium status and the sync queue</li>
         </ul>
 
-        <h3>2.2 Service Improvement</h3>
+        <h3>2.2 Cloud Sync (Backup)</h3>
+        <p>The app includes a cloud sync service that <strong>may transmit data to an external server</strong> to protect it against loss and allow restoration on another phone:</p>
         <ul>
-            <li>Usage analysis to improve features</li>
-            <li>Error debugging and app stability maintenance</li>
-            <li>Development of new features based on user feedback</li>
+            <li><strong>Provider:</strong> Cloudflare (D1 service — managed database, and KV — rate-limit storage), through the app's cloud Worker</li>
+            <li><strong>What is transmitted:</strong> all data entered in the app (apiaries, hives, activities, treatments, harvests, inventory, varroa records, notification settings), including apiary GPS coordinates, together with the anonymous device identifier (UUID)</li>
+            <li><strong>When:</strong> automatically, at regular intervals, when the device has an internet connection. Local data keeps working without internet</li>
+            <li><strong>Why:</strong> automatic backup, sync between multiple devices, and data restoration after reinstalling or losing the phone (via recovery code)</li>
+            <li><strong>Protection in transit:</strong> all transmissions use HTTPS; API access is protected with an authentication key and limited by rate limiting per IP address and per user</li>
+            <li><strong>Disabling:</strong> there is currently no option to disable sync from the interface; data is transmitted only to Cloudflare, not to other parties</li>
         </ul>
 
-        <h3>2.3 Communications</h3>
+        <h3>2.3 Access to Data</h3>
         <ul>
-            <li>To send feature updates</li>
-            <li>To inform about service changes</li>
-            <li>For technical support (if you contact us)</li>
+            <li>Data is accessible by the app on the device where it is stored and, when sync is enabled, by the Cloudflare server mentioned above</li>
+            <li>Data is never sold, rented, or shared with advertisers or other companies</li>
+            <li>No employee or third party has access to your data beyond the technical processing required to run the backup service</li>
         </ul>
 
-        <h2>3. Data Sharing</h2>
+        <h3>2.4 Backup and Export</h3>
+        <p>You can manually export your data in CSV, JSON or PDF format through the export feature in the Settings menu. The exported file is saved on your device and can be shared through the system's share sheet (e.g., email, Google Drive). Transferring these files is at your own initiative.</p>
 
-        <h3>3.1 We Don't Sell Your Data</h3>
-        <p>We do not sell, rent, or transfer your personal data to third parties for marketing purposes.</p>
+        <h2>3. How We Use the Data</h2>
 
-        <h3>3.2 Service Providers</h3>
-        <p>We share data only with necessary service providers:</p>
+        <h3>3.1 Purpose of Data Collection</h3>
         <ul>
-            <li><strong>RevenueCat</strong> - for premium subscription management</li>
-            <li><strong>Google/Apple</strong> - for payment processing through app stores</li>
-            <li><strong>Notification Services</strong> - Firebase Cloud Messaging for push notifications</li>
-            <li><strong>Analytics Services</strong> - for app stability monitoring (no personal data)</li>
+            <li><strong>Managing apiaries and hives</strong> — data is used exclusively to let you keep track of your apiaries, hives and beekeeping activities</li>
+            <li><strong>Notifications</strong> — reminders and alerts help you not to miss inspections, treatment withdrawals or health issues</li>
+            <li><strong>Statistics</strong> — activity and harvest data is aggregated to display charts in the statistics section</li>
+            <li><strong>Backup and restoration</strong> — cloud sync protects your data against loss and allows restoring it on another phone via recovery code</li>
+            <li><strong>Improving the app</strong> — anonymous crash reports help us identify and fix bugs</li>
         </ul>
 
-        <h3>3.3 Legal Requirements</h3>
-        <p>We may disclose data if required to:</p>
+        <h3>3.2 Data Sharing</h3>
+        <p>Your data is <strong>never sold or shared with advertisers</strong>. Data is transmitted only to the technical providers required for the app to work:</p>
         <ul>
-            <li>Comply with law (court order, subpoena)</li>
-            <li>Protect our rights and property</li>
-            <li>Prevent fraud or abuse</li>
-            <li>Ensure user safety</li>
+            <li><strong>Cloudflare</strong> — backup storage (D1 database) and API delivery</li>
+            <li><strong>Google Firebase</strong> — push notifications (Firebase Cloud Messaging) and anonymous crash reports (Crashlytics)</li>
+            <li><strong>Adapty</strong> — verifying your Premium subscription status</li>
+            <li><strong>Telegram</strong> — messages sent through the contact form (name, email, message) are forwarded to the developer via the Telegram messaging service, exclusively to respond to the user and improve the app</li>
+            <li><strong>OpenStreetMap / Google Maps</strong> — displaying the apiary map and directions (only at your request, by opening the map)</li>
         </ul>
 
-        <h2>4. Data Security</h2>
+        <h3>3.3 Data Retention</h3>
+        <p>Local data is stored on the device for as long as it is kept in the app. Cloud backup data is retained to allow restoration, including after reinstalling the app on the same or a new phone. To request deletion of cloud backup data, contact us at the email address below.</p>
 
+        <h2>4. System Permissions</h2>
+        <h3>4.1 Location</h3>
         <ul>
-            <li><strong>Local Storage:</strong> All beekeeping data is stored locally on your device in the Isar database (encrypted)</li>
-            <li><strong>No Central Server:</strong> We do not store your data on our central servers</li>
-            <li><strong>User Backup:</strong> You are responsible for backing up your data through the export function</li>
-            <li><strong>Encryption:</strong> Data is protected by encryption in transit and at rest</li>
+            <li><strong>ACCESS_FINE_LOCATION</strong> — used to obtain precise GPS coordinates when creating/editing apiaries (only when pressing the "GPS location" button)</li>
+            <li><strong>ACCESS_COARSE_LOCATION</strong> — used as a fallback when fine location is unavailable</li>
+            <li>Location is never accessed in the background</li>
+        </ul>
+        <h3>4.2 Notifications</h3>
+        <ul>
+            <li><strong>Local notifications</strong> — reminders and alerts are scheduled locally on the device and displayed by the system</li>
+            <li><strong>Push notifications (FCM)</strong> — certain alerts (for example, treatment withdrawal) are also scheduled on the backup server, which delivers them via Firebase Cloud Messaging, even when the app is closed</li>
+            <li>To work correctly, the app asks for permission to send and display notifications</li>
+        </ul>
+        <h3>4.3 Other Permissions</h3>
+        <ul>
+            <li><strong>Camera</strong> — for QR code scanning and attaching photos to hives (only at your request)</li>
+            <li><strong>Microphone</strong> — for voice dictation (Premium, only at your request)</li>
+            <li><strong>Internet</strong> — for backup sync and push notifications</li>
         </ul>
 
-        <h2>5. Children's Data</h2>
-        <div class="highlight">
-            <strong>The app is not intended for children under 13.</strong> We do not intentionally collect data from children under 13. If we discover we have collected data from a child under 13, we will delete it immediately.
-        </div>
-
-        <h2>6. Your Rights</h2>
-
-        <h3>6.1 Access and Control</h3>
-        <p>You have the right to:</p>
+        <h2>5. Data Security</h2>
         <ul>
-            <li><strong>Access:</strong> You can view all data stored in the app</li>
-            <li><strong>Export:</strong> You can export your data in CSV or JSON format (premium feature)</li>
-            <li><strong>Delete:</strong> You can delete any data directly from the app</li>
-            <li><strong>Unsubscribe:</strong> You can cancel your premium subscription at any time</li>
+            <li>Data is stored in a local database (SQLite) with access restricted to the app</li>
+            <li>Transmissions to the backup server use HTTPS exclusively</li>
+            <li>The sync API is protected with an authentication key and rate limiting</li>
+            <li>The Android identifier is stored only as a hash, never in raw form</li>
+            <li>Passwords and credentials are not stored in the app</li>
+            <li>The app does not use cookies, tracking pixels or targeted advertising</li>
         </ul>
 
-        <h3>6.2 Data Portability</h3>
-        <p>You can export all your data in standard format (CSV/JSON) and use it in other applications.</p>
-
-        <h2>7. Premium Subscription and Payments</h2>
-
-        <h3>7.1 General Information</h3>
+        <h2>6. Third-Party Services</h2>
+        <p>The app interacts with the following third-party services:</p>
         <ul>
-            <li>Premium subscription offers unlimited features</li>
-            <li>Payment is processed through the app store (Google Play/App Store)</li>
-            <li>Prices are displayed before purchase</li>
-            <li>Subscriptions renew automatically until cancelled</li>
+            <li><strong>Cloudflare</strong> — data backup (D1) and sync API</li>
+            <li><strong>Google Firebase</strong> — push notifications (FCM) and crash reports (Crashlytics)</li>
+            <li><strong>Adapty</strong> — processing Premium purchases</li>
+            <li><strong>Telegram</strong> — receiving messages sent through the contact form (name, email, message); messages are sent only at the user's initiative, through the form</li>
+            <li><strong>OpenStreetMap</strong> — displaying the apiary map (when the map is opened)</li>
+            <li><strong>Google Maps</strong> — when opening directions to an apiary, the coordinates are transmitted as a URL to the Google Maps app (at your request)</li>
+            <li><strong>Email client</strong> — when tapping the email address, the email client opens with the address pre-filled; no content is sent automatically</li>
+            <li><strong>iwan.ro</strong> — when tapping the website, the site opens in the browser</li>
+        </ul>
+        <p>Each third-party service applies its own privacy policy. We recommend you review them.</p>
+
+        <h2>7. Google Play Data Safety</h2>
+        <ul>
+            <li><strong>Data collection:</strong> user-provided data (apiaries, hives, activities), GPS location (on explicit request), contact data (name, email, message — only through the contact form), device identifiers (UUID, hashed Android ID, FCM token), diagnostic data (anonymous crashes), purchase data (Premium status)</li>
+            <li><strong>Data sharing:</strong> data is transmitted to Cloudflare (backup), Google Firebase (push notifications, crashes), Adapty (purchases) and Telegram (contact form messages) for essential app functionality; it is never shared with advertisers</li>
+            <li><strong>Data deletion:</strong> data can be deleted by the user from the app interface or by uninstalling; to delete the cloud backup, contact us by email</li>
         </ul>
 
-        <h3>7.2 Renewal Policy</h3>
+        <h2>8. Your Rights</h2>
         <ul>
-            <li>Subscriptions automatically renew at the end of the current period</li>
-            <li>You can cancel anytime through the app store</li>
-            <li>Cancellation does not affect the current paid period</li>
-            <li>No refunds for partial periods</li>
-        </ul>
-
-        <h3>7.3 Subscription Management</h3>
-        <ul>
-            <li>Go to "Settings" → "Subscription" → "Manage Subscription"</li>
-            <li>Or directly through the app store</li>
-        </ul>
-
-        <h2>8. Privacy and Notifications</h2>
-
-        <h3>8.1 GPS Coordinates</h3>
-        <ul>
-            <li>We collect GPS coordinates only to mark apiary locations</li>
-            <li>Location data is stored locally on your device</li>
-            <li>We do not track real-time location</li>
-            <li>You can add coordinates manually</li>
-        </ul>
-
-        <h3>8.2 Microphone (Voice Dictation)</h3>
-        <ul>
-            <li>We use microphone only for voice dictation</li>
-            <li>Recording is processed locally on your device</li>
-            <li>We do not store audio recordings</li>
-            <li>Feature is available only for premium subscribers</li>
-        </ul>
-
-        <h2>9. Policy Changes</h2>
-
-        <p>We will update this policy periodically to reflect:</p>
-        <ul>
-            <li>New app features</li>
-            <li>Changes in applicable law</li>
-            <li>User feedback</li>
-        </ul>
-
-        <p>We will notify you of significant changes by:</p>
-        <ul>
-            <li>In-app notification</li>
-            <li>Email (if provided)</li>
-        </ul>
-
-        <h2>10. Contact</h2>
-
-        <div class="contact">
-            <h3>For Questions or Complaints:</h3>
-            <ul>
-                <li><strong>Email:</strong> iulianivn@gmail.com</li>
-                <li><strong>Website:</strong> <a href="https://iwan.ro" target="_blank">https://iwan.ro</a></li>
-                <li><strong>Phone:</strong> Available upon request</li>
-            </ul>
-            <p>Please include "Privacy Policy" in your email subject line.</p>
-        </div>
-
-        <h2>11. Applicable Law</h2>
-
-        <p>This policy complies with:</p>
-        <ul>
-            <li><strong>GDPR</strong> - General Data Protection Regulation (EU)</li>
-            <li><strong>LGPD</strong> - Romanian Law on Personal Data Protection</li>
-            <li><strong>CCPA</strong> - California Consumer Privacy Act (USA)</li>
+            <li>You have the right to access, modify and delete your data at any time from the app</li>
+            <li>You have the right to request an export of all your data in CSV or JSON format</li>
+            <li>You have the right to revoke location, notification, camera and microphone permissions at any time from your phone settings</li>
+            <li>You have the right to request deletion of your data, including the cloud backup, by contacting us at the email address below</li>
         </ul>
 
         <div class="highlight">
             <strong>GDPR Rights:</strong> As an EU user, you have rights to access, rectification, erasure ("right to be forgotten"), restriction, portability, and objection. Contact us to exercise these rights.
         </div>
 
-        <p class="last-updated">Last updated: April 2026</p>
-        <p style="text-align: center; color: #7f8c8d;">Version 1.0</p>
+        <h2>9. Changes to This Policy</h2>
+        <p>We will update this policy periodically to reflect new app features, changes in applicable law, or user feedback. We will notify you of significant changes through an in-app notification or email (if provided).</p>
+
+        <h2>10. Contact</h2>
+        <div class="contact">
+            <h3>For Questions or Complaints:</h3>
+            <ul>
+                <li><strong>Email:</strong> iulianivn@gmail.com</li>
+                <li><strong>Website:</strong> <a href="https://iwan.ro" target="_blank">https://iwan.ro</a></li>
+                <li><strong>Developer:</strong> Ivan Iulian</li>
+            </ul>
+            <p>Please include "Privacy Policy" in the subject of your email.</p>
+        </div>
+
+        <h2>11. Applicable Legislation</h2>
+        <ul>
+            <li><strong>GDPR</strong> — General Data Protection Regulation (EU)</li>
+            <li><strong>LGPD</strong> — Romanian personal data protection law</li>
+            <li><strong>CCPA</strong> — California Consumer Privacy Act (USA)</li>
+        </ul>
+
+        <p class="last-updated">Last updated: August 13, 2026</p>
+        <p style="text-align: center; color: #7f8c8d;">Version 1.6.4</p>
     </div>
 </body>
 </html>
