@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Migraine Tracker — Terms of Service</title>
+<meta name="description" content="Terms of Service for Migraine Tracker — monitoring and statistics only, no medical advice.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root{
+    --bg:#fcfcfa;
+    --card:#ffffff;
+    --ink:#0f172a;
+    --muted:#64748b;
+    --line:#e2e8f0;
+    --accent:#0f766e;
+    --accent-soft:#ccfbf1;
+    --danger:#fef2f2;
+    --danger-line:#fecaca;
+    --danger-ink:#7f1d1d;
+    --radius:16px;
+    --max:860px;
+    --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family: ui-sans-system, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    color:var(--ink);
+    background: radial-gradient(1200px 600px at 70% -10%, #e0f2fe 0%, transparent 60%),
+                radial-gradient(900px 500px at -10% 10%, #ccfbf1 0%, transparent 55%),
+                var(--bg);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    backdrop-filter:saturate(180%) blur(12px);
+    background:color-mix(in srgb, var(--bg) 84%, white);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{max-width:var(--max);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--ink);color:white;font-weight:800}
+  .brand h1{font-size:15px;margin:0;line-height:1.1;letter-spacing:-.02em}
+  .brand p{margin:2px 0 0;font-size:12.5px;color:var(--muted);line-height:1}
+  .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+  .meta{font-size:12px;color:var(--muted);text-align:right;line-height:1.3}
+  .meta strong{color:var(--ink);font-weight:600}
+  .lang{display:flex;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+  .lang button{appearance:none;border:0;background:transparent;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:.18s}
+  .lang button[aria-pressed="true"]{background:var(--ink);color:white;box-shadow:0 1px 6px rgba(15,23,42,.2)}
+  .lang button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .hero{padding:36px 0 10px}
+  .hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow)}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;background:var(--accent-soft);border:1px solid #99f6e4;padding:6px 10px;border-radius:999px}
+  .hero h2{margin:14px 0 8px;font-size:32px;line-height:1.05;letter-spacing:-.03em}
+  .hero p{margin:0;color:var(--muted);max-width:62ch;font-size:15px}
+  .danger{
+    margin:18px 0 0;display:flex;gap:12px;align-items:flex-start;
+    background:var(--danger);border:1px solid var(--danger-line);color:var(--danger-ink);
+    padding:14px 16px;border-radius:12px;font-size:13.5px;
+  }
+  .danger strong{font-weight:800}
+  .toc{margin:22px 0 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+  .toc h3{margin:0 0 10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .toc ol{margin:0;padding-left:18px;columns:2;column-gap:28px}
+  .toc li{margin:6px 0;font-size:13.5px}
+  .toc a{color:var(--ink);border-bottom:1px dashed #cbd5e1}
+  .toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  @media(max-width:640px){.toc ol{columns:1}}
+  article{padding:18px 0 36px}
+  section{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:16px 0}
+  section h3{margin:0 0 10px;font-size:18px;letter-spacing:-.02em;line-height:1.2}
+  section h4{margin:18px 0 8px;font-size:14px}
+  section p{margin:10px 0;color:#1e293b;font-size:14.5px}
+  section ul, section ol{margin:8px 0 10px;padding-left:20px}
+  section li{margin:6px 0;font-size:14.5px;color:#1e293b}
+  .muted{color:var(--muted)!important}
+  .callout{border:1px solid var(--line);background:#f8fafc;border-radius:12px;padding:14px;margin:12px 0}
+  .callout.warn{background:#fffbeb;border-color:#fde68a}
+  .callout.warn p{color:#92400e}
+  .caps{font-weight:800;letter-spacing:.03em}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .mini{border:1px solid var(--line);border-radius:12px;padding:14px;background:#f8fafc}
+  .mini h4{margin:0 0 6px;font-size:13px}
+  .mini p{margin:0;font-size:13px;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:13px}
+  .contact-card{background:var(--ink);color:#e2e8f0;border-radius:var(--radius);padding:20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+  .contact-card a{color:white;text-decoration:underline;text-underline-offset:3px}
+  .contact-card strong{color:white}
+  [data-lang]{display:none}
+  html[lang="en"] [data-lang="en"]{display:block}
+  html[lang="ro"] [data-lang="ro"]{display:block}
+  html[lang="en"] [data-lang="en"].inline{display:inline}
+  html[lang="ro"] [data-lang="ro"].inline{display:inline}
+  @media print{.topbar{position:static}.lang{display:none}body{background:white}section{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <h1>Migraine Tracker</h1>
+          <p data-lang="en">Terms of Service</p>
+          <p data-lang="ro">Termeni și Condiții</p>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="meta">
+          <div><span data-lang="en">Last updated:</span><span data-lang="ro">Ultima actualizare:</span> <strong>29 August 2026</strong></div>
+          <div class="muted"><span data-lang="en">Effective immediately</span><span data-lang="ro">În vigoare imediat</span></div>
+        </div>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+          <button type="button" id="btn-ro" aria-pressed="false" onclick="setLang('ro')">RO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap hero">
+    <div class="hero-card">
+      <div class="kicker">Informational only &nbsp;·&nbsp; No medical device &nbsp;·&nbsp; EU law</div>
+      <h2 data-lang="en">A simple diary & statistics app. Not a doctor, not a diagnosis, not a prescription.</h2>
+      <h2 data-lang="ro">Un jurnal simplu și statistici. Nu este medic, nu este diagnostic, nu este rețetă.</h2>
+      <p data-lang="en">These Terms govern your use of Migraine Tracker (the “App”). By installing or using the App you agree to them. If you don’t agree, do not use the App. The App is provided by a <strong>Freelancer</strong> — no company, contact: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a>.</p>
+      <p data-lang="ro">Acești Termeni guvernează utilizarea Migraine Tracker (“Aplicația”). Prin instalarea sau utilizarea Aplicației ești de acord cu ei. Dacă nu ești de acord, nu folosi Aplicația. Aplicația este oferită de un <strong>Freelancer</strong> — fără firmă, contact: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a>.</p>
+
+      <div class="danger">
+        <span aria-hidden="true">🛡️</span>
+        <div>
+          <div data-lang="en"><span class="caps">IMPORTANT — NO MEDICAL ADVICE.</span> Migraine Tracker is a personal monitoring and statistics tool only. It does <strong>not</strong> provide medical advice, diagnosis, treatment, prevention, or dosage recommendations, does <strong>not</strong> establish a doctor-patient relationship, and is <strong>not a medical device</strong> (no CE/FDA clearance). Never disregard professional medical advice or delay seeking it because of something you read in the App. In an emergency, seek immediate medical assistance. See Section 3.</div>
+          <div data-lang="ro"><span class="caps">IMPORTANT — FĂRĂ SFAT MEDICAL.</span> Migraine Tracker este doar un instrument personal de monitorizare și statistici. <strong>Nu</strong> oferă sfat medical, diagnostic, tratament, prevenție sau recomandări de dozare, <strong>nu</strong> creează relație medic-pacient și <strong>nu este dispozitiv medical</strong> (fără certificare CE/FDA). Nu ignora niciodată sfatul medical profesionist și nu amâna consultul din cauza a ceva citit în Aplicație. În urgență, solicită imediat ajutor medical. Vezi Secțiunea 3.</div>
+        </div>
+      </div>
+
+      <div class="toc">
+        <h3 data-lang="en">On this page</h3><h3 data-lang="ro">Cuprins</h3>
+        <ol>
+          <li><a href="#accept" data-lang="en" class="inline">Acceptance & eligibility</a><a href="#accept" data-lang="ro" class="inline">Acceptare & eligibilitate</a></li>
+          <li><a href="#what" data-lang="en" class="inline">What the App is / isn’t</a><a href="#what" data-lang="ro" class="inline">Ce este / nu este Aplicația</a></li>
+          <li><a href="#medical" data-lang="en" class="inline">No-medical-advice disclaimer</a><a href="#medical" data-lang="ro" class="inline">Declinarea sfatului medical</a></li>
+          <li><a href="#license" data-lang="en" class="inline">License & acceptable use</a><a href="#license" data-lang="ro" class="inline">Licență & utilizare acceptabilă</a></li>
+          <li><a href="#user" data-lang="en" class="inline">User content & responsibility</a><a href="#user" data-lang="ro" class="inline">Conținutul utilizatorului & răspundere</a></li>
+          <li><a href="#third" data-lang="en" class="inline">Third parties & permissions</a><a href="#third" data-lang="ro" class="inline">Terți & permisiuni</a></li>
+          <li><a href="#ip" data-lang="en" class="inline">IP & feedback</a><a href="#ip" data-lang="ro" class="inline">PI & feedback</a></li>
+          <li><a href="#warranty" data-lang="en" class="inline">Warranties & AS-IS</a><a href="#warranty" data-lang="ro" class="inline">Garanții & AS-IS</a></li>
+          <li><a href="#liability" data-lang="en" class="inline">Limitation of liability & indemnity</a><a href="#liability" data-lang="ro" class="inline">Limitarea răspunderii & despăgubirea</a></li>
+          <li><a href="#changes" data-lang="en" class="inline">Changes, termination, law</a><a href="#changes" data-lang="ro" class="inline">Modificări, încetare, lege</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><article>
+
+    <section id="accept">
+      <h3 data-lang="en">1. Acceptance, eligibility, and controller</h3>
+      <h3 data-lang="ro">1. Acceptare, eligibilitate și operator</h3>
+      <div data-lang="en">
+        <p><strong>Provider:</strong> Freelancer — Iulian, contact <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a> (no company, no postal address). References to “we”, “us”, “our” mean the Freelancer.</p>
+        <p><strong>Acceptance:</strong> By downloading, installing or using the App you acknowledge you have read, understood and agree to these Terms and to the <a href="privacy.html">Privacy Policy</a> (incorporated by reference).</p>
+        <p><strong>Eligibility:</strong> You must be at least 16 years old (or the age of digital consent in your country) and capable of entering a binding agreement. The App is not directed to children under 13. If you use the App on behalf of someone else, you confirm you have authority to do so.</p>
+      </div>
+      <div data-lang="ro">
+        <p><strong>Furnizor:</strong> Freelancer — Iulian, contact <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a> (fără firmă, fără adresă poștală). Referirile la “noi” înseamnă Freelancer-ul.</p>
+        <p><strong>Acceptare:</strong> Prin descărcarea, instalarea sau utilizarea Aplicației confirmi că ai citit, înțeles și ești de acord cu acești Termeni și cu <a href="privacy.html">Politica de Confidențialitate</a> (încorporată prin referință).</p>
+        <p><strong>Eligibilitate:</strong> Trebuie să ai cel puțin 16 ani (sau vârsta consimțământului digital din țara ta) și capacitate de a încheia un acord. Aplicația nu se adresează copiilor sub 13 ani. Dacă folosești Aplicația în numele altcuiva, confirmi că ai autoritatea necesară.</p>
+      </div>
+    </section>
+
+    <section id="what">
+      <h3 data-lang="en">2. What the App is (and what it is not)</h3>
+      <h3 data-lang="ro">2. Ce este (și ce nu este) Aplicația</h3>
+      <div data-lang="en">
+        <p><strong>What it is:</strong> A local-first diary to log migraine attacks (pain, location, symptoms, triggers, medication you choose to note, relief methods, notes, weather snapshot if enabled, MIDAS answers) and view personal statistics (history, calendar heatmap, weekly summary, pain trends, trigger frequency, medication effectiveness, simple insights). Data is stored on-device (SQLite + SharedPreferences); PDF/CSV exports are generated on demand and shared via the OS share sheet only at your request.</p>
+        <p><strong>What it is NOT:</strong></p>
+        <ul>
+          <li>Not a medical device, not CE-marked, not FDA-cleared.</li>
+          <li>Not a diagnostic, treatment, prevention, prescribing or dosing tool.</li>
+          <li>Not a substitute for professional medical advice, diagnosis or treatment.</li>
+          <li>Not a promotion of any drug, therapy, clinic, or lifestyle.</li>
+          <li>Not an emergency service. For emergencies contact local emergency services.</li>
+        </ul>
+      </div>
+      <div data-lang="ro">
+        <p><strong>Ce este:</strong> Un jurnal local-first pentru a înregistra atacuri de migrenă (durere, localizare, simptome, declanșatori, medicația notată de tine, metode de ameliorare, notițe, snapshot meteo dacă e activat, răspunsuri MIDAS) și a vedea statistici personale (istoric, heatmap calendar, sumar săptămânal, trend durere, frecvență declanșatori, eficiență medicație, insight-uri simple). Datele sunt stocate pe dispozitiv (SQLite + SharedPreferences); exporturile PDF/CSV sunt generate la cerere și partajate via share-ul OS doar la solicitarea ta.</p>
+        <p><strong>Ce NU este:</strong></p>
+        <ul>
+          <li>Nu este dispozitiv medical, nu are marcaj CE, nu are aprobare FDA.</li>
+          <li>Nu este instrument de diagnostic, tratament, prevenție, prescriere sau dozare.</li>
+          <li>Nu înlocuiește sfatul, diagnosticul sau tratamentul medical profesionist.</li>
+          <li>Nu promovează niciun medicament, terapie, clinică sau stil de viață.</li>
+          <li>Nu este serviciu de urgență. În urgențe, sună la serviciile locale de urgență.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="medical">
+      <h3 data-lang="en">3. No medical advice — comprehensive disclaimer</h3>
+      <h3 data-lang="ro">3. Fără sfat medical — declinare completă</h3>
+      <div data-lang="en">
+        <p>To the maximum extent permitted by law:</p>
+        <ol>
+          <li><strong>Informational only.</strong> All content, labels, charts, “insights” (e.g., “Top trigger”, peak hours, pressure vs pain), and exports are automated, generic statistics based solely on data you enter and, if enabled, local weather. They are not medical conclusions.</li>
+          <li><strong>No doctor-patient relationship</strong> is created by using the App or by contacting us at <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a>.</li>
+          <li><strong>Do not change treatment</strong> based on the App. Always consult a qualified healthcare professional before making any medical decision, starting/stopping/changing medication or dosage, or interpreting correlations.</li>
+          <li><strong>No verification of user content.</strong> Pain scores, triggers, medications and notes are user-reported; we do not verify accuracy, completeness or suitability.</li>
+          <li><strong>No promotion.</strong> Mention of a medication name (you type) does not constitute endorsement, recommendation or advertisement for any product.</li>
+          <li><strong>Seek professional help.</strong> If you experience severe, worsening, or unusual symptoms, or side effects, seek timely medical care.</li>
+        </ol>
+        <div class="callout warn"><p><strong>If you have a medical emergency, call your local emergency number immediately.</strong> The App cannot contact emergency services for you.</p></div>
+      </div>
+      <div data-lang="ro">
+        <p>În măsura maximă permisă de lege:</p>
+        <ol>
+          <li><strong>Doar informativ.</strong> Tot conținutul, etichetele, graficele, “insight-urile” (ex. “declanșator principal”, ore de vârf, presiune vs durere) și exporturile sunt statistici automate, generice, bazate doar pe datele introduse de tine și, dacă e activat, pe vremea locală. Nu sunt concluzii medicale.</li>
+          <li><strong>Fără relație medic-pacient</strong> prin utilizarea Aplicației sau prin contact la <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a>.</li>
+          <li><strong>Nu schimba tratamentul</strong> pe baza Aplicației. Consultă întotdeauna un profesionist medical calificat înainte de orice decizie medicală, inițiere/oprire/schimbare de medicație sau doză, sau interpretarea corelațiilor.</li>
+          <li><strong>Fără verificare a conținutului utilizatorului.</strong> Scorurile de durere, declanșatorii, medicația și notițele sunt raportate de utilizator; nu verificăm acuratețea, completitudinea sau oportunitatea.</li>
+          <li><strong>Fără promovare.</strong> Menționarea unui nume de medicament (introdus de tine) nu constituie susținere, recomandare sau reclamă.</li>
+          <li><strong>Caută ajutor profesionist.</strong> Dacă ai simptome severe, agravate, atipice sau reacții adverse, solicită îngrijire medicală la timp.</li>
+        </ol>
+        <div class="callout warn"><p><strong>În urgență medicală, sună imediat la numărul local de urgență.</strong> Aplicația nu poate contacta serviciile de urgență pentru tine.</p></div>
+      </div>
+    </section>
+
+    <section id="license">
+      <h3 data-lang="en">4. License & acceptable use</h3>
+      <h3 data-lang="ro">4. Licență & utilizare acceptabilă</h3>
+      <div data-lang="en">
+        <p>We grant you a personal, revocable, non-exclusive, non-transferable license to install and use the App for your own personal, non-commercial monitoring. You may not:</p>
+        <ul>
+          <li>Copy, modify, reverse-engineer, decompile, or create derivative works (except as allowed by law);</li>
+          <li>Use the App for unlawful purposes, to harass, spam, scrape, or overload the weather/push endpoints;</li>
+          <li>Circumvent permission prompts, API rate limits, or access controls;</li>
+          <li>Remove copyright or trademark notices.</li>
+        </ul>
+        <p>We reserve all rights not expressly granted.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Îți acordăm o licență personală, revocabilă, neexclusivă, netransferabilă de a instala și folosi Aplicația pentru monitorizare personală, necomercială. Nu ai voie să:</p>
+        <ul>
+          <li>Copiezi, modifici, faci reverse-engineering, decompilezi sau creezi opere derivate (cu excepția cazurilor permise de lege);</li>
+          <li>Folosești Aplicația în scopuri ilegale, pentru hărțuire, spam, scraping sau supraîncărcarea endpoint-urilor meteo/push;</li>
+          <li>Ocolești prompturile de permisiuni, limitele de rată API sau controalele de acces;</li>
+          <li>Elimini notificările de drepturi de autor sau marcă.</li>
+        </ul>
+        <p>Ne rezervăm toate drepturile neacordate expres.</p>
+      </div>
+    </section>
+
+    <section id="user">
+      <h3 data-lang="en">5. Your content & your responsibility</h3>
+      <h3 data-lang="ro">5. Conținutul tău & răspunderea ta</h3>
+      <div data-lang="en">
+        <p><strong>Yours:</strong> The diary entries, notes and MIDAS answers you create remain yours. Because they are stored locally, you control retention and sharing (edit/delete in History, delete via uninstall). When you export and share a PDF/CSV, you direct that sharing via the OS — we do not retain a copy.</p>
+        <p><strong>Your responsibility:</strong> You are solely responsible for the accuracy, legality and consequences of data you enter and of any decisions you make based on App outputs. You confirm you have the right to enter any health information you record and will not enter third-party sensitive data without consent.</p>
+        <p><strong>No backup promise:</strong> We do not operate a central backup. Keep your own backups (e.g., keep exported files) if you need them.</p>
+      </div>
+      <div data-lang="ro">
+        <p><strong>Al tău:</strong> Intrările din jurnal, notițele și răspunsurile MIDAS rămân ale tale. Fiind stocate local, controlezi păstrarea și partajarea (editezi/ștergi în Istoric, ștergi prin dezinstalare). Când exporți și partajezi un PDF/CSV, tu direcționezi partajarea via OS — noi nu păstrăm o copie.</p>
+        <p><strong>Răspunderea ta:</strong> Ești exclusiv responsabil pentru acuratețea, legalitatea și consecințele datelor introduse și ale deciziilor luate pe baza rezultatelor Aplicației. Confirmi că ai dreptul să introduci orice informație de sănătate și nu vei introduce date sensibile despre terți fără consimțământ.</p>
+        <p><strong>Fără promisiune de backup:</strong> Nu operăm backup central. Păstrează-ți propriile backup-uri (ex. păstrează fișierele exportate) dacă ai nevoie.</p>
+      </div>
+    </section>
+
+    <section id="third">
+      <h3 data-lang="en">6. Permissions & third-party services</h3>
+      <h3 data-lang="ro">6. Permisiuni & servicii terțe</h3>
+      <div data-lang="en">
+        <div class="grid">
+          <div class="mini"><h4>Location</h4><p>Optional, consent-based via geolocator. Used only to fetch weather for your coordinates. Deny in OS to disable.</p></div>
+          <div class="mini"><h4>Notifications</h4><p>Optional, consent-based. Daily reminder via FCM + Vercel bridge. Disable in Settings to delete server token.</p></div>
+          <div class="mini"><h4>Weather — OpenWeatherMap</h4><p>When enabled, coordinates are sent to api.openweathermap.org. Their terms/privacy apply. No diary data sent.</p></div>
+          <div class="mini"><h4>Push — Firebase + Vercel</h4><p>FCM token + locale stored minimally to deliver reminders. See Privacy Policy §5.</p></div>
+        </div>
+        <p>The App may link to OS share targets you choose (email, messenger, cloud). Those services have their own terms.</p>
+      </div>
+      <div data-lang="ro">
+        <div class="grid">
+          <div class="mini"><h4>Locație</h4><p>Opțională, pe bază de consimțământ via geolocator. Folosită doar pentru a aduce vremea. Refuză din OS pentru a dezactiva.</p></div>
+          <div class="mini"><h4>Notificări</h4><p>Opționale, pe consimțământ. Memento zilnic via FCM + bridge Vercel. Dezactivează din Setări pentru a șterge token-ul.</p></div>
+          <div class="mini"><h4>Vremea — OpenWeatherMap</h4><p>Când e activă, coordonatele sunt trimise la api.openweathermap.org. Se aplică termenii lor. Nu se trimit date din jurnal.</p></div>
+          <div class="mini"><h4>Push — Firebase + Vercel</h4><p>Token FCM + limbă, stocate minimal pentru livrarea mementourilor. Vezi Politica §5.</p></div>
+        </div>
+        <p>Aplicația poate trimite către țintele de share alese de tine (email, messenger, cloud). Acele servicii au propriii termeni.</p>
+      </div>
+    </section>
+
+    <section id="ip">
+      <h3 data-lang="en">7. Intellectual property & feedback</h3>
+      <h3 data-lang="ro">7. Proprietate intelectuală & feedback</h3>
+      <div data-lang="en">
+        <p>The App, including code, design, icons, translations, and documentation, is owned by the Freelancer (or licensed) and protected by copyright and other IP laws. “Migraine Tracker” and associated logos are trademarks of the Freelancer where applicable.</p>
+        <p>If you send feedback or suggestions, you grant us a non-exclusive, worldwide, royalty-free, perpetual license to use, modify and incorporate it without obligation or compensation.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Aplicația, inclusiv codul, designul, iconițele, traducerile și documentația, aparține Freelancer-ului (sau este licențiată) și este protejată de drepturi de autor și alte legi PI. “Migraine Tracker” și logo-urile asociate sunt mărci ale Freelancer-ului unde se aplică.</p>
+        <p>Dacă trimiți feedback sau sugestii, ne acorzi o licență neexclusivă, mondială, fără redevențe, perpetuă de a le folosi, modifica și încorpora fără obligație sau compensație.</p>
+      </div>
+    </section>
+
+    <section id="warranty">
+      <h3 data-lang="en">8. No warranties — AS IS</h3>
+      <h3 data-lang="ro">8. Fără garanții — AS IS</h3>
+      <div data-lang="en">
+        <p class="caps">THE APP IS PROVIDED “AS IS” AND “AS AVAILABLE”, WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, NON-INFRINGEMENT, OR AVAILABILITY.</p>
+        <p>We do not warrant that the App will be error-free, uninterrupted, secure, or that charts/insights/weather data are accurate, complete or timely. Weather data is supplied by a third party and may be unavailable or inaccurate.</p>
+        <p>You use the App at your own risk.</p>
+      </div>
+      <div data-lang="ro">
+        <p class="caps">APLICAȚIA ESTE FURNIZATĂ „CA ATARE” ȘI „DUPĂ DISPONIBILITATE”, FĂRĂ GARANȚII DE ORICE FEL, EXPRESE SAU IMPLICITE, INCLUSIV VANDABILITATE, POTRIVIRE PENTRU UN ANUMIT SCOP, ACURATEȚE, NEÎNCĂLCARE SAU DISPONIBILITATE.</p>
+        <p>Nu garantăm că Aplicația va fi fără erori, neîntreruptă, sigură sau că graficele/insight-urile/datele meteo sunt exacte, complete sau la timp. Datele meteo provin de la un terț și pot fi indisponibile sau inexacte.</p>
+        <p>Folosești Aplicația pe propriul risc.</p>
+      </div>
+    </section>
+
+    <section id="liability">
+      <h3 data-lang="en">9. Limitation of liability & indemnity — please read carefully</h3>
+      <h3 data-lang="ro">9. Limitarea răspunderii & despăgubirea — citește cu atenție</h3>
+      <div data-lang="en">
+        <p class="caps">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:</p>
+        <ol>
+          <li><strong>No liability for health decisions.</strong> In no event will the Freelancer be liable for any medical decisions, actions or omissions you take based on the App, or for any health outcomes, bodily injury, or loss of life. The App is not a medical service.</li>
+          <li><strong>Excluded damages.</strong> The Freelancer will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenues, data, goodwill, or use, even if advised of the possibility.</li>
+          <li><strong>Cap.</strong> The Freelancer’s total aggregate liability arising out of or related to the App or these Terms will not exceed the amount you paid (if any) for the App in the 12 months preceding the claim — or, if you paid nothing (the App is free), €10.</li>
+          <li><strong>Allocation of risk.</strong> You acknowledge this allocation is reasonable and a fundamental element of the bargain (the App is free and informational).</li>
+        </ol>
+        <p><strong>Indemnity.</strong> You agree to indemnify, defend and hold harmless the Freelancer from and against any claims, liabilities, damages, losses and expenses (including reasonable legal fees) arising from: (a) your use of the App in violation of these Terms or law; (b) content you enter; (c) your violation of third-party rights; or (d) any health-related decisions you make.</p>
+        <p><strong>Nothing in these Terms excludes liability</strong> that cannot be excluded under applicable mandatory law (e.g., gross negligence, willful misconduct, or where exclusion is prohibited). Any such liability is limited to the minimum extent required by law.</p>
+        <p><strong>Independent platform terms:</strong> App store operators (e.g., Google Play) are not parties to these Terms and bear no liability for the App.</p>
+      </div>
+      <div data-lang="ro">
+        <p class="caps">ÎN MĂSURA MAXIMĂ PERMISĂ DE LEGEA APLICABILĂ:</p>
+        <ol>
+          <li><strong>Fără răspundere pentru decizii medicale.</strong> În niciun caz Freelancer-ul nu va fi răspunzător pentru decizii medicale, acțiuni sau omisiuni luate pe baza Aplicației sau pentru rezultate asupra sănătății, vătămări corporale sau pierderea vieții. Aplicația nu este serviciu medical.</li>
+          <li><strong>Daune excluse.</strong> Freelancer-ul nu va fi răspunzător pentru daune indirecte, incidentale, speciale, de consecință sau punitive, ori pentru pierderi de profit, venituri, date, fond comercial sau utilizare, chiar dacă a fost informat despre posibilitate.</li>
+          <li><strong>Plafon.</strong> Răspunderea totală agregată a Freelancer-ului derivând din sau legată de Aplicație sau acești Termeni nu va depăși suma plătită (dacă există) pentru Aplicație în 12 luni anterioare reclamației — sau, dacă nu ai plătit nimic (Aplicația e gratuită), 10 €.</li>
+          <li><strong>Alocarea riscului.</strong> Recunoști că această alocare este rezonabilă și element fundamental al înțelegerii (Aplicația e gratuită și informativă).</li>
+        </ol>
+        <p><strong>Despăgubire.</strong> Ești de acord să despăgubești, să aperi și să exonerezi Freelancer-ul de orice reclamații, răspunderi, daune, pierderi și cheltuieli (inclusiv onorarii rezonabile de avocat) decurgând din: (a) utilizarea Aplicației cu încălcarea Termenilor/legii; (b) conținutul introdus de tine; (c) încălcarea drepturilor terților; sau (d) decizii legate de sănătate.</p>
+        <p><strong>Nimic din acești Termeni nu exclude răspunderea</strong> care nu poate fi exclusă conform legii imperative (ex. neglijență gravă, faptă intenționată). Orice astfel de răspundere e limitată la minimul cerut de lege.</p>
+        <p><strong>Termeni de platformă independenți:</strong> Operatorii magazinelor de aplicații (ex. Google Play) nu sunt părți la acești Termeni și nu poartă răspundere pentru Aplicație.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3 data-lang="en">10. Disclaimer of promotion & no endorsement</h3>
+      <h3 data-lang="ro">10. Declinarea promovării & fără susținere</h3>
+      <div data-lang="en">
+        <p>The App does not promote, advertise, or endorse any drug, dosage, therapy, medical professional, or commercial product. Medication fields are free-text for your own notes; any effectiveness slider is your subjective assessment. No sponsorship or commercial relationship is implied.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Aplicația nu promovează, nu face reclamă și nu susține niciun medicament, dozaj, terapie, profesionist medical sau produs comercial. Câmpurile de medicație sunt text liber pentru notițele tale; slider-ul de eficiență este evaluarea ta subiectivă. Nicio sponsorizare sau relație comercială nu este implicată.</p>
+      </div>
+    </section>
+
+    <section id="changes">
+      <h3 data-lang="en">11. Changes, termination, governing law & disputes</h3>
+      <h3 data-lang="ro">11. Modificări, încetare, lege aplicabilă & litigii</h3>
+      <div data-lang="en">
+        <p><strong>Changes to App/Terms.</strong> We may update the App and these Terms (e.g., for legal or feature changes). The “Last updated” date will change; for material changes we will highlight the update in the App/distribution page. Continued use after the effective date constitutes acceptance.</p>
+        <p><strong>Termination.</strong> You may stop using the App at any time (uninstall). We may suspend or discontinue the App at any time. Upon termination, your license ends; diary data can be removed by uninstall/clear data (Privacy Policy §7).</p>
+        <p><strong>Governing law.</strong> These Terms are governed by the laws of Romania and, where applicable, EU law, without regard to conflict-of-laws principles. Mandatory consumer protections of your country of residence remain unaffected.</p>
+        <p><strong>Disputes.</strong> Please contact us first at <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a> — we aim to resolve amicably within 30 days. If unresolved, competent courts of Romania (Bucharest) shall have jurisdiction, unless mandatory consumer-jurisdiction rules of your EU residence require otherwise. You may also use the EU Online Dispute Resolution platform where applicable.</p>
+        <p><strong>Severability; no waiver; assignment.</strong> If any provision is held invalid, the remainder stays in effect. Failure to enforce is not a waiver. You may not assign these Terms; we may assign them in connection with a reorganization, but your rights are preserved.</p>
+        <p><strong>Language.</strong> These Terms are provided in English and Romanian. The English version prevails in case of conflict, except where Romanian law requires otherwise. The toggle above switches instantly and defaults to English.</p>
+      </div>
+      <div data-lang="ro">
+        <p><strong>Modificări ale Aplicației/Termenilor.</strong> Putem actualiza Aplicația și acești Termeni (ex. pentru schimbări legale sau funcționale). Data “Ultima actualizare” se va schimba; pentru modificări materiale vom evidenția actualizarea în Aplicație/pagina de distribuție. Continuarea utilizării după data intrării în vigoare constituie acceptare.</p>
+        <p><strong>Încetare.</strong> Poți opri utilizarea oricând (dezinstalare). Putem suspenda sau întrerupe Aplicația oricând. La încetare, licența încetează; datele din jurnal pot fi șterse prin dezinstalare/ștergere date (Politica §7).</p>
+        <p><strong>Lege aplicabilă.</strong> Acești Termeni sunt guvernați de legile României și, unde se aplică, de legislația UE, fără a ține cont de conflictul de legi. Protecțiile imperative ale consumatorului din țara ta de reședință rămân neafectate.</p>
+        <p><strong>Litigii.</strong> Contactează-ne mai întâi la <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a> — ne propunem rezolvare amiabilă în 30 de zile. Dacă nu se rezolvă, instanțele competente din România (București) au jurisdicție, cu excepția cazului în care regulile imperative de jurisdicție pentru consumatori din reședința ta UE cer altfel. Poți folosi și platforma UE SOL unde se aplică.</p>
+        <p><strong>Divizibilitate; nerenuțare; cesiune.</strong> Dacă o prevedere e invalidă, restul rămâne în vigoare. Neexercitarea nu e renunțare. Nu poți cesiona acești Termeni; noi îi putem cesiona în caz de reorganizare, dar drepturile tale sunt păstrate.</p>
+        <p><strong>Limbă.</strong> Acești Termeni sunt disponibili în engleză și română. Versiunea în engleză prevalează în caz de conflict, cu excepția cazului în care legea română cere altfel. Comutatorul de mai sus schimbă instant și pornește implicit în engleză.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3 data-lang="en">12. Contact</h3>
+      <h3 data-lang="ro">12. Contact</h3>
+      <div data-lang="en">
+        <p>Questions about these Terms: <a href="mailto:iulianivn@duck.com"><strong>iulianivn@duck.com</strong></a> — Freelancer, no company. Please include “Migraine Tracker — Terms” in the subject.</p>
+        <p class="muted">This document is for transparency and does not constitute legal advice. For advice on your situation, consult counsel.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Întrebări despre acești Termeni: <a href="mailto:iulianivn@duck.com"><strong>iulianivn@duck.com</strong></a> — Freelancer, fără firmă. Te rog să incluzi “Migraine Tracker — Terms” în subiect.</p>
+        <p class="muted">Acest document este pentru transparență și nu constituie consultanță juridică. Pentru situația ta, consultă un avocat.</p>
+      </div>
+    </section>
+
+  </article></div>
+
+  <div class="wrap">
+    <footer>
+      <div class="contact-card">
+        <div>
+          <div><strong>Migraine Tracker</strong> <span class="muted">— Freelancer</span></div>
+          <div class="muted"><span data-lang="en">Questions?</span><span data-lang="ro">Întrebări?</span> <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="privacy.html" data-lang="en">Privacy Policy</a><a href="privacy.html" data-lang="ro">Politica de Confidențialitate</a>
+          <span class="muted">·</span>
+          <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-lang="en">Back to top ↑</a><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-lang="ro">Sus ↑</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:14px">© 2026 Migraine Tracker — Freelancer. <span data-lang="en">Provided for transparency; not legal advice.</span><span data-lang="ro">Oferit pentru transparență; nu este consultanță juridică.</span></p>
+    </footer>
+  </div>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    localStorage.setItem('mt-lang', lang);
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang==='en' ? 'true':'false');
+    document.getElementById('btn-ro').setAttribute('aria-pressed', lang==='ro' ? 'true':'false');
+    document.title = lang==='ro' ? 'Migraine Tracker — Termeni și Condiții' : 'Migraine Tracker — Terms of Service';
+  }
+  (function(){
+    const saved = localStorage.getItem('mt-lang');
+    const initial = (saved==='ro'||saved==='en') ? saved : 'en';
+    setLang(initial);
+  })();
+</script>
+</body>
+                              </html>
