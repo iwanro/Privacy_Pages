@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Migraine Tracker — Privacy Policy</title>
+<meta name="description" content="Privacy Policy for Migraine Tracker — local-first migraine diary and statistics app.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root{
+    --bg:#fcfcfa;
+    --card:#ffffff;
+    --ink:#0f172a;
+    --muted:#64748b;
+    --line:#e2e8f0;
+    --accent:#0f766e;
+    --accent-2:#0d9488;
+    --accent-soft:#ccfbf1;
+    --warn:#fef3c7;
+    --warn-ink:#92400e;
+    --radius:16px;
+    --max:860px;
+    --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family: ui-sans-system, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    color:var(--ink);
+    background: radial-gradient(1200px 600px at 70% -10%, #e0f2fe 0%, transparent 60%),
+                radial-gradient(900px 500px at -10% 10%, #ccfbf1 0%, transparent 55%),
+                var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  /* header */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    backdrop-filter:saturate(180%) blur(12px);
+    background:color-mix(in srgb, var(--bg) 84%, white);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:var(--max);margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .logo{
+    width:36px;height:36px;border-radius:10px;
+    display:grid;place-items:center;
+    background:var(--ink);color:white;
+    font-weight:800;letter-spacing:-.02em;
+    flex:0 0 auto;
+  }
+  .brand h1{font-size:15px;margin:0;line-height:1.1;letter-spacing:-.02em}
+  .brand p{margin:2px 0 0;font-size:12.5px;color:var(--muted);line-height:1}
+  .actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+  .meta{font-size:12px;color:var(--muted);text-align:right;line-height:1.3}
+  .meta strong{color:var(--ink);font-weight:600}
+  /* lang switch */
+  .lang{
+    display:flex;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:3px;box-shadow:var(--shadow);
+  }
+  .lang button{
+    appearance:none;border:0;background:transparent;
+    padding:7px 14px;border-radius:999px;
+    font-size:13px;font-weight:600;letter-spacing:.02em;
+    color:var(--muted);cursor:pointer;transition:.18s;
+  }
+  .lang button[aria-pressed="true"]{
+    background:var(--ink);color:white;box-shadow:0 1px 6px rgba(15,23,42,.2);
+  }
+  .lang button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  /* hero */
+  .hero{padding:36px 0 10px}
+  .hero-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px 24px;box-shadow:var(--shadow);
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;
+    background:var(--accent-soft);border:1px solid #99f6e4;
+    padding:6px 10px;border-radius:999px;
+  }
+  .hero h2{margin:14px 0 8px;font-size:32px;line-height:1.05;letter-spacing:-.03em}
+  .hero p{margin:0;color:var(--muted);max-width:62ch;font-size:15px}
+  /* notice */
+  .notice{
+    margin:18px 0 0;
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--warn);border:1px solid #fde68a;color:var(--warn-ink);
+    padding:14px 16px;border-radius:12px;font-size:13.5px;
+  }
+  .notice strong{font-weight:700}
+  /* toc */
+  .toc{
+    margin:22px 0 0;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;box-shadow:var(--shadow);
+  }
+  .toc h3{margin:0 0 10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .toc ol{margin:0;padding-left:18px;columns:2;column-gap:28px}
+  .toc li{margin:6px 0;font-size:13.5px}
+  .toc a{color:var(--ink);text-decoration:none;border-bottom:1px dashed #cbd5e1}
+  .toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  @media(max-width:640px){.toc ol{columns:1}}
+  /* article */
+  article{padding:18px 0 36px}
+  section{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow);margin:16px 0;
+  }
+  section h3{margin:0 0 10px;font-size:18px;letter-spacing:-.02em;line-height:1.2}
+  section h4{margin:18px 0 8px;font-size:14px;letter-spacing:-.01em}
+  section p{margin:10px 0;color:#1e293b;font-size:14.5px}
+  section ul, section ol{margin:8px 0 10px;padding-left:20px}
+  section li{margin:6px 0;font-size:14.5px;color:#1e293b}
+  .muted{color:var(--muted)!important}
+  .grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;
+  }
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .mini{
+    border:1px solid var(--line);border-radius:12px;padding:14px;background:#f8fafc;
+  }
+  .mini h4{margin:0 0 6px;font-size:13px}
+  .mini p{margin:0;font-size:13px;color:var(--muted)}
+  .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;margin-top:10px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
+  th{ text-align:left;background:#f8fafc;padding:10px 12px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+  td{padding:10px 12px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  .badge{ display:inline-flex;align-items:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:#f1f5f9;color:#334155;white-space:nowrap}
+  .badge.local{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+  .badge.third{background:#eff6ff;border-color:#bfdbfe;color:#1e40af}
+  .badge.opt{background:#fefce8;border-color:#fde68a;color:#854d0e}
+  footer{
+    border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:13px;
+  }
+  .contact-card{
+    background:var(--ink);color:#e2e8f0;border-radius:var(--radius);padding:20px;
+    display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+  }
+  .contact-card a{color:white;text-decoration:underline;text-underline-offset:3px}
+  .contact-card strong{color:white}
+  /* lang visibility */
+  [data-lang]{display:none}
+  html[lang="en"] [data-lang="en"]{display:block}
+  html[lang="ro"] [data-lang="ro"]{display:block}
+  html[lang="en"] [data-lang="en"].inline{ display:inline }
+  html[lang="ro"] [data-lang="ro"].inline{ display:inline }
+  /* print */
+  @media print{
+    .topbar{position:static}
+    .lang{display:none}
+    body{background:white}
+    section{break-inside:avoid;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <h1>Migraine Tracker</h1>
+          <p data-lang="en">Privacy Policy</p>
+          <p data-lang="ro">Politica de Confidențialitate</p>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="meta">
+          <div><span data-lang="en">Last updated:</span><span data-lang="ro">Ultima actualizare:</span> <strong>29 August 2026</strong></div>
+          <div class="muted"><span data-lang="en">Effective immediately</span><span data-lang="ro">În vigoare imediat</span></div>
+        </div>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+          <button type="button" id="btn-ro" aria-pressed="false" onclick="setLang('ro')">RO</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap hero">
+    <div class="hero-card">
+      <div class="kicker">● Local-first &nbsp;·&nbsp; No accounts &nbsp;·&nbsp; GDPR-ready</div>
+      <h2 data-lang="en">Your migraines stay on your phone. We don’t sell, profile or monetize your health.</h2>
+      <h2 data-lang="ro">Migrenele tale rămân pe telefon. Nu vindem, nu profilăm și nu monetizăm datele tale de sănătate.</h2>
+      <p data-lang="en">This Privacy Policy explains what Migraine Tracker does and doesn’t collect, which third-party services are involved when you enable optional features, and what rights you have. The app is a <strong>personal diary and statistics tool only</strong> — it is not a medical device and does not provide medical advice.</p>
+      <p data-lang="ro">Această Politică explică ce colectează și ce <em>nu</em> colectează Migraine Tracker, ce servicii terțe intervin când activezi funcții opționale și ce drepturi ai. Aplicația este <strong>doar un jurnal personal și instrument de statistici</strong> — nu este dispozitiv medical și nu oferă sfaturi medicale.</p>
+
+      <div class="notice">
+        <span aria-hidden="true">⚠️</span>
+        <div>
+          <div data-lang="en"><strong>Not medical advice.</strong> Migraine Tracker does not diagnose, treat, prevent or recommend any medication, therapy or lifestyle change. All content is informational. Always consult a qualified healthcare professional for medical decisions. <a href="terms.html">See Terms</a>.</div>
+          <div data-lang="ro"><strong>Nu este sfat medical.</strong> Migraine Tracker nu diagnostichează, nu tratează, nu previne și nu recomandă medicamente, terapii sau schimbări de stil de viață. Conținutul este pur informativ. Consultă întotdeauna un profesionist medical calificat. <a href="terms.html">Vezi Termenii</a>.</div>
+        </div>
+      </div>
+
+      <div class="toc">
+        <h3 data-lang="en">On this page</h3><h3 data-lang="ro">Cuprins</h3>
+        <ol>
+          <li><a href="#controller" data-lang="en" class="inline">Controller & contact</a><a href="#controller" data-lang="ro" class="inline">Operator & contact</a></li>
+          <li><a href="#scope" data-lang="en" class="inline">Scope & app model</a><a href="#scope" data-lang="ro" class="inline">Domeniu & modelul aplicației</a></li>
+          <li><a href="#collect" data-lang="en" class="inline">What we collect</a><a href="#collect" data-lang="ro" class="inline">Ce colectăm</a></li>
+          <li><a href="#notcollect" data-lang="en" class="inline">What we don’t collect</a><a href="#notcollect" data-lang="ro" class="inline">Ce nu colectăm</a></li>
+          <li><a href="#third" data-lang="en" class="inline">Third-party services</a><a href="#third" data-lang="ro" class="inline">Servicii terțe</a></li>
+          <li><a href="#legal" data-lang="en" class="inline">Legal bases (GDPR)</a><a href="#legal" data-lang="ro" class="inline">Temeiuri legale (GDPR)</a></li>
+          <li><a href="#retention" data-lang="en" class="inline">Retention & deletion</a><a href="#retention" data-lang="ro" class="inline">Stocare & ștergere</a></li>
+          <li><a href="#security" data-lang="en" class="inline">Security</a><a href="#security" data-lang="ro" class="inline">Securitate</a></li>
+          <li><a href="#rights" data-lang="en" class="inline">Your rights</a><a href="#rights" data-lang="ro" class="inline">Drepturile tale</a></li>
+          <li><a href="#children" data-lang="en" class="inline">Children</a><a href="#children" data-lang="ro" class="inline">Copii</a></li>
+          <li><a href="#changes" data-lang="en" class="inline">Changes</a><a href="#changes" data-lang="ro" class="inline">Modificări</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+  <article>
+
+    <section id="controller">
+      <h3 data-lang="en">1. Data controller & contact</h3>
+      <h3 data-lang="ro">1. Operatorul & contactul</h3>
+
+      <div data-lang="en">
+        <p>The data controller for Migraine Tracker is:</p>
+        <p><strong>Freelancer — Iulian</strong><br>Contact: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a><br><span class="muted">No company, no postal address published — contact by email.</span></p>
+        <p>For GDPR purposes the controller determines the purposes and means of processing for the optional cloud features (push reminders). All diary data stays local on your device unless you explicitly export/share it.</p>
+        <p class="muted">Supervisory authority (RO): <strong>ANSPDCP</strong> — Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal. You have the right to lodge a complaint with ANSPDCP or your local EU authority.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Operatorul pentru Migraine Tracker este:</p>
+        <p><strong>Freelancer — Iulian</strong><br>Contact: <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a><br><span class="muted">Fără firmă, fără adresă poștală publicată — contact pe email.</span></p>
+        <p>În sens GDPR, operatorul stabilește scopurile și mijloacele prelucrării pentru funcțiile opționale cloud (mementouri push). Toate datele din jurnal rămân local pe dispozitiv, cu excepția cazului în care le exporți/distribui tu explicit.</p>
+        <p class="muted">Autoritatea de supraveghere (RO): <strong>ANSPDCP</strong>. Ai dreptul să depui plângere la ANSPDCP sau la autoritatea locală din UE.</p>
+      </div>
+    </section>
+
+    <section id="scope">
+      <h3 data-lang="en">2. Scope & app model (local-first)</h3>
+      <h3 data-lang="ro">2. Domeniu & modelul aplicației (local-first)</h3>
+      <div data-lang="en">
+        <p>Migraine Tracker works <strong>offline-first</strong>. Your migraine entries — start/end time, pain level, location, symptoms, triggers, medication, relief method, notes, MIDAS answers — are stored in an on-device SQLite database (<code>drift</code>) and in <code>SharedPreferences</code> for settings (language, theme, onboarding, notification preferences). No account, no login, no central user database.</p>
+        <p>Optional features that contact the internet are <strong>opt-in</strong> and degrade gracefully when disabled or offline:</p>
+        <ul>
+          <li><strong>Weather</strong> (pressure/temperature/humidity, feels-like, wind, UV, 3-day outlook) — requires location permission and a build-time API key.</li>
+          <li><strong>Daily reminder</strong> — push via Firebase Cloud Messaging (FCM) and a minimal Vercel endpoint; requires notification permission.</li>
+        </ul>
+        <p>If you deny permissions or the build has no API keys configured, the app runs normally and weather/push simply stay inactive.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Migraine Tracker funcționează <strong>offline-first</strong>. Intrările tale — timp start/sfârșit, nivel durere, localizare durere, simptome, declanșatori, medicație, metodă de ameliorare, notițe, răspunsuri MIDAS — sunt stocate într-o bază SQLite (<code>drift</code>) pe dispozitiv și în <code>SharedPreferences</code> pentru setări (limbă, temă, onboarding, notificări). Fără cont, fără autentificare, fără bază centrală de utilizatori.</p>
+        <p>Funcțiile care necesită internet sunt <strong>opționale</strong> și aplicația funcționează fără ele:</p>
+        <ul>
+          <li><strong>Vremea</strong> (presiune/temperatură/umiditate, resimțită, vânt, UV, prognoză 3 zile) — necesită permisiune de locație și cheie API la build.</li>
+          <li><strong>Memento zilnic</strong> — push prin Firebase Cloud Messaging (FCM) și un endpoint minimal Vercel; necesită permisiunea de notificări.</li>
+        </ul>
+        <p>Dacă refuzi permisiunile sau build-ul nu are chei configurate, aplicația rulează normal, doar vremea/push-ul rămân inactive.</p>
+      </div>
+    </section>
+
+    <section id="collect">
+      <h3 data-lang="en">3. What we collect — and why</h3>
+      <h3 data-lang="ro">3. Ce colectăm — și de ce</h3>
+
+      <div data-lang="en">
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Category</th><th>Examples</th><th>Storage</th><th>Purpose</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Diary data you enter</strong> <span class="badge local">local only</span></td>
+              <td>Start/end, pain 0–10, pain location, symptoms, triggers, medication & effectiveness, relief method, barometric snapshot, notes, MIDAS answers</td>
+              <td>On-device SQLite + SharedPreferences</td>
+              <td>Show history, charts, insights, PDF/CSV export. Never uploaded by us.</td>
+            </tr>
+            <tr>
+              <td><strong>Settings & preferences</strong> <span class="badge local">local only</span></td>
+              <td>Language (en/ro), theme, onboardingComplete, notificationsEnabled, weatherAlerts, timeago locale</td>
+              <td>On-device SharedPreferences</td>
+              <td>Remember your choices.</td>
+            </tr>
+            <tr>
+              <td><strong>Precise location</strong> <span class="badge opt">only if you allow</span></td>
+              <td>Latitude/longitude at refresh time</td>
+              <td>Not stored by us; sent to OpenWeatherMap to fetch weather for your position; kept in RAM only during request</td>
+              <td>Provide pressure/temperature correlation for your attacks.</td>
+            </tr>
+            <tr>
+              <td><strong>Weather snapshot</strong> <span class="badge local">local only</span></td>
+              <td>Pressure hPa, temp °C, humidity %, attached to an attack at save time if available</td>
+              <td>Stored with the attack row (optional fields)</td>
+              <td>Context for analytics — e.g., pressure vs pain insights.</td>
+            </tr>
+            <tr>
+              <td><strong>Push token & locale</strong> <span class="badge opt">only if you enable reminders</span></td>
+              <td>FCM registration token + your app locale (en/ro)</td>
+              <td>Stored on Vercel push server to know where to send the daily notification</td>
+              <td>Deliver the daily “Time to log” reminder in your language. Deleted when you toggle off.</td>
+            </tr>
+            <tr>
+              <td><strong>Export files you create</strong> <span class="badge local">you control</span></td>
+              <td>PDF/CSV generated on demand</td>
+              <td>Temporary file in app cache, then shared via system share sheet</td>
+              <td>Let you share with your doctor or keep a backup.</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="muted">We do not use advertising IDs, analytics SDKs, crashlytics, or fingerprinting in this build. If this changes, this Policy will be updated and versioned.</p>
+      </div>
+
+      <div data-lang="ro">
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Categorie</th><th>Exemple</th><th>Stocare</th><th>Scop</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Date din jurnal introduse de tine</strong> <span class="badge local">doar local</span></td>
+              <td>Start/sfârșit, durere 0–10, localizare durere, simptome, declanșatori, medicație & eficiență, metodă ameliorare, snapshot meteo, notițe, răspunsuri MIDAS</td>
+              <td>SQLite pe dispozitiv + SharedPreferences</td>
+              <td>Afișare istoric, grafice, insight-uri, export PDF/CSV. Nu sunt încărcate de noi.</td>
+            </tr>
+            <tr>
+              <td><strong>Setări & preferințe</strong> <span class="badge local">doar local</span></td>
+              <td>Limbă (en/ro), temă, onboarding, notificări, alerte meteo</td>
+              <td>SharedPreferences pe dispozitiv</td>
+              <td>Reținerea alegerilor tale.</td>
+            </tr>
+            <tr>
+              <td><strong>Locație precisă</strong> <span class="badge opt">doar cu acord</span></td>
+              <td>Latitudine/longitudine la refresh</td>
+              <td>Nu e stocată de noi; trimisă la OpenWeatherMap pentru a aduce vremea; păstrată doar în RAM</td>
+              <td>Corelarea presiunii/temperaturii cu atacurile.</td>
+            </tr>
+            <tr>
+              <td><strong>Snapshot meteo</strong> <span class="badge local">doar local</span></td>
+              <td>Presiune hPa, temp °C, umiditate %, atașate atacului la salvare dacă există</td>
+              <td>Stocate în rândul atacului (câmpuri opționale)</td>
+              <td>Context pentru analize — ex. presiune vs durere.</td>
+            </tr>
+            <tr>
+              <td><strong>Token push & limbă</strong> <span class="badge opt">doar dacă activezi mementourile</span></td>
+              <td>Token FCM + locale (en/ro)</td>
+              <td>Stocate pe serverul Vercel pentru livrarea notificării zilnice</td>
+              <td>Livrarea mementoului zilnic în limba ta. Șters la dezactivare.</td>
+            </tr>
+            <tr>
+              <td><strong>Fișiere exportate</strong> <span class="badge local">controlul tău</span></td>
+              <td>PDF/CSV generate la cerere</td>
+              <td>Fișier temporar în cache, apoi share via sistemul de operare</td>
+              <td>Pentru medic sau backup personal.</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="muted">Nu folosim ID-uri de publicitate, SDK-uri de analytics, crashlytics sau fingerprinting în acest build. Dacă se schimbă, Politica va fi actualizată.</p>
+      </div>
+    </section>
+
+    <section id="notcollect">
+      <h3 data-lang="en">4. What we don’t collect</h3>
+      <h3 data-lang="ro">4. Ce nu colectăm</h3>
+      <div data-lang="en">
+        <ul>
+          <li><strong>No accounts</strong> — no email, name, phone, or password is asked.</li>
+          <li><strong>No health data leaves your phone</strong> — diary entries are not sent to our servers, not sold, not used for ads, not used to train AI.</li>
+          <li><strong>No tracking</strong> — no advertising, no cross-app tracking, no analytics in this build.</li>
+          <li><strong>No automatic contacts/calendar/media access</strong>.</li>
+        </ul>
+        <p>If you share an export (PDF/CSV) via email, messenger or cloud, that sharing is handled by the OS/apps you choose — we don’t intercept it.</p>
+      </div>
+      <div data-lang="ro">
+        <ul>
+          <li><strong>Fără conturi</strong> — nu cerem email, nume, telefon sau parolă.</li>
+          <li><strong>Datele de sănătate nu părăsesc telefonul</strong> — intrările din jurnal nu sunt trimise pe serverele noastre, nu sunt vândute, nu sunt folosite pentru reclame și nu antrenează AI.</li>
+          <li><strong>Fără urmărire</strong> — fără publicitate, fără tracking cross-app, fără analytics în acest build.</li>
+          <li><strong>Fără acces la contacte/calendar/media</strong>.</li>
+        </ul>
+        <p>Dacă distribui un export (PDF/CSV) prin email/messenger/cloud, partajarea este gestionată de OS/aplicațiile alese de tine — noi nu o interceptăm.</p>
+      </div>
+    </section>
+
+    <section id="third">
+      <h3 data-lang="en">5. Third-party services (only when you use the feature)</h3>
+      <h3 data-lang="ro">5. Servicii terțe (doar când folosești funcția)</h3>
+
+      <div data-lang="en">
+        <div class="grid">
+          <div class="mini">
+            <h4>OpenWeatherMap <span class="badge third">when fetching weather</span></h4>
+            <p>Your coordinates + metric units + API key are sent to <code>api.openweathermap.org</code> (endpoints <code>data/4.0/onecall</code>, <code>data/3.0/onecall</code>, fallback <code>data/2.5/weather</code>). See their Privacy Policy. No diary data is sent.</p>
+          </div>
+          <div class="mini">
+            <h4>Firebase Cloud Messaging (Google) <span class="badge third">when reminders enabled</span></h4>
+            <p>FCM provides the device token used to push the daily reminder. Google’s terms and privacy apply to token handling. No health data is sent to FCM — only token + locale via our Vercel bridge.</p>
+          </div>
+          <div class="mini">
+            <h4>Vercel — push bridge <span class="badge third">when reminders enabled</span></h4>
+            <p>Our lightweight endpoint at <code>PUSH_API_BASE_URL/api/register</code> stores <code>{token, locale, enabled}</code> and a daily cron triggers <code>/api/daily → FCM → device</code>. Payload is localized title/body only. Tokens are deleted on toggle-off or via refresh invalidation.</p>
+          </div>
+          <div class="mini">
+            <h4>OS-level: Location & Notifications <span class="badge opt">permission-gated</span></h4>
+            <p><code>geolocator</code> checks permission; <code>flutter_local_notifications</code> shows foreground pushes; <code>share_plus</code>/<code>printing</code> hand off exports to the OS share sheet. All are user-controllable in system settings.</p>
+          </div>
+        </div>
+        <p class="muted">If a third-party is unreachable, the feature simply stays unavailable — the app keeps working.</p>
+      </div>
+
+      <div data-lang="ro">
+        <div class="grid">
+          <div class="mini">
+            <h4>OpenWeatherMap <span class="badge third">la aducerea vremii</span></h4>
+            <p>Coordonatele tale + unități metrice + cheia API sunt trimise la <code>api.openweathermap.org</code> (endpointuri <code>data/4.0/onecall</code>, <code>3.0/onecall</code>, fallback <code>2.5/weather</code>). Vezi Politica lor. Nu se trimit date din jurnal.</p>
+          </div>
+          <div class="mini">
+            <h4>Firebase Cloud Messaging (Google) <span class="badge third">când mementourile sunt active</span></h4>
+            <p>FCM furnizează token-ul dispozitivului pentru push-ul zilnic. Se aplică termenii și confidențialitatea Google. Nu se trimit date de sănătate către FCM — doar token + limbă via bridge-ul Vercel.</p>
+          </div>
+          <div class="mini">
+            <h4>Vercel — bridge push <span class="badge third">când mementourile sunt active</span></h4>
+            <p>Endpoint-ul minimal <code>PUSH_API_BASE_URL/api/register</code> stochează <code>{token, locale, enabled}</code>, iar un cron zilnic declanșează <code>/api/daily → FCM → device</code>. Payload-ul este doar titlu/corp localizat. Token-urile sunt șterse la dezactivare.</p>
+          </div>
+          <div class="mini">
+            <h4>Nivel OS: Locație & Notificări <span class="badge opt">pe bază de permisiune</span></h4>
+            <p><code>geolocator</code> verifică permisiunea; <code>flutter_local_notifications</code> afișează push în foreground; <code>share_plus</code>/<code>printing</code> predau exporturile către share-ul sistemului. Totul e controlabil din setările sistemului.</p>
+          </div>
+        </div>
+        <p class="muted">Dacă un terț nu e disponibil, funcția rămâne indisponibilă — aplicația continuă să funcționeze.</p>
+      </div>
+    </section>
+
+    <section id="legal">
+      <h3 data-lang="en">6. Legal bases (GDPR Art. 6)</h3>
+      <h3 data-lang="ro">6. Temeiuri legale (GDPR Art. 6)</h3>
+      <div data-lang="en">
+        <ul>
+          <li><strong>Contract / pre-contract (Art. 6(1)(b))</strong> — providing the diary, charts and exports you request.</li>
+          <li><strong>Consent (Art. 6(1)(a))</strong> — location for weather and notifications for reminders. Withdraw anytime in system settings or in-app toggles; withdrawal is immediate and retroactive removal of push token.</li>
+          <li><strong>Legitimate interest (Art. 6(1)(f))</strong> — minimal, proportionate operation of the app (e.g., keeping settings locally). Never for health data monetization.</li>
+        </ul>
+        <p>Health-related diary data is a special category (Art. 9). We <strong>don’t process it centrally at all</strong> — it stays on device and is processed only locally at your explicit request (your own entries and explicit consent). No Art. 9 transfer to us occurs.</p>
+      </div>
+      <div data-lang="ro">
+        <ul>
+          <li><strong>Contract (Art. 6(1)(b))</strong> — furnizarea jurnalului, graficelor și exporturilor solicitate.</li>
+          <li><strong>Consimțământ (Art. 6(1)(a))</strong> — locație pentru vreme și notificări pentru mementouri. Retragi oricând din setările sistemului sau din toggle-urile aplicației; retragerea șterge imediat token-ul push.</li>
+          <li><strong>Interes legitim (Art. 6(1)(f))</strong> — operarea minimală, proporțională (ex. păstrarea setărilor local). Niciodată pentru monetizarea datelor de sănătate.</li>
+        </ul>
+        <p>Datele din jurnal sunt categorie specială (Art. 9). Noi <strong>nu le prelucrăm centralizat</strong> — rămân pe dispozitiv și sunt prelucrate doar local, la cererea ta explicită. Nu are loc un transfer Art. 9 către noi.</p>
+      </div>
+    </section>
+
+    <section id="retention">
+      <h3 data-lang="en">7. Retention & how to delete everything</h3>
+      <h3 data-lang="ro">7. Stocarea & cum ștergi tot</h3>
+      <div data-lang="en">
+        <ul>
+          <li><strong>Diary & settings</strong> stay on device until you delete them: delete individual attacks in History, or uninstall/clear app data to wipe the SQLite DB and SharedPreferences entirely.</li>
+          <li><strong>Weather snapshot</strong> attached to an attack lives as long as that attack does.</li>
+          <li><strong>Push token</strong> lives on the Vercel bridge only while reminders are enabled. Toggling off in Settings calls <code>DELETE /api/register</code>; uninstalling the app invalidates the FCM token system-side; tokens are also rotated via <code>onTokenRefresh</code>.</li>
+          <li><strong>Exports</strong> are temporary cache files; delete them from the share target or file manager.</li>
+        </ul>
+        <p>We operate no central backup of your diary. If you share an export with your doctor, retention of that copy is governed by the recipient.</p>
+      </div>
+      <div data-lang="ro">
+        <ul>
+          <li><strong>Jurnalul & setările</strong> rămân pe dispozitiv până le ștergi: ștergi atacuri individual în Istoric sau dezinstalezi / ștergi datele aplicației pentru a goli complet baza SQLite și SharedPreferences.</li>
+          <li><strong>Snapshot-ul meteo</strong> atașat unui atac trăiește cât atacul.</li>
+          <li><strong>Token-ul push</strong> rămâne pe bridge-ul Vercel doar cât mementourile sunt active. Dezactivarea în Setări apelează <code>DELETE /api/register</code>; dezinstalarea invalidează token-ul FCM; token-urile se rotesc via <code>onTokenRefresh</code>.</li>
+          <li><strong>Exporturile</strong> sunt fișiere temporare în cache; le ștergi din aplicația cu care le-ai partajat sau din file manager.</li>
+        </ul>
+        <p>Nu operăm backup central al jurnalului. Dacă partajezi un export cu medicul, păstrarea acelei copii ține de destinatar.</p>
+      </div>
+    </section>
+
+    <section id="security">
+      <h3 data-lang="en">8. Security</h3>
+      <h3 data-lang="ro">8. Securitate</h3>
+      <div data-lang="en">
+        <p>Diary data is protected by OS-level sandboxing (app-private SQLite). Transport for weather (HTTPS to OpenWeatherMap) and push (HTTPS to Vercel and FCM) uses TLS. No plain-text health data is logged on our bridge.</p>
+        <p>However, no system is 100% secure. Keep your device locked, OS updated, and do not share exports over insecure channels if they contain sensitive health information.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Datele din jurnal sunt protejate de sandbox-ul OS (SQLite privat aplicației). Transportul pentru vreme (HTTPS către OpenWeatherMap) și push (HTTPS către Vercel și FCM) folosește TLS. Nu logăm date de sănătate în clar pe bridge.</p>
+        <p>Niciun sistem nu e 100% sigur. Păstrează dispozitivul blocat, OS-ul actualizat și nu partaja exporturi prin canale nesigure dacă conțin informații sensibile.</p>
+      </div>
+    </section>
+
+    <section id="rights">
+      <h3 data-lang="en">9. Your rights</h3>
+      <h3 data-lang="ro">9. Drepturile tale</h3>
+      <div data-lang="en">
+        <p>Because the diary stays on device, you can exercise most rights directly:</p>
+        <ul>
+          <li><strong>Access & portability</strong> — view in History/Analytics; export PDF/CSV from Settings.</li>
+          <li><strong>Rectification</strong> — edit an attack; change language/theme/toggles.</li>
+          <li><strong>Erasure (“right to be forgotten”)</strong> — delete attacks; toggle off weatherAlerts/notifications; uninstall to erase all.</li>
+          <li><strong>Restriction & objection</strong> — deny/revoke location and notification permissions in system settings.</li>
+          <li><strong>Withdraw consent</strong> — at any time, with immediate effect (toggles + OS permissions).</li>
+        </ul>
+        <p>For push-token deletion or any privacy question, email <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a> with your FCM token (found in system logs only if you extract it) or simply toggle reminders off — that deletes the server entry.</p>
+        <p class="muted">EU residents may complain to ANSPDCP (Romania) or their local DPA. California residents: this app does not sell or share personal information under CCPA/CPRA and does not use cross-context behavioral advertising.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Pentru că jurnalul rămâne pe dispozitiv, îți exerciți majoritatea drepturilor direct:</p>
+        <ul>
+          <li><strong>Acces & portabilitate</strong> — vezi în Istoric/Analiză; export PDF/CSV din Setări.</li>
+          <li><strong>Rectificare</strong> — editezi un atac; schimbi limba/tema/toggle-urile.</li>
+          <li><strong>Ștergere (“dreptul de a fi uitat”)</strong> — ștergi atacuri; dezactivezi alerte meteo/notificări; dezinstalezi pentru a șterge tot.</li>
+          <li><strong>Restricționare & opoziție</strong> — refuzi/revoci permisiunile de locație și notificări din setările sistemului.</li>
+          <li><strong>Retragerea consimțământului</strong> — oricând, cu efect imediat.</li>
+        </ul>
+        <p>Pentru ștergerea token-ului push sau orice întrebare, scrie la <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a> — sau dezactivează mementourile, ceea ce șterge înregistrarea de pe server.</p>
+        <p class="muted">Rezidenți UE: poți depune plângere la ANSPDCP sau DPA local. Rezidenți California: aplicația nu vinde și nu partajează date conform CCPA/CPRA și nu folosește publicitate comportamentală cross-context.</p>
+      </div>
+    </section>
+
+    <section id="children">
+      <h3 data-lang="en">10. Children’s privacy</h3>
+      <h3 data-lang="ro">10. Confidențialitatea copiilor</h3>
+      <div data-lang="en">
+        <p>Migraine Tracker is not directed to children under 13 (and, in the EU, under 16 where applicable). We do not knowingly collect personal data from children. If you believe a child has used the app, uninstall and contact us to discuss removal of any push token if reminders were enabled.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Migraine Tracker nu se adresează copiilor sub 13 ani (și, în UE, sub 16 ani unde se aplică). Nu colectăm cu bună știință date de la copii. Dacă crezi că un copil a folosit aplicația, dezinstalează și contactează-ne pentru ștergerea token-ului push dacă mementourile au fost activate.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3 data-lang="en">11. International transfers</h3>
+      <h3 data-lang="ro">11. Transferuri internaționale</h3>
+      <div data-lang="en">
+        <p>When you enable weather or reminders, limited data leaves the EU: coordinates to OpenWeatherMap and token+locale to Vercel/Google (FCM) — all over HTTPS. Where applicable, transfers rely on the providers’ Standard Contractual Clauses / adequacy mechanisms. Diary entries themselves are never transferred.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Când activezi vremea sau mementourile, date limitate părăsesc UE: coordonate către OpenWeatherMap și token+limbă către Vercel/Google (FCM) — toate prin HTTPS. Transferurile se bazează pe Clauzele Contractuale Standard / mecanismele de adecvare ale furnizorilor. Intrările din jurnal nu sunt transferate.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3 data-lang="en">12. Do Not Track & automated decisions</h3>
+      <h3 data-lang="ro">12. Do Not Track & decizii automate</h3>
+      <div data-lang="en">
+        <p>The app does not track you across apps/sites and does not make automated decisions with legal or similarly significant effects. Insights (“Top trigger”, peak hours, pressure vs pain) are simple on-device statistics for your review only.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Aplicația nu te urmărește între aplicații/site-uri și nu ia decizii automate cu efecte juridice semnificative. Insight-urile (“declanșator principal”, ore de vârf, presiune vs durere) sunt statistici simple pe dispozitiv, doar pentru informarea ta.</p>
+      </div>
+    </section>
+
+    <section id="changes">
+      <h3 data-lang="en">13. Changes to this Policy</h3>
+      <h3 data-lang="ro">13. Modificări ale Politicii</h3>
+      <div data-lang="en">
+        <p>We may update this Policy to reflect changes in the app, law or providers. The “Last updated” date at the top will change and, for material changes, we will highlight the update in the app or on the distribution page. Continued use after the effective date means you accept the updated Policy.</p>
+      </div>
+      <div data-lang="ro">
+        <p>Putem actualiza Politica pentru a reflecta schimbări în aplicație, legislație sau furnizori. Data “Ultima actualizare” se va schimba și, pentru modificări materiale, vom evidenția actualizarea în aplicație sau pe pagina de distribuție. Continuarea utilizării după data intrării în vigoare înseamnă acceptul Politicii actualizate.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3 data-lang="en">14. Contact</h3>
+      <h3 data-lang="ro">14. Contact</h3>
+      <div data-lang="en">
+        <p>Questions, requests or complaints about privacy: <a href="mailto:iulianivn@duck.com"><strong>iulianivn@duck.com</strong></a> — Freelancer, no company. Please include “Migraine Tracker — Privacy” in the subject.</p>
+        <p class="muted">We aim to reply within 30 days (GDPR timeline).</p>
+      </div>
+      <div data-lang="ro">
+        <p>Întrebări, cereri sau reclamații privind confidențialitatea: <a href="mailto:iulianivn@duck.com"><strong>iulianivn@duck.com</strong></a> — Freelancer, fără firmă. Te rog să incluzi “Migraine Tracker — Privacy” în subiect.</p>
+        <p class="muted">Ne propunem să răspundem în 30 de zile (termen GDPR).</p>
+      </div>
+    </section>
+
+  </article>
+  </div>
+
+  <div class="wrap">
+    <footer>
+      <div class="contact-card">
+        <div>
+          <div><strong>Migraine Tracker</strong> <span class="muted">— Freelancer</span></div>
+          <div class="muted"><span data-lang="en">Privacy questions?</span><span data-lang="ro">Întrebări despre confidențialitate?</span> <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="terms.html" data-lang="en">Terms of Service</a><a href="terms.html" data-lang="ro">Termeni și Condiții</a>
+          <span class="muted">·</span>
+          <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-lang="en">Back to top ↑</a><a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" data-lang="ro">Sus ↑</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:14px">© 2026 Migraine Tracker — Freelancer. <span data-lang="en">This document is provided for transparency and does not constitute legal advice. For specific legal guidance consult counsel.</span><span data-lang="ro">Acest document este oferit pentru transparență și nu constituie consultanță juridică. Pentru îndrumare specifică consultă un avocat.</span></p>
+    </footer>
+  </div>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    localStorage.setItem('mt-lang', lang);
+    document.getElementById('btn-en').setAttribute('aria-pressed', lang==='en' ? 'true':'false');
+    document.getElementById('btn-ro').setAttribute('aria-pressed', lang==='ro' ? 'true':'false');
+    // update title lang hint
+    const titles = {
+      en: 'Migraine Tracker — Privacy Policy',
+      ro: 'Migraine Tracker — Politica de Confidențialitate'
+    };
+    document.title = titles[lang] || titles.en;
+  }
+  (function(){
+    const saved = localStorage.getItem('mt-lang');
+    // default en as requested; respect saved, else en, ignore browser lang on purpose
+    const initial = (saved === 'ro' || saved === 'en') ? saved : 'en';
+    setLang(initial);
+  })();
+</script>
+</body>
+  </html>
