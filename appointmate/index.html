@@ -120,137 +120,134 @@
 <body>
     <div class="container">
         <h1>AppointMate Privacy Policy</h1>
-        <p class="date"><strong>Last updated:</strong> May 1, 2026 | <strong>Effective Date:</strong> May 1, 2026</p>
+        <p class="date"><strong>Last updated:</strong> October 17, 2026</p>
 
         <div class="highlight">
-            <p><strong>AppointMate</strong> ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+            <p><strong>AppointMate</strong> ("we," "our," or "us") respects your privacy. This policy explains what the app stores locally, what is sent to the cloud to deliver push reminders, and the controls you have.</p>
         </div>
 
         <h2>1. Information We Collect</h2>
 
-        <h3>Personal Data</h3>
-        <p>AppointMate collects the following personal information:</p>
+        <h3>Stored on your device</h3>
         <ul>
-            <li><strong>Contact Information:</strong> Names, phone numbers from your device contacts (with your explicit permission)</li>
-            <li><strong>Appointment Data:</strong> Appointment details including dates, times, descriptions, and client information</li>
-            <li><strong>Device Information:</strong> Device model, operating system version, unique device identifiers</li>
-            <li><strong>Usage Data:</strong> App features used, time spent in app, crash logs</li>
+            <li><strong>Appointment data:</strong> client names, phone numbers, dates/times, duration, descriptions and addresses</li>
+            <li><strong>Settings:</strong> theme, SMS templates, business details used on estimates and invoices</li>
+            <li><strong>Progress notes and images:</strong> the notes and photos you add</li>
+            <li><strong>Documents:</strong> estimates, invoices, payments and warranties</li>
         </ul>
 
-        <h3>Android Permissions</h3>
+        <h3>Sent to the cloud for push reminders</h3>
+        <p>To deliver push notifications while the app is closed, the minimum fields needed are copied to Firebase Firestore:</p>
+        <ul>
+            <li>client name, phone number, appointment time, description and category</li>
+            <li>a device identifier and the Firebase Cloud Messaging token</li>
+        </ul>
+        <p>The copy is deleted when you delete the appointment, the client, or all data.</p>
+
+        <h3>Usage counters</h3>
+        <p>A pseudonymous device hash and monthly appointment/image counters are stored on Cloudflare. They contain no client data and are used only to enforce the free plan limits.</p>
+
+        <h3>Diagnostics</h3>
+        <p>Firebase Crashlytics collects anonymous crash reports (device model, Android version, app version, stack trace). They never contain client names or appointment content and can be turned off in <strong>Settings &rarr; Data &amp; privacy</strong>.</p>
+
+        <h3>Android permissions used</h3>
         <div class="permissions">
-            <p>We request the following Android permissions:</p>
             <ul>
-                <li><code>READ_CONTACTS</code> — To import client information from your contacts</li>
-                <li><code>SEND_SMS</code> — To send appointment confirmation and reminder SMS messages</li>
-                <li><code>CALL_PHONE</code> — To initiate calls to clients directly from the app</li>
-                <li><code>POST_NOTIFICATIONS</code> — To send you appointment reminders</li>
-                <li><code>RECEIVE_BOOT_COMPLETED</code> — To reschedule notifications after device restart</li>
-                <li><code>SCHEDULE_EXACT_ALARM</code> — To ensure precise notification timing</li>
+                <li><code>INTERNET</code> — push reminders, usage counters, subscriptions</li>
+                <li><code>READ_CONTACTS</code> — optional contact picker; the list is never uploaded</li>
+                <li><code>POST_NOTIFICATIONS</code> — appointment and warranty reminders</li>
+                <li><code>RECEIVE_BOOT_COMPLETED</code> — restore scheduled local notifications after a restart</li>
             </ul>
+            <p>The app does <strong>not</strong> declare <code>SEND_SMS</code>, <code>CALL_PHONE</code> or <code>SCHEDULE_EXACT_ALARM</code>. Calls and SMS are opened through the system dialer and SMS app, which need no runtime permission.</p>
         </div>
 
         <h2>2. How We Use Your Information</h2>
-        <p>We use your data to:</p>
         <ul>
-            <li>Manage and track your appointments</li>
-            <li>Send SMS reminders to your clients</li>
-            <li>Provide notification alerts for upcoming appointments</li>
-            <li>Improve app functionality and fix bugs</li>
-            <li>Provide customer support</li>
+            <li>Manage appointments, clients and their history</li>
+            <li>Send push reminders for upcoming appointments</li>
+            <li>Prepare SMS confirmations and payment reminders for you to send</li>
+            <li>Issue estimates and invoices and create backups</li>
+            <li>Enforce free-plan limits</li>
+            <li>Diagnose crashes and fix bugs</li>
         </ul>
 
         <h2>3. Data Storage & Security</h2>
 
-        <h3>Local Storage</h3>
-        <p><strong>All appointment data is stored locally on your device</strong> using the Isar database. We do not store your appointment data on our servers unless you explicitly use backup features.</p>
+        <h3>Local storage</h3>
+        <p>Appointment data, clients, notes, images and documents are stored in a SQLite (Drift) database on your device. The app does not upload this data except for the minimal reminder copy described above.</p>
 
-        <h3>Security Measures</h3>
-        <p>We implement industry-standard security measures including:</p>
+        <h3>Security</h3>
         <ul>
-            <li>Local database encryption on supported devices</li>
-            <li>Secure data transmission for any network operations</li>
-            <li>Regular security updates</li>
+            <li>Data is accessible only to the app and the operating system</li>
+            <li>Network operations use HTTPS</li>
+            <li>Crash reports contain no client details</li>
         </ul>
 
         <div class="warning">
-            <p><strong>Important:</strong> You are responsible for maintaining device security (screen lock, encryption, etc.). We are not liable for data loss due to unauthorized device access.</p>
+            <p><strong>Important:</strong> You are responsible for device security (screen lock, encryption, etc.). We are not liable for data loss caused by unauthorized device access.</p>
         </div>
 
         <h2>4. Third-Party Services</h2>
 
-        <h3>Adapty (Subscription Management)</h3>
-        <p>We use Adapty for subscription management. Adapty may collect:</p>
-        <ul>
-            <li>Purchase receipt data</li>
-            <li>Subscription status information</li>
-            <li>Anonymous usage analytics</li>
-        </ul>
-        <p><strong>Adapty Privacy Policy:</strong> <a href="https://adapty.io/privacy-policy/" target="_blank">https://adapty.io/privacy-policy/</a></p>
-
-        <h3>Firebase Cloud Messaging</h3>
-        <p>We use Firebase for push notifications. Firebase may collect device tokens and notification delivery data.</p>
+        <h3>Google Firebase</h3>
+        <p>Firestore stores the minimal reminder copy. Cloud Messaging delivers push notifications. Crashlytics collects anonymous diagnostics.</p>
         <p><strong>Google Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
 
+        <h3>Cloudflare</h3>
+        <p>Processes the pseudonymous device hash and monthly counters used for free-plan limits.</p>
+
+        <h3>Vercel</h3>
+        <p>Runs the scheduling service that reads the reminder copies and sends push notifications through Firebase.</p>
+
+        <h3>Adapty and Google Play</h3>
+        <p>Handle subscription purchases. We never see or store your card details.</p>
+        <p><strong>Adapty Privacy Policy:</strong> <a href="https://adapty.io/privacy" target="_blank">https://adapty.io/privacy</a></p>
+
         <h2>5. Data Sharing & Disclosure</h2>
-        <p>We <strong>do not sell</strong> your personal data. We may share data only:</p>
-        <ul>
-            <li>With service providers who perform services on our behalf (e.g., Adapty, Firebase)</li>
-            <li>To comply with legal obligations</li>
-            <li>To protect our rights and prevent fraud</li>
-            <li>With your explicit consent</li>
-        </ul>
+        <p>We <strong>do not sell</strong> your personal data. Data is processed only by the providers above, to run the app, and when required by law.</p>
 
         <h2>6. Data Retention</h2>
-        <p>We retain your data:</p>
         <ul>
-            <li><strong>Appointment Data:</strong> Until you delete it from the app</li>
-            <li><strong>Usage Analytics:</strong> Up to 12 months</li>
-            <li><strong>Support Communications:</strong> Up to 2 years</li>
+            <li><strong>Local data:</strong> until you delete it or uninstall the app</li>
+            <li><strong>Firestore reminder copies:</strong> deleted with the appointment, the client, or all data</li>
+            <li><strong>Backups:</strong> until you delete them or use "Delete all data"</li>
+            <li><strong>Crashlytics reports:</strong> according to Firebase policy (default 90 days)</li>
         </ul>
 
-        <h2>7. Your Rights (GDPR & CCPA)</h2>
-        <p>You have the right to:</p>
+        <h2>7. Your Rights (GDPR &amp; CCPA)</h2>
         <ul>
-            <li><strong>Access:</strong> Request a copy of your data</li>
-            <li><strong>Rectification:</strong> Correct inaccurate data</li>
-            <li><strong>Erasure:</strong> Request deletion of your data</li>
-            <li><strong>Portability:</strong> Receive your data in a structured format</li>
-            <li><strong>Objection:</strong> Object to processing of your data</li>
-            <li><strong>Restrict:</strong> Limit how we use your data</li>
+            <li><strong>Access:</strong> all data is visible in the app</li>
+            <li><strong>Rectification:</strong> edit any record in the app</li>
+            <li><strong>Erasure:</strong> delete a client, or use <strong>Settings &rarr; Data &amp; privacy &rarr; Delete all data</strong> to remove local data, images, backups and cloud copies</li>
+            <li><strong>Portability:</strong> export a JSON backup from Settings</li>
+            <li><strong>Objection/restriction:</strong> turn off crash reports, or stop using the app</li>
         </ul>
 
         <div class="contact">
             <p><strong>To exercise these rights, contact us:</strong><br>
-            <a href="mailto:iulianivn@duck.com">📧 iulianivn@duck.com</a>
-            <a href="https://iwan.ro" target="_blank">🌐 iwan.ro</a></p>
+            <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a><br>
+            <a href="https://iwan.ro" target="_blank">iwan.ro</a></p>
         </div>
 
         <h2>8. Children's Privacy</h2>
         <p>AppointMate is not intended for children under 13. We do not knowingly collect data from children under 13.</p>
 
         <h2>9. International Data Transfers</h2>
-        <p>Your data is processed locally on your device. When third-party services are used, data may be transferred to countries with different data protection laws. We ensure appropriate safeguards are in place.</p>
+        <p>Local data stays on your device. The reminder copy and diagnostics are processed by Google Firebase, Cloudflare, Vercel and Adapty under their standard data processing agreements and safeguards.</p>
 
         <h2>10. Changes to This Policy</h2>
-        <p>We may update this privacy policy. Significant changes will be notified via:</p>
-        <ul>
-            <li>In-app notification</li>
-            <li>Email (if provided)</li>
-            <li>App store update notes</li>
-        </ul>
+        <p>We may update this policy. Material changes are announced in the app and in the store release notes.</p>
 
         <h2>11. Contact Information</h2>
         <div class="contact">
-            <p><strong>For privacy-related questions, contact:</strong></p>
             <p><strong>Developer:</strong> Iulian Ivan<br>
             <strong>Email:</strong> <a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a><br>
             <strong>Website:</strong> <a href="https://iwan.ro" target="_blank">https://iwan.ro</a></p>
         </div>
 
         <div class="highlight">
-            <p><strong>Last updated:</strong> May 1, 2026<br>
-            <strong>AppointMate</strong> — Appointment manager with SMS reminders for solopreneurs</p>
+            <p><strong>Last updated:</strong> October 17, 2026<br>
+            <strong>AppointMate</strong> — Appointment manager for solopreneurs</p>
         </div>
     </div>
 </body>
