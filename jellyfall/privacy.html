@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jellyfall — Privacy Policy</title>
 <meta name="description" content="Privacy Policy for the Jellyfall Android game.">
+<link rel="canonical" href="https://privacy-pages-self.vercel.app/jellyfall/privacy.html">
+<meta property="og:title" content="Jellyfall — Privacy Policy">
+<meta property="og:url" content="https://privacy-pages-self.vercel.app/jellyfall/privacy.html">
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
@@ -84,7 +87,7 @@
 <div class="note">
   <strong>Short version.</strong> Jellyfall has no accounts, no login, and no servers of
   its own. Your scores and settings stay on your device. The only outside service is an
-  advertising SDK (AppLovin MAX) that shows optional ads and processes device and
+  advertising SDK (CAS.AI) that shows optional ads and processes device and
   advertising data for that purpose. You can accept or decline personalized advertising
   in the consent form, and change your choice at any time in
   <strong>Settings → Privacy options</strong>.
@@ -134,9 +137,9 @@
 <p>
   Jellyfall displays optional rewarded ads (continue after a game over, double your score)
   and occasional interstitial ads between runs. Ads are served through
-  <strong>AppLovin MAX</strong> (AppLovin Corporation, USA), a mediation platform that may
-  route ad requests to partner ad networks. When ads are requested, the SDK and its partners
-  may process:
+  <strong>CAS.AI</strong> (Clever Ads Solutions, operated by CLEAR INVEST LTD), a mediation
+  platform that may route ad requests to partner ad networks. When ads are requested, the
+  SDK and its partners may process:
 </p>
 <table>
   <thead>
@@ -172,9 +175,25 @@
 </table>
 <p>
   We do not receive your name, email address, phone number, contacts, photos, files,
-  microphone or camera data, and the Game requests none of those permissions. The Game
-  declares only the <code>INTERNET</code> and <code>VIBRATE</code> permissions. We do not
+  microphone or camera data, and the Game requests none of those permissions. We do not
   collect precise GPS location.
+</p>
+<p>
+  <strong>Permissions.</strong> The Game itself declares only
+  <code>INTERNET</code> and <code>VIBRATE</code>. The advertising SDKs bundled through the
+  mediation platform add their own permissions, which you can see before installing on the
+  Play Store listing:
+</p>
+<ul>
+  <li><code>ACCESS_NETWORK_STATE</code>, <code>ACCESS_WIFI_STATE</code> — to check whether a connection is available and whether you are on Wi-Fi;</li>
+  <li><code>com.google.android.gms.permission.AD_ID</code> and the Android Privacy Sandbox permissions <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code> — to read the advertising ID and serve and measure ads;</li>
+  <li><code>com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE</code> — install attribution by the store;</li>
+  <li><code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code> — to keep an ad download or a full-screen ad from being interrupted;</li>
+  <li><code>POST_NOTIFICATIONS</code> — declared by one of the ad SDKs; the Game never asks you for it and never posts notifications.</li>
+</ul>
+<p>
+  None of these give access to your contacts, calendar, photos, files, microphone, camera or
+  precise location, and none of them are requested by the Game's own code.
 </p>
 
 <h3>3.3 What we never do</h3>
@@ -221,28 +240,31 @@
 <h2 id="consent">5. Your advertising choices</h2>
 <p>
   On first launch, users in the European Economic Area, the United Kingdom and Switzerland
-  are shown a consent form provided by AppLovin MAX. The form lets you accept or refuse
+  are shown a consent form provided by CAS.AI. The form lets you accept or refuse
   personalized advertising and lists the advertising partners involved. If you refuse, the
   Game can still show non-personalized ads, and the Game remains fully playable either way.
 </p>
 <p>
   You can reopen the form at any time in the Game through
-  <strong>Settings → Privacy options</strong>, which reopens the AppLovin consent management
+  <strong>Settings → Privacy options</strong>, which reopens the CAS.AI consent management
   platform. You can also reset or delete your advertising ID in the Android system settings
   under <strong>Settings → Privacy → Ads</strong> (path may vary by device).
 </p>
 <p>
-  AppLovin's own practices are described in the AppLovin privacy policy:
-  <a href="https://www.applovin.com/privacy/">applovin.com/privacy</a>. Partner ad networks
-  that may receive ad requests through MAX maintain their own policies, and AppLovin
-  publishes the current partner list in its documentation.
+  CAS.AI's own practices are described in the Clever Ads Solutions privacy policy:
+  <a href="https://cas.ai/privacy-policy">cas.ai/privacy-policy</a>. The mediation
+  adapters included in this version of the Game may include Google (AdMob demand), Meta
+  Audience Network, AppLovin, Unity Ads, ironSource, Mintegral, InMobi, Vungle (Liftoff)
+  and Pangle (ByteDance). That list depends on the adapter set built into the app version
+  you are using and can change with updates; CAS.AI publishes the current partner list in
+  its documentation. Each partner network maintains its own privacy policy.
 </p>
 
 <h2 id="sharing">6. Sharing and international transfers</h2>
 <p>
   We do not share data ourselves, because we hold none. When the Game requests an ad, the
-  request goes from your device to AppLovin and, through mediation, to the ad network that
-  wins the auction. AppLovin and its partners act as independent controllers or processors
+  request goes from your device to CAS.AI and, through mediation, to the ad network that
+  wins the auction. CAS.AI and its partners act as independent controllers or processors
   for their own advertising purposes.
 </p>
 <p>
@@ -256,7 +278,7 @@
 <h2 id="retention">7. Retention</h2>
 <ul>
   <li><strong>On your device:</strong> settings, score and consent choice are kept until you delete the app or clear its storage.</li>
-  <li><strong>Advertising data:</strong> retained by AppLovin and its partners under their own retention rules, described in their privacy policies. We cannot access or delete that data directly.</li>
+  <li><strong>Advertising data:</strong> retained by CAS.AI and its partners under their own retention rules, described in their privacy policies. We cannot access or delete that data directly.</li>
   <li><strong>Messages you send us:</strong> kept only as long as needed to answer the request and to comply with legal obligations.</li>
 </ul>
 
@@ -345,7 +367,7 @@
 <p>
   The Game itself stores a handful of preferences on your device, protected by the Android
   app sandbox. It has no backend, no database and no user credentials, so there is no server
-  of ours that could be breached. Advertising traffic between the Game and AppLovin is
+  of ours that could be breached. Advertising traffic between the Game and CAS.AI is
   transmitted over encrypted connections (TLS/HTTPS). No system is perfectly secure, and no
   method of transmission is guaranteed to be immune to interception, but the amount of data
   at stake here is limited to advertising identifiers.
