@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service — Flashake</title>
+  <meta name="description" content="Flashake terms of service: safe use, hardware requirements, no warranty, and contact details.">
+  <meta name="author" content="Iulian Ivan">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A0A0B">
+  <meta name="color-scheme" content="dark">
+  <link rel="canonical" href="https://iwan.ro/terms">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Flashake">
+  <meta property="og:title" content="Terms of Service — Flashake">
+  <meta property="og:description" content="Flashake terms of service: safe use, hardware requirements, no warranty, and contact details.">
+  <meta property="og:url" content="https://iwan.ro/terms">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ro_RO">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0A0A0B;
+      --surface: #141416;
+      --border: #232327;
+      --text: #F5F5F2;
+      --muted: #A1A1A6;
+      --accent: #FFF8EC;
+      --radius: 20px;
+      --max: 680px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+    }
+
+    .brand:hover { color: var(--accent); }
+
+    .lang {
+      display: inline-flex;
+      gap: 2px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+    }
+
+    .lang button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+      padding: 0 14px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .lang button[aria-pressed="true"] {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .lang button:hover { color: var(--text); }
+
+    .lang button[aria-pressed="true"]:hover { color: var(--bg); }
+
+    main { padding: 44px 0 64px; }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 5vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+    }
+
+    h2 {
+      margin: 38px 0 10px;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+    }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+
+    ul { margin: 0 0 18px; padding-left: 22px; color: var(--muted); }
+
+    li { margin: 0 0 7px; }
+
+    strong { color: var(--text); font-weight: 600; }
+
+    a {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    a:hover { color: var(--accent); }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .updated {
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .summary {
+      margin: 26px 0 10px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .summary strong { color: var(--accent); }
+
+    .related {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .note {
+      margin: 0;
+      padding: 12px 24px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 0 30px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      justify-content: space-between;
+    }
+
+    .site-footer a { color: var(--muted); }
+    .site-footer a:hover { color: var(--text); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 520px) {
+      .wrap { padding: 0 20px; }
+      main { padding: 32px 0 48px; }
+      .header-inner { padding-top: 16px; padding-bottom: 16px; }
+      .summary { padding: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="https://iwan.ro">Flashake</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="ro" aria-pressed="false">RO</button>
+      </div>
+    </div>
+  </header>
+
+  <noscript>
+    <p class="note">JavaScript is required to switch languages. The English version is shown.</p>
+  </noscript>
+
+  <main class="wrap" id="content">
+    <section data-lang="en" lang="en" id="terms-en">
+      <h1>Terms of Service</h1>
+      <p class="updated">Last updated: 7 November 2026</p>
+
+      <div class="summary">
+        <strong>Short version.</strong> Use Flashake safely and lawfully. The app is provided as is, without warranty.
+      </div>
+
+      <h2>Acceptance</h2>
+      <p>By installing or using Flashake, you agree to these terms. If you do not agree, do not use the app.</p>
+
+      <h2>The service</h2>
+      <p>Flashake is a simple Android flashlight. It has no account, no purchases, and no subscription. We may update, change, or discontinue features at any time.</p>
+
+      <h2>License</h2>
+      <p>We grant you a personal, non-exclusive, non-transferable, revocable license to use Flashake for personal purposes. You may not misrepresent the app as your own or use it in violation of applicable law.</p>
+
+      <h2>Acceptable use</h2>
+      <p>Use Flashake lawfully and responsibly. Do not use the flashlight while driving or in any situation where distraction could cause harm. Do not rely on the app as a substitute for proper lighting, emergency equipment, or professional safety devices.</p>
+
+      <h2>Safety</h2>
+      <p>The LED can be bright. Do not shine it directly into eyes. The shake gesture involves moving your phone; secure it firmly and use the sensitivity setting that fits you. Other apps that use the camera may make the flashlight unavailable until they release it.</p>
+
+      <h2>Hardware and availability</h2>
+      <p>Flashake requires a device with a camera flash LED and an accelerometer. Some devices do not have these components. The app may not work if another app is using the camera or if the operating system restricts background services. We do not guarantee uninterrupted availability.</p>
+
+      <h2>No warranty</h2>
+      <p>Flashake is provided “as is” and “as available”, without warranties of any kind, express or implied, including fitness for a particular purpose, merchantability, and non-infringement, to the extent permitted by law.</p>
+
+      <h2>Limitation of liability</h2>
+      <p>To the extent permitted by law, we are not liable for indirect, incidental, special, consequential, or punitive damages, or for any loss arising from the use of or inability to use the app. Nothing in these terms limits rights that cannot be limited under applicable law.</p>
+
+      <h2>Third-party links</h2>
+      <p>The app and these pages may link to third-party websites, such as iwan.ro or the privacy policy. We are not responsible for their content or practices.</p>
+
+      <h2>Changes</h2>
+      <p>We may update these terms. The updated version will be posted on this page with a new date. Continued use of the app after changes means you accept the updated terms.</p>
+
+      <h2>Governing law</h2>
+      <p>These terms are governed by the laws of Romania. Disputes will be handled by the competent courts in Romania, unless mandatory law provides otherwise.</p>
+
+      <h2>Contact</h2>
+      <p>Iulian Ivan<br><a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a><br><a href="https://iwan.ro">iwan.ro</a></p>
+
+      <p class="related">Related: <a href="https://iwan.ro/privacy">Privacy Policy</a> · <a href="https://iwan.ro">iwan.ro</a></p>
+    </section>
+
+    <section data-lang="ro" lang="ro" id="terms-ro" hidden>
+      <h1>Termeni și condiții</h1>
+      <p class="updated">Ultima actualizare: 7 noiembrie 2026</p>
+
+      <div class="summary">
+        <strong>Pe scurt.</strong> Folosește Flashake în siguranță și conform legii. Aplicația este oferită ca atare, fără garanții.
+      </div>
+
+      <h2>Acceptare</h2>
+      <p>Prin instalarea sau utilizarea Flashake, ești de acord cu acești termeni. Dacă nu ești de acord, nu folosi aplicația.</p>
+
+      <h2>Serviciul</h2>
+      <p>Flashake este o lanternă Android simplă. Nu are cont, cumpărături sau abonament. Putem actualiza, modifica sau întrerupe funcții oricând.</p>
+
+      <h2>Licență</h2>
+      <p>Îți acordăm o licență personală, neexclusivă, netransmisibilă și revocabilă pentru a folosi Flashake în scopuri personale. Nu poți prezenta aplicația ca fiind a ta și nu o poți folosi cu încălcarea legii aplicabile.</p>
+
+      <h2>Utilizare acceptabilă</h2>
+      <p>Folosește Flashake în mod legal și responsabil. Nu folosi lanterna în timp ce conduci sau în orice situație în care distragerea atenției poate produce răni. Nu te baza pe aplicație ca înlocuitor pentru iluminat adecvat, echipament de urgență sau dispozitive profesionale de siguranță.</p>
+
+      <h2>Siguranță</h2>
+      <p>LED-ul poate fi puternic. Nu îndrepta lumina direct în ochi. Gestul de scuturare implică mișcarea telefonului; ține-l bine și alege sensibilitatea potrivită. Alte aplicații care folosesc camera pot face lanterna indisponibilă până când o eliberează.</p>
+
+      <h2>Hardware și disponibilitate</h2>
+      <p>Flashake are nevoie de un dispozitiv cu LED de flash și accelerometru. Unele dispozitive nu au aceste componente. Aplicația poate să nu funcționeze dacă altă aplicație folosește camera sau dacă sistemul restricționează serviciile din fundal. Nu garantăm disponibilitatea neîntreruptă.</p>
+
+      <h2>Fără garanții</h2>
+      <p>Flashake este oferită „ca atare” și „în funcție de disponibilitate”, fără garanții de niciun fel, exprese sau implicite, inclusiv de adecvare pentru un anumit scop, vandabilitate și neîncălcare a drepturilor terților, în măsura permisă de lege.</p>
+
+      <h2>Limitarea răspunderii</h2>
+      <p>În măsura permisă de lege, nu răspundem pentru daune indirecte, incidentale, speciale, consecutive sau punitive și nici pentru pierderi rezultate din utilizarea sau imposibilitatea de utilizare a aplicației. Nimic din acești termeni nu limitează drepturile care nu pot fi limitate prin lege.</p>
+
+      <h2>Linkuri terțe</h2>
+      <p>Aplicația și aceste pagini pot conține linkuri către site-uri terțe, cum ar fi iwan.ro sau politica de confidențialitate. Nu suntem responsabili pentru conținutul sau practicile acestora.</p>
+
+      <h2>Modificări</h2>
+      <p>Putem actualiza acești termeni. Versiunea actualizată va fi publicată pe această pagină, cu o dată nouă. Continuarea utilizării aplicației după modificări înseamnă că accepți termenii actualizați.</p>
+
+      <h2>Legea aplicabilă</h2>
+      <p>Acești termeni sunt guvernați de legile României. Litigiile vor fi soluționate de instanțele competente din România, cu excepția cazurilor în care legea prevede altfel.</p>
+
+      <h2>Contact</h2>
+      <p>Iulian Ivan<br><a href="mailto:iulianivn@duck.com">iulianivn@duck.com</a><br><a href="https://iwan.ro">iwan.ro</a></p>
+
+      <p class="related">Vezi și: <a href="https://iwan.ro/privacy">Politica de confidențialitate</a> · <a href="https://iwan.ro">iwan.ro</a></p>
+    </section>
+
+    <p id="lang-status" class="sr-only" aria-live="polite"></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Iulian Ivan</span>
+      <span><a href="https://iwan.ro">iwan.ro</a> · <a href="mailto:iulianivn@duck.com">Email</a></span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var titles = {
+        en: "Terms of Service — Flashake",
+        ro: "Termeni și condiții — Flashake"
+      };
+      var sections = document.querySelectorAll("[data-lang]");
+      var buttons = document.querySelectorAll("[data-set-lang]");
+      var status = document.getElementById("lang-status");
+
+      function setLanguage(language) {
+        document.documentElement.lang = language;
+        document.title = titles[language] || titles.en;
+
+        sections.forEach(function (section) {
+          section.hidden = section.getAttribute("data-lang") !== language;
+        });
+
+        buttons.forEach(function (button) {
+          button.setAttribute(
+            "aria-pressed",
+            String(button.getAttribute("data-set-lang") === language)
+          );
+        });
+
+        if (status) {
+          status.textContent = language === "ro"
+            ? "Limba selectată: română."
+            : "Selected language: English.";
+        }
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          setLanguage(button.getAttribute("data-set-lang"));
+        });
+      });
+
+      setLanguage("en");
+    })();
+  </script>
+</body>
+</html>
