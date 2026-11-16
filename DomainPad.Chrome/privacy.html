@@ -45,6 +45,55 @@
         margin: 0 auto;
       }
 
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .brand {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+      }
+
+      .lang {
+        display: inline-flex;
+        align-items: center;
+        gap: 2px;
+        padding: 3px 5px;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        background: var(--bg);
+        font-family: inherit;
+        cursor: pointer;
+      }
+
+      .lang:hover {
+        border-color: var(--accent);
+      }
+
+      .lang:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .lang-code {
+        padding: 1px 6px;
+        border-radius: 4px;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      .lang-code.is-active {
+        background: var(--soft);
+        color: var(--accent);
+      }
+
       header {
         margin-bottom: 32px;
         padding-bottom: 20px;
@@ -67,11 +116,6 @@
         margin: 40px 0 12px;
         font-size: 20px;
         line-height: 1.3;
-      }
-
-      h3 {
-        margin: 24px 0 8px;
-        font-size: 16px;
       }
 
       p,
@@ -128,12 +172,6 @@
         margin-bottom: 0;
       }
 
-      .summary {
-        margin-top: 48px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border);
-      }
-
       a {
         color: var(--accent);
       }
@@ -147,212 +185,448 @@
   </head>
   <body>
     <main>
-      <header>
-        <h1>DomainPad — Politica de confidențialitate</h1>
-        <p class="updated">Ultima actualizare: 16 noiembrie 2026</p>
-      </header>
-
-      <p>
-        DomainPad este o extensie Chrome pentru notițe private, legate de domeniul pe care îl
-        vizitezi. Această pagină explică exact ce date ajung în extensie, unde sunt păstrate și ce
-        nu face extensia cu ele.
-      </p>
-
-      <div class="callout">
-        <p>
-          <strong>Pe scurt:</strong> toate datele rămân în browserul tău, în
-          <code>chrome.storage.local</code>. Extensia nu are cont, server, telemetrie și nu trimite
-          nimic prin rețea.
-        </p>
+      <div class="topbar">
+        <span class="brand">DomainPad</span>
+        <button type="button" class="lang" id="lang-toggle">
+          <span class="lang-code" data-lang="ro">RO</span>
+          <span class="lang-code" data-lang="en">EN</span>
+        </button>
       </div>
 
-      <h2>Ce date prelucrează extensia</h2>
-
-      <ul>
-        <li>
-          <strong>Textul notițelor.</strong> Conținutul pe care îl scrii tu în popup, împreună cu
-          două momente de timp: când a fost creată notița și când a fost modificată ultima dată.
-        </li>
-        <li>
-          <strong>Domeniul paginii.</strong> Extensia citește URL-ul tabului activ când deschizi
-          popup-ul și URL-urile taburilor pentru a actualiza badge-ul de pe iconiță. Din URL este
-          păstrat doar domeniul normalizat, de exemplu <code>github.com</code> sau
-          <code>localhost:3000</code>, ca cheie a notiței.
-        </li>
-        <li>
-          <strong>Limba interfeței.</strong> Alegerea RO/EN, ca popup-ul și pagina de opțiuni să
-          pornească în aceeași limbă la următoarea deschidere.
-        </li>
-      </ul>
-
-      <p>
-        Extensia nu citește conținutul paginilor, nu accesează cookie-uri, formulare, pagina de
-        istoric a browserului, fișiere sau alte date ale contului tău Google. URL-urile taburilor
-        sunt folosite doar în memorie, pentru a determina domeniul; extensia nu construiește și nu
-        păstrează un istoric al vizitelor.
-      </p>
-
-      <h2>Cum sunt folosite datele</h2>
-
-      <ul>
-        <li>Domeniul este folosit pentru a găsi notița potrivită când revii pe un site.</li>
-        <li>Textul notiței este afișat în popup și în pagina <strong>Toate notițele</strong>.</li>
-        <li>
-          Momentul ultimei modificări este folosit pentru sortarea listei și pentru afișarea datei
-          relative, de exemplu „acum 5 minute”.
-        </li>
-      </ul>
-
-      <p>
-        Acestea sunt singurele scopuri. Datele nu sunt folosite pentru publicitate, profilare,
-        analiză de comportament sau cercetare de piață.
-      </p>
-
-      <h2>Unde sunt stocate datele</h2>
-
-      <p>
-        Notițele și limba interfeței sunt salvate local, în <code>chrome.storage.local</code>, în
-        profilul de Chrome în care ai instalat extensia. Nu există sincronizare între dispozitive
-        și nu există copii pe serverele dezvoltatorului.
-      </p>
-
-      <p>
-        Exportul JSON este generat în browser și descărcat ca fișier obișnuit. Fișierul rămâne sub
-        controlul tău, pe discul tău.
-      </p>
-
-      <h2>Ce nu face extensia</h2>
-
-      <ul>
-        <li>Nu trimite date către niciun server, al dezvoltatorului sau al unei terțe părți.</li>
-        <li>Nu folosește instrumente de analiză, reclame sau urmărire.</li>
-        <li>Nu cere cont, autentificare sau date de plată.</li>
-        <li>Nu vinde și nu închiriază date.</li>
-        <li>Nu citește sau modifică paginile pe care navighezi.</li>
-        <li>Nu execută cod la distanță; tot codul este inclus în pachetul extensiei.</li>
-      </ul>
-
-      <h2>Permisiuni și motivul lor</h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Permisiune</th>
-            <th>De ce este necesară</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>storage</code></td>
-            <td>Singura sursă de date: notițele sunt citite și scrise în <code>chrome.storage.local</code>.</td>
-          </tr>
-          <tr>
-            <td><code>tabs</code></td>
-            <td>
-              Citește URL-ul tabului pentru a determina domeniul afișat în popup și pentru a arăta
-              badge-ul pe iconiță când domeniul are o notiță.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>
-        Extensia nu are permisiuni de acces la site-uri (<code>host_permissions</code> este gol) și
-        nu injectează scripturi în pagini.
-      </p>
-
-      <h2>Import și export</h2>
-
-      <p>
-        Exportul creează un fișier JSON cu toate notițele tale, la cererea ta. Importul citește un
-        fișier ales de tine și scrie notițele în stocarea locală. Ambele operații au loc exclusiv pe
-        dispozitivul tău.
-      </p>
-
-      <h2>Păstrare și ștergere</h2>
-
-      <ul>
-        <li>Poți șterge o notiță din popup sau din pagina <strong>Toate notițele</strong>.</li>
-        <li>
-          Dezinstalarea extensiei șterge toate notițele, împreună cu restul datelor extensiei din
-          Chrome.
-        </li>
-        <li>Nu există backup automat. Exportul JSON este singura cale de păstrare pe termen lung.</li>
-        <li>Dezvoltatorul nu deține copii ale notițelor și nu le poate recupera.</li>
-      </ul>
-
-      <h2>Partajare și transfer</h2>
-
-      <p>
-        Nu partajăm, nu vindem și nu transferăm date către terți. Nu există terți implicați în
-        funcționarea extensiei.
-      </p>
-
-      <h2>Utilizare limitată</h2>
-
-      <p>
-        Datele sunt folosite exclusiv pentru funcționalitatea vizibilă a extensiei: afișarea notiței
-        pentru domeniul curent, badge-ul de pe iconiță și lista tuturor notițelor. Utilizarea respectă
-        cerințele de utilizare limitată din Chrome Web Store User Data Policy: fără publicitate
-        personalizată, fără profilare, fără acces uman la datele utilizatorului.
-      </p>
-
-      <h2>Drepturile tale</h2>
-
-      <p>
-        Toate datele sunt pe dispozitivul tău, deci le controlezi direct: le poți citi din extensie,
-        exporta, modifica sau șterge. Pentru întrebări despre date, folosește canalul de suport al
-        listării extensiei din Chrome Web Store.
-      </p>
-
-      <h2>Modificări ale acestei politici</h2>
-
-      <p>
-        Dacă practicile de date se schimbă, această pagină este actualizată la aceeași adresă, iar
-        data de la începutul paginii se modifică. Extensia nu colectează date suplimentare fără o
-        versiune nouă, care cere acceptarea permisiunilor noi în Chrome.
-      </p>
-
-      <h2>Contact</h2>
-
-      <p>
-        Pentru întrebări despre confidențialitate, scrie prin canalul de suport al listării
-        DomainPad din Chrome Web Store. Datele de contact ale dezvoltatorului sunt afișate public în
-        pagina extensiei.
-      </p>
-
-      <section class="summary" lang="en">
-        <h2>Summary in English</h2>
+      <article class="doc" id="doc-ro" lang="ro">
+        <header>
+          <h1>Politica de confidențialitate</h1>
+          <p class="updated">Ultima actualizare: 16 noiembrie 2026</p>
+        </header>
 
         <p>
-          DomainPad is a Chrome extension for private notes attached to the website domain you
-          visit. All notes are stored locally in <code>chrome.storage.local</code>. The extension
-          has no account, no backend, no analytics and no network requests.
+          DomainPad este o extensie Chrome pentru notițe private, legate de domeniul pe care îl
+          vizitezi. Această pagină explică exact ce date ajung în extensie, unde sunt păstrate și ce
+          nu face extensia cu ele.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>Pe scurt:</strong> toate datele rămân în browserul tău, în
+            <code>chrome.storage.local</code>. Extensia nu are cont, server, telemetrie și nu trimite
+            nimic prin rețea.
+          </p>
+        </div>
+
+        <h2>Ce date prelucrează extensia</h2>
+
+        <ul>
+          <li>
+            <strong>Textul notițelor.</strong> Conținutul pe care îl scrii tu în popup, împreună cu
+            două momente de timp: când a fost creată notița și când a fost modificată ultima dată.
+          </li>
+          <li>
+            <strong>Domeniul paginii.</strong> Extensia citește URL-ul tabului activ când deschizi
+            popup-ul și URL-urile taburilor pentru a actualiza badge-ul de pe iconiță. Din URL este
+            păstrat doar domeniul normalizat, de exemplu <code>github.com</code> sau
+            <code>localhost:3000</code>, ca cheie a notiței.
+          </li>
+          <li>
+            <strong>Limba interfeței.</strong> Alegerea RO/EN, ca popup-ul și pagina de opțiuni să
+            pornească în aceeași limbă la următoarea deschidere.
+          </li>
+        </ul>
+
+        <p>
+          Extensia nu citește conținutul paginilor, nu accesează cookie-uri, formulare, pagina de
+          istoric a browserului, fișiere sau alte date ale contului tău Google. URL-urile taburilor
+          sunt folosite doar în memorie, pentru a determina domeniul; extensia nu construiește și nu
+          păstrează un istoric al vizitelor.
+        </p>
+
+        <h2>Cum sunt folosite datele</h2>
+
+        <ul>
+          <li>Domeniul este folosit pentru a găsi notița potrivită când revii pe un site.</li>
+          <li>Textul notiței este afișat în popup și în pagina <strong>Toate notițele</strong>.</li>
+          <li>
+            Momentul ultimei modificări este folosit pentru sortarea listei și pentru afișarea datei
+            relative, de exemplu „acum 5 minute”.
+          </li>
+          <li>Limba aleasă este folosită doar pentru afișarea interfeței.</li>
+        </ul>
+
+        <p>
+          Acestea sunt singurele scopuri. Datele nu sunt folosite pentru publicitate, profilare,
+          analiză de comportament sau cercetare de piață.
+        </p>
+
+        <h2>Unde sunt stocate datele</h2>
+
+        <p>
+          Notițele și limba interfeței sunt salvate local, în <code>chrome.storage.local</code>, în
+          profilul de Chrome în care ai instalat extensia. Nu există sincronizare între dispozitive
+          și nu există copii pe serverele dezvoltatorului.
         </p>
 
         <p>
-          The extension reads the URL of the active tab when you open the popup, and tab URLs to
-          update the toolbar badge, then keeps only the normalized domain as the note key. It does
-          not read page content, cookies or forms, and it does not keep a history of the sites you
-          visit. Note text and timestamps are used only to display, sort and export your own notes.
+          Exportul JSON este generat în browser și descărcat ca fișier obișnuit. Fișierul rămâne sub
+          controlul tău, pe discul tău.
+        </p>
+
+        <h2>Ce nu face extensia</h2>
+
+        <ul>
+          <li>Nu trimite date către niciun server, al dezvoltatorului sau al unei terțe părți.</li>
+          <li>Nu folosește instrumente de analiză, reclame sau urmărire.</li>
+          <li>Nu cere cont, autentificare sau date de plată.</li>
+          <li>Nu vinde și nu închiriază date.</li>
+          <li>Nu citește sau modifică paginile pe care navighezi.</li>
+          <li>Nu execută cod la distanță; tot codul este inclus în pachetul extensiei.</li>
+        </ul>
+
+        <h2>Permisiuni și motivul lor</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Permisiune</th>
+              <th>De ce este necesară</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>storage</code></td>
+              <td>
+                Singura sursă de date: notițele și limba sunt citite și scrise în
+                <code>chrome.storage.local</code>.
+              </td>
+            </tr>
+            <tr>
+              <td><code>tabs</code></td>
+              <td>
+                Citește URL-ul tabului pentru a determina domeniul afișat în popup și pentru a arăta
+                badge-ul pe iconiță când domeniul are o notiță.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Extensia nu are permisiuni de acces la site-uri (<code>host_permissions</code> este gol)
+          și nu injectează scripturi în pagini.
+        </p>
+
+        <h2>Import și export</h2>
+
+        <p>
+          Exportul creează un fișier JSON cu toate notițele tale, la cererea ta. Importul citește un
+          fișier ales de tine și scrie notițele în stocarea locală. Ambele operații au loc exclusiv
+          pe dispozitivul tău.
+        </p>
+
+        <h2>Păstrare și ștergere</h2>
+
+        <ul>
+          <li>Poți șterge o notiță din popup sau din pagina <strong>Toate notițele</strong>.</li>
+          <li>
+            Dezinstalarea extensiei șterge toate notițele, împreună cu restul datelor extensiei din
+            Chrome.
+          </li>
+          <li>
+            Nu există backup automat. Exportul JSON este singura cale de păstrare pe termen lung.
+          </li>
+          <li>Dezvoltatorul nu deține copii ale notițelor și nu le poate recupera.</li>
+        </ul>
+
+        <h2>Partajare și transfer</h2>
+
+        <p>
+          Nu partajăm, nu vindem și nu transferăm date către terți. Nu există terți implicați în
+          funcționarea extensiei.
+        </p>
+
+        <h2>Utilizare limitată</h2>
+
+        <p>
+          Datele sunt folosite exclusiv pentru funcționalitatea vizibilă a extensiei: afișarea
+          notiței pentru domeniul curent, badge-ul de pe iconiță și lista tuturor notițelor.
+          Utilizarea respectă cerințele de utilizare limitată din Chrome Web Store User Data Policy:
+          fără publicitate personalizată, fără profilare, fără acces uman la datele utilizatorului.
+        </p>
+
+        <h2>Drepturile tale</h2>
+
+        <p>
+          Toate datele sunt pe dispozitivul tău, deci le controlezi direct: le poți citi din
+          extensie, exporta, modifica sau șterge. Pentru întrebări despre date, folosește canalul de
+          suport al listării extensiei din Chrome Web Store.
+        </p>
+
+        <h2>Modificări ale acestei politici</h2>
+
+        <p>
+          Dacă practicile de date se schimbă, această pagină este actualizată la aceeași adresă, iar
+          data de la începutul paginii se modifică. Extensia nu colectează date suplimentare fără o
+          versiune nouă, care cere acceptarea permisiunilor noi în Chrome.
+        </p>
+
+        <h2>Contact</h2>
+
+        <p>
+          Pentru întrebări despre confidențialitate, scrie prin canalul de suport al listării
+          DomainPad din Chrome Web Store. Datele de contact ale dezvoltatorului sunt afișate public
+          în pagina extensiei.
+        </p>
+
+        <footer>
+          <p>DomainPad · Politica de confidențialitate · 16 noiembrie 2026</p>
+        </footer>
+      </article>
+
+      <article class="doc" id="doc-en" lang="en" hidden>
+        <header>
+          <h1>Privacy policy</h1>
+          <p class="updated">Last updated: 16 November 2026</p>
+        </header>
+
+        <p>
+          DomainPad is a Chrome extension for private notes tied to the website domain you visit.
+          This page explains exactly what data reaches the extension, where it is stored, and what
+          the extension does not do with it.
+        </p>
+
+        <div class="callout">
+          <p>
+            <strong>In short:</strong> all data stays in your browser, in
+            <code>chrome.storage.local</code>. The extension has no account, no server, no telemetry
+            and sends nothing over the network.
+          </p>
+        </div>
+
+        <h2>What data the extension handles</h2>
+
+        <ul>
+          <li>
+            <strong>Note text.</strong> The content you write in the popup, together with two
+            timestamps: when the note was created and when it was last edited.
+          </li>
+          <li>
+            <strong>The page domain.</strong> The extension reads the URL of the active tab when you
+            open the popup, and tab URLs to update the toolbar badge. Only the normalized domain is
+            kept from the URL, for example <code>github.com</code> or <code>localhost:3000</code>,
+            as the note key.
+          </li>
+          <li>
+            <strong>Interface language.</strong> Your RO/EN choice, so the popup and the options page
+            start in the same language next time.
+          </li>
+        </ul>
+
+        <p>
+          The extension does not read page content, does not access cookies, forms, the browser
+          history page, files or other data in your Google account. Tab URLs are used only in
+          memory to determine the domain; the extension does not build or keep a history of the
+          sites you visit.
+        </p>
+
+        <h2>How the data is used</h2>
+
+        <ul>
+          <li>The domain is used to find the right note when you return to a site.</li>
+          <li>The note text is shown in the popup and on the <strong>All notes</strong> page.</li>
+          <li>
+            The last edit timestamp is used to sort the list and to show the relative date, for
+            example “5 minutes ago”.
+          </li>
+          <li>The selected language is used only to render the interface.</li>
+        </ul>
+
+        <p>
+          These are the only purposes. The data is not used for advertising, profiling, behavioural
+          analysis or market research.
+        </p>
+
+        <h2>Where the data is stored</h2>
+
+        <p>
+          Notes and the interface language are stored locally, in <code>chrome.storage.local</code>,
+          in the Chrome profile where you installed the extension. There is no sync between devices
+          and there are no copies on the developer's servers.
         </p>
 
         <p>
-          It requests <code>storage</code> to keep notes and the interface language, and
-          <code>tabs</code> to determine the current domain. It has no host permissions and does
-          not inject scripts into pages. Notes are never transmitted, sold or shared. Removing the extension deletes all notes, so export
-          a JSON file if you want a backup.
+          The JSON export is generated in the browser and downloaded as a regular file. The file
+          stays under your control, on your disk.
         </p>
+
+        <h2>What the extension does not do</h2>
+
+        <ul>
+          <li>It does not send data to any server, the developer's or a third party's.</li>
+          <li>It does not use analytics, ads or tracking.</li>
+          <li>It does not ask for an account, authentication or payment details.</li>
+          <li>It does not sell or rent data.</li>
+          <li>It does not read or modify the pages you browse.</li>
+          <li>It does not execute remote code; all code is included in the extension package.</li>
+        </ul>
+
+        <h2>Permissions and why they are needed</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Why it is required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>storage</code></td>
+              <td>
+                The only data source: notes and the language are read from and written to
+                <code>chrome.storage.local</code>.
+              </td>
+            </tr>
+            <tr>
+              <td><code>tabs</code></td>
+              <td>
+                Reads the tab URL to determine the domain shown in the popup, and to show the
+                toolbar badge when the domain has a note.
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
         <p>
-          For privacy questions, use the support channel on the DomainPad listing in the Chrome Web
-          Store.
+          The extension has no site access permissions (<code>host_permissions</code> is empty) and
+          does not inject scripts into pages.
         </p>
-      </section>
 
-      <footer>
-        <p>DomainPad · Politica de confidențialitate · 16 noiembrie 2026</p>
-      </footer>
+        <h2>Import and export</h2>
+
+        <p>
+          Export creates a JSON file with all your notes, at your request. Import reads a file you
+          choose and writes the notes to local storage. Both operations happen only on your device.
+        </p>
+
+        <h2>Retention and deletion</h2>
+
+        <ul>
+          <li>You can delete a note from the popup or from the <strong>All notes</strong> page.</li>
+          <li>
+            Uninstalling the extension deletes all notes, along with the rest of the extension data
+            in Chrome.
+          </li>
+          <li>There is no automatic backup. The JSON export is the only long-term option.</li>
+          <li>The developer holds no copies of the notes and cannot recover them.</li>
+        </ul>
+
+        <h2>Sharing and transfer</h2>
+
+        <p>
+          We do not share, sell or transfer data to third parties. No third parties are involved in
+          running the extension.
+        </p>
+
+        <h2>Limited use</h2>
+
+        <p>
+          The data is used solely for the extension's visible functionality: showing the note for
+          the current domain, the toolbar badge and the list of all notes. This use complies with
+          the limited use requirements of the Chrome Web Store User Data Policy: no personalized
+          advertising, no profiling, no human access to user data.
+        </p>
+
+        <h2>Your rights</h2>
+
+        <p>
+          All data is on your device, so you control it directly: you can read it from the
+          extension, export it, change it or delete it. For data questions, use the support channel
+          on the extension listing in the Chrome Web Store.
+        </p>
+
+        <h2>Changes to this policy</h2>
+
+        <p>
+          If data practices change, this page is updated at the same address and the date at the top
+          changes. The extension does not collect additional data without a new version that asks
+          you to accept new permissions in Chrome.
+        </p>
+
+        <h2>Contact</h2>
+
+        <p>
+          For privacy questions, write through the support channel on the DomainPad listing in the
+          Chrome Web Store. The developer's contact details are shown publicly on the extension
+          page.
+        </p>
+
+        <footer>
+          <p>DomainPad · Privacy policy · 16 November 2026</p>
+        </footer>
+      </article>
     </main>
+
+    <script>
+      (function () {
+        const STORAGE_KEY = 'domainpad-privacy-language';
+        const blocks = {
+          ro: document.getElementById('doc-ro'),
+          en: document.getElementById('doc-en')
+        };
+        const toggle = document.getElementById('lang-toggle');
+        let current = 'ro';
+
+        function storedLanguage() {
+          try {
+            const value = window.localStorage.getItem(STORAGE_KEY);
+            return value === 'ro' || value === 'en' ? value : null;
+          } catch {
+            return null;
+          }
+        }
+
+        function preferredLanguage() {
+          const stored = storedLanguage();
+          if (stored) return stored;
+
+          const browser = (navigator.language || '').toLowerCase();
+          return browser.startsWith('en') ? 'en' : 'ro';
+        }
+
+        function updateToggle() {
+          for (const code of toggle.querySelectorAll('[data-lang]')) {
+            code.classList.toggle('is-active', code.dataset.lang === current);
+          }
+
+          const next = current === 'ro' ? 'en' : 'ro';
+          const label =
+            next === 'en' ? 'Schimbă limba în engleză' : 'Switch to Romanian';
+          toggle.setAttribute('aria-label', label);
+          toggle.title = label;
+        }
+
+        function apply(language) {
+          current = language === 'en' ? 'en' : 'ro';
+          for (const [code, block] of Object.entries(blocks)) {
+            block.hidden = code !== current;
+          }
+          document.documentElement.lang = current;
+          document.title =
+            current === 'en'
+              ? 'DomainPad — Privacy policy'
+              : 'DomainPad — Politica de confidențialitate';
+          updateToggle();
+        }
+
+        toggle.addEventListener('click', () => {
+          const next = current === 'ro' ? 'en' : 'ro';
+          apply(next);
+          try {
+            window.localStorage.setItem(STORAGE_KEY, next);
+          } catch {
+            /* stocarea poate fi blocată; pagina funcționează și fără persistență */
+          }
+        });
+
+        apply(preferredLanguage());
+      })();
+    </script>
   </body>
 </html>
